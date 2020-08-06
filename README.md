@@ -3,8 +3,8 @@
 ## Index
 
 -   ## Basics
-    -   [Navigation](/basics/navigation)
-    -   [Page](basics/page)
+    -   [Navigation](/basics/navigation.md)
+    -   [Page](basics/page.md)
     -   [Localization](basics/localization)
     -   [Helpers](basics/helpers)
 -   ## CRUD
