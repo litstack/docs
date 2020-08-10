@@ -77,14 +77,52 @@ $table->col('Fruit')
     ->regex('/\b(\w*orange\w*)\b/im', 'apple'); // Replaces orange with apple.
 ```
 
+### Money
+
+Let's assume that you want to display an amount of money in a column. For this
+the `money` method with the desired attribute can be used. The amount is
+formatted and the column can be sorted by the attribute.
+
+```php
+$table->money('amount');
+```
+
+#### Currency
+
+For formatting the
+[formatCurrnency](https://www.php.net/manual/de/numberformatter.formatcurrency.php)
+method of the PHP
+[NumberFormatter](https://www.php.net/manual/de/class.numberformatter.php) is
+used. This makes it possible to choose the 3-letter ISO 4217 currency code. The
+default currency code is `EUR`.
+
+```php
+$table->money('amount', 'USD');
+```
+
+Additionally, the language can be specified as a third parameter. However, the
+locale of the authenticated user is used by default.
+
+```php
+$table->money('amount', 'USD', 'en_US');
+```
+
+Usefull **ISO 4217** codes:
+
+| Code    | Currency          | Example (`de_DE`) |
+| ------- | ----------------- | ----------------- |
+| `"EUR"` | Euro              | `"10,00 €"`       |
+| `"USD"` | US Dollar         | `"10,00 $"`       |
+| `"AUD"` | Australian Dollar | `"10,00 AU$"`     |
+| `"CHF"` | Swiss Franc       | `"10,00 CHF"`     |
+| `"GGP"` | Pound             | `"10,00 £"`       |
+
 ## Reduce Width
 
 With the function `small` the column is reduced to the minimum width.
 
 ```php
-$table->col('Icon')
-    ->value('{icon}')
-    ->small(); // Reduces column to minimum width.
+$table->col('Icon')->value('{icon}')->small();
 ```
 
 ## Sortable
@@ -94,9 +132,7 @@ head. To achieve this, you simply have to specify the name of the attribute you
 want to sort by.
 
 ```php
-$table->col('Name')
-    ->value('{first_name} {last_name}')
-    ->sortBy('first_name'); // Sorting the column by first_name.
+$table->col('Name')->value('{first_name} {last_name}')->sortBy('first_name');
 ```
 
 You may even sort by related column.
@@ -120,8 +156,24 @@ using the `src` method. If the image was uploaded via the `Image` Field, the
 conversions specified in the config file **fjord.php** can be displayed.
 
 ```php
-$table->image('Image')
-    ->src('{image.conversion_urls.sm}');
+$table->image('Image')->src('{image.url}');
+```
+
+::: tip
+
+Display **media conversion** for images that where uploaded via the `Image`
+field.
+
+Example: `$column->src('{image.conversion_urls.sm}')`
+
+:::
+
+### Avatar
+
+You may use avatar to display a rounded image.
+
+```php
+$table->avatar('Image')->src('{image.conversion_urls.sm}');
 ```
 
 ### maxWidth, maxHeight
