@@ -1,10 +1,13 @@
 # Forms
 
-[[toc]]
+## Introduction
 
-Forms provide a convenient way to store, organize and maintain data of many kinds, such as your page content. You may create as many `Forms` as you like.
+Forms provide a convenient way to store, organize and maintain data of many
+kinds, such as your page content. You may create as many `Forms` as you like.
 
-Forms are divided into form `collections` to keep the overview. For example, the forms **home** and **faq**, which contain the page content for the pages **home** and **faq**, can be included in the `collection` **pages**.
+Forms are divided into form `collections` to keep the overview. For example, the
+forms **home** and **faq**, which contain the page content for the pages
+**home** and **faq**, can be included in the `collection` **pages**.
 
 ## Create
 
@@ -14,13 +17,19 @@ A `form` can be created using the following artisan command:
 php artisan fjord:form
 ```
 
-A wizard will take you through all required steps. The corresponding `config` and the `controller` is created afterwards.
+A wizard will take you through all required steps. The corresponding `config`
+and the `controller` is created afterwards.
 
 ## Permissions
 
-Now you need to specify a **permission group** in the `_make_form_permissions` migration. You can create a **permission group** for each form or only for each collection. For example, for the collection `pages` in which all forms for the static pages of a website are located, you can create a **group** for all pages or for each individual form.
+Now you need to specify a **permission group** in the `_make_form_permissions`
+migration. You can create a **permission group** for each form or only for each
+collection. For example, for the collection `pages` in which all forms for the
+static pages of a website are located, you can create a **group** for all pages
+or for each individual form.
 
-The permissions `read {group}` and `update {group}` are created for all groups that are specified.
+The permissions `read {group}` and `update {group}` are created for all groups
+that are specified.
 
 ```php
 protected $groups = [
@@ -31,19 +40,24 @@ protected $groups = [
 ];
 ```
 
-The migration can now simply be rolled back and re-run using the artisan command `fjord:form-permissions`.
+The migration can now simply be rolled back and re-run using the artisan command
+`fjord:form-permissions`.
 
 ```shell
 php artisan fjord:nav-permissions
 ```
 
 ::: tip
+
 Try to use as few groups as possible to keep permission **management** simple.
+
 :::
 
 ## Controller (Authorization)
 
-A controller has been created in `Controllers/Form/{collection}` in which the authorization for all operation is specified. Operations can be `read` and `update`.
+A controller has been created in `Controllers/Form/{collection}` in which the
+authorization for all operation is specified. Operations can be `read` and
+`update`.
 
 ```php
 /**
@@ -62,7 +76,8 @@ public function authorize(FjordUser $user, string $operation): bool
 
 ## Navigation
 
-Add the navigation entry by adding the `form.{collection}.{form}` preset to your navigation.
+Add the navigation entry by adding the `form.{collection}.{form}` preset to your
+navigation.
 
 ```php
 $nav->preset('form.pages.home', [
@@ -72,7 +87,9 @@ $nav->preset('form.pages.home', [
 
 ## Configuration
 
-Define the form config in the created config file: `Config/Form/{collection}/{form}Config.php`. First the controller must be specified in the config:
+Define the form config in the created config file:
+`Config/Form/{collection}/{form}Config.php`. First the controller must be
+specified in the config:
 
 ```php
 use FjordApp\Controllers\Form\Pages\HomeController;
@@ -87,7 +104,9 @@ public $controller = HomeController::class;
 
 ### Container Size
 
-By default, the containers for the update Form have a maximum width. If you want the containers to expand to the maximum width for a better overview, this can be achieved with `expandContainer`.
+By default, the containers for the update Form have a maximum width. If you want
+the containers to expand to the maximum width for a better overview, this can be
+achieved with `expandContainer`.
 
 ```php
 /**
@@ -100,11 +119,13 @@ public $expandContainer = false;
 
 ### Update Form
 
-Next, the configuration for the [form](/docs/crud/config-form.html) can be adjusted.
+Next, the configuration for the [form](/docs/crud/config-form.html) can be
+adjusted.
 
 ## Retrieve Data
 
-In order to retrieve the form data, you have to add the **Form Facade** to your controller. Data can now be easily retrieved with the `load` function like this:
+In order to retrieve the form data, you have to add the **Form Facade** to your
+controller. Data can now be easily retrieved with the `load` function like this:
 
 ```php
 use Fjord\Support\Facades\Form;
@@ -112,7 +133,8 @@ use Fjord\Support\Facades\Form;
 $form = Form::load('pages', 'home');
 ```
 
-This allows the data to be passed directly to a [View](https://laravel.com/docs/7.x/blade#displaying-data).
+This allows the data to be passed directly to a
+[View](https://laravel.com/docs/7.x/blade#displaying-data).
 
 ```php
 use Fjord\Support\Facades\Form;
@@ -140,7 +162,8 @@ $settings->main->title;
 
 ::: tip
 
-Use [View composers](https://laravel.com/docs/7.x/views#view-composers) to load global Form data to your `Views`.
+Use [View composers](https://laravel.com/docs/7.x/views#view-composers) to load
+global Form data to your `Views`.
 
 ```php
 View::composer('*', function ($view) {

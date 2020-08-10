@@ -1,6 +1,7 @@
 # WYSIWYG
 
-A **W**hat-**Y**ou-**S**ee-**I**s-**W**hat-You-**G**et editor using [tiptap](https://github.com/scrumpy/tiptap).
+A **W**hat-**Y**ou-**S**ee-**I**s-**W**hat-You-**G**et editor using
+[tiptap](https://github.com/scrumpy/tiptap).
 
 ```php
 $form->wysiwyg('text')
@@ -14,15 +15,15 @@ $form->wysiwyg('text')
 
 ## Methods
 
-| Method           | Description                                                                                                           |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `title`          | The title description for this field.                                                                                 |
-| `hint`           | A short hint that should describe how to use the field.`                                                              |
-| `width`          | Width of the field.                                                                                                   |
-| `translatable`   | Should the field be translatable? For translatable crud models, the translatable fields are automatically recognized. |
-| `max`            | Max characters.                                                                                                       |
-| `colors`         | Array of colors the the text can be painted in.                                                                       |
-| `tableHasHeader` | Determines if wysiwyg tables should have an header.                                                                   |
-| `rules`          | Rules that should be applied when **updating** and **creating**.                                                      |
-| `creationRules`  | Rules that should be applied when **creating**.                                                                       |
-| `updateRules`    | Rules that should be applied when **updating**.                                                                       |
+| Method                                   | Description                                                                                                           |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `$field->title('Text')`                  | The title description for this field.                                                                                 |
+| `$field->hint('Edit the article.')`      | A short hint that should describe how to use the field.`                                                              |
+| `$field->width(1/2)`                     | Width of the field.                                                                                                   |
+| `$field->translatable()`                 | Should the field be translatable? For translatable crud models, the translatable fields are automatically recognized. |
+| `$field->max(100)`                       | Max characters.                                                                                                       |
+| `$field->colors(['#4951f2', '#f67693'])` | Array of colors the the text can be painted in.                                                                       |
+| `$field->tableHasHeader()`               | Determines if wysiwyg tables should have an header.                                                                   |
+| `$field->rules('min:10')`                | Rules that should be applied when **updating** and **creating**.                                                      |
+| `$field->creationRules('required')`      | Rules that should be applied when **creating**.                                                                       |
+| `$field->updateRules('min:10')`          | Rules that should be applied when **updating**.                                                                       |

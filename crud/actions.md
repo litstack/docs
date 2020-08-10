@@ -1,18 +1,20 @@
 # Actions
 
-[[toc]]
+## Introduction
 
-Actions are a useful feature to create reusable tasks for models. These can then be inserted at the desired position, in your index table or on a detail page of a model.
+Actions are a convenient feature to create reusable tasks for models. Each
+action can be placed in different locations. For example in your index table or
+on a detail page of a model.
 
 ## Create
 
-Actions can be created via artisan.
+Create an action via artisan:
 
 ```shell
 php artisan fjord:action MyAction
 ```
 
-These then end up in the folder `./fjord/app/Actions`.
+The created actions are located in `./fjord/app/Actions`.
 
 ```php
 namespace FjordApp\Actions;
@@ -30,7 +32,9 @@ class MyAction
 
 ## Responses
 
-When a `message` is returned via a json response, a toast is displayed in the lower right corner of the page containing the message. This can be displayed in four variants: `success`, `info`, `warning`, `danger`. The default is `success`.
+When a `message` is returned via a json response, a toast is displayed in the
+lower right corner of the page containing the message. This can be displayed in
+four variants: `success`, `info`, `warning`, `danger`. The default is `success`.
 
 ```php
 public function run(Collection $models)
@@ -55,9 +59,11 @@ return response()->danger('My message.');
   <img src="./screens/message_danger.png" alt="message danger" width="350"/>
 </center>
 
-## Redirects
+### Redirects
 
-If you want to redirect to another page after you have performed your action, you can return one of the Laravel helpers for [redirects](https://laravel.com/docs/7.x/redirects).
+In some cases you may want to redirect the user to another page after the action
+has been executed. This can be done as usual by returning a
+[redirect](https://laravel.com/docs/7.x/redirects).
 
 ```php
 public function run(Collection $models)
@@ -70,7 +76,8 @@ public function run(Collection $models)
 
 ## Confirm Modal
 
-If your action has the function modal, the execution of the action must be confirmed via a modal.
+If your action has the function modal, the execution of the action must be
+confirmed via a modal.
 
 ```php
 namespace FjordApp\Actions;
@@ -96,7 +103,9 @@ class MyAction
 
 ## Fields
 
-Form fields can be added to the confirm modal of an action. The values of these fields are passed to the action. This allows you, for example, to let the user type in a message to be sent by mail, as shown the following example.
+Form fields can be added to the confirm modal of an action. The values of these
+fields are passed to the action. This allows you, for example, to let the user
+type in a message to be sent by mail, as shown the following example.
 
 ```php
 use Illuminate\Support\Collection;
@@ -122,9 +131,12 @@ public function run(Collection $models, AttributeBag $attributes)
   <img src="./screens/action_modal_fields.png" alt="action fields" height="250"/>
 </center>
 
-## Display
+## Display the Action
 
-Actions can be added to a table using the action method. To do this, the title and namespace of the action must be specified as parameters.
+### In a Table
+
+Actions can be added to a table using the `action` method. To do this, the title
+and namespace of the action must be specified as parameters.
 
 ```php
 // CrudConfig
@@ -138,7 +150,11 @@ public function index(CrudIndex $page)
 }
 ```
 
-Actions can also be displayed on the show page of a crud, even in the slots `navigationLeft`, `navigationRight`, `navigationControls`, `headerLeft` and `headerRight`:
+### On a Page
+
+Actions can also be displayed on the show page of a crud, even in the slots
+`navigationLeft`, `navigationRight`, `navigationControls`, `headerLeft` and
+`headerRight`:
 
 ![navigation](./../basics/screens/page_slots.jpg 'navigation')
 

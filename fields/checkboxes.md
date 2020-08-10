@@ -1,6 +1,13 @@
 # Checkboxes
 
-Multiple checkboxes.
+## Introduction
+
+Multiple checkboxes. The selected values are stored as an array.
+
+## Example
+
+The following example shows a list of fruits that can be selected using
+checkboxes.
 
 ```php
 $form->checkboxes('fruits')
@@ -15,7 +22,11 @@ $form->checkboxes('fruits')
     ->width(6);
 ```
 
-Add the `array` [cast](https://laravel.com/docs/5.2/eloquent-mutators#attribute-casting) to your model:
+### Cast
+
+Add the `array`
+[cast](https://laravel.com/docs/5.2/eloquent-mutators#attribute-casting) to your
+model:
 
 ```php
 protected $casts = [
@@ -25,13 +36,13 @@ protected $casts = [
 
 ## Methods
 
-| Method          | Description                                                            |
-| --------------- | ---------------------------------------------------------------------- |
-| `title`         | The title description for this field.                                  |
-| `hint`          | A short hint that should describe how to use the field.`               |
-| `width`         | Width of the field.                                                    |
-| `options`       | An array with checkboxe values and descriptions.                       |
-| `stacked`       | Places each checkbox one over the other instead of next to each other. |
-| `rules`         | Rules that should be applied when **updating** and **creating**.       |
-| `creationRules` | Rules that should be applied when **creating**.                        |
-| `updateRules`   | Rules that should be applied when **updating**.                        |
+| Method                              | Description                                                            |
+| ----------------------------------- | ---------------------------------------------------------------------- |
+| `$field->title('Foo')`              | The title description for this field.                                  |
+| `$field->hint('Foo.')`              | A short hint that should describe how to use the field.`               |
+| `$field->width(1/2)`                | Width of the field.                                                    |
+| `$field->options(['foo', 'bar'])`   | An array with checkboxe values and descriptions.                       |
+| `$field->stacked()`                 | Places each checkbox one over the other instead of next to each other. |
+| `$field->rules('required')`         | Rules that should be applied when **updating** and **creating**.       |
+| `$field->creationRules('required')` | Rules that should be applied when **creating**.                        |
+| `$field->updateRules('required')`   | Rules that should be applied when **updating**.                        |

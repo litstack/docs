@@ -1,13 +1,19 @@
 # Conditional Fields
 
-If fields should depend on the value of other fields, field conditions can be used.
+## Introduction
+
+If fields should depend on the value of other fields, field conditions can be
+used.
 
 ![radio conditions](./screens/conditions/conditions_radio.gif 'radio conditions')
 
-The following example shows an input field that only gets displayed if the select field `type` has the value `news`:
+## Examples
+
+The following example shows an input field that only gets displayed if the
+select field `type` has the value `news`:
 
 ```php{10}
-$typeField = $form->select('type')
+$form->select('type')
     ->options([
         'news' => 'News',
         'blog' => 'Blog',
@@ -16,19 +22,19 @@ $typeField = $form->select('type')
 
 $form->input('news_title')
     ->title('Title')
-    ->when($typeField, 'news');
+    ->when('type, 'news');
 ```
 
-Available conditions:
+A varity of conditions are available for any field:
 
-```php
-->when($field, 'value');
-->orWhen($field, 'value');
-->whenContains($field, 'value');
-->orWhenContains($field, 'value');
-```
+| Condition                                | Description                                 |
+| ---------------------------------------- | ------------------------------------------- |
+| `$field->when('type', 'foo')`            | Matches the exact given value.              |
+| `$field->whenNot('type', 'foo')`         | When field doesnt match the given value.    |
+| `$field->whenContains('type', 'foo')`    | Matches the given substring or array value. |
+| `$field->whenNotContains('type', 'foo')` | When field doesnt contain the given value.  |
 
-## Conditional Groups
+### Conditional Groups
 
 Conditions can also be applied to groups:
 
@@ -41,13 +47,13 @@ $form->group(function($form) {
 })->when($field, 'news');
 ```
 
-## Multiple Conditions
+### Multiple Conditions
 
-You may add as many conditions as you like:
+You may chain as many conditions in a row by adding `or` to the desired
+condition:
 
 ```php
-$form->input('title')
-    ->title('Title')
+$form->input('title')->title('Title')
     ->when($field, 'news')
     ->orWhen($field, 'blog');
 ```

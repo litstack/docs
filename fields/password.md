@@ -1,5 +1,7 @@
 # Password
 
+## Introduction
+
 A `password` input Field.
 
 ```php
@@ -19,7 +21,8 @@ $form->password('password')
 
 ## Confirm Password
 
-Password fields can be used to update and confirm user passwords using the following `rules`.
+Password fields can be used to update and confirm user passwords using the
+following `rules`.
 
 ```php
 $modal->password('password')
@@ -36,16 +39,14 @@ $modal->password('password_confirmation')
 
 ## Methods
 
-| Method          | Description                                                                    |
-| --------------- | ------------------------------------------------------------------------------ |
-| `title`         | The title description for this field.                                          |
-| `placeholder`   | The placeholder for this field.                                                |
-| `hint`          | A short hint that should describe how to use the field.`                       |
-| `width`         | Width of the field.                                                            |
-| `confirm`       | Requires the user to type in the current passwort to confirm update or create. |
-| `rulesOnly`     | The password wont be stored, only validation rules are used.                   |
-| `noScore`       | Shouldn't display the password score.                                          |
-| `minScore`      | Minimum password score.                                                        |
-| `rules`         | Rules that should be applied when **updating** and **creating**.               |
-| `creationRules` | Rules that should be applied when **creating**.                                |
-| `updateRules`   | Rules that should be applied when **updating**.                                |
+| Method                               | Description                                                                    |
+| ------------------------------------ | ------------------------------------------------------------------------------ |
+| `$field->title('Password')`          | The title description for this field.                                          |
+| `$field->placeholder('Password')`    | The placeholder for this field.                                                |
+| `$field->hint('Choose a Password.')` | A short hint that should describe how to use the field.`                       |
+| `$field->width(1/2)`                 | Width of the field.                                                            |
+| `$field->confirm()`                  | Requires the user to type in the current passwort to confirm update or create. |
+| `$field->rulesOnly()`                | The password wont be stored, only validation rules are used.                   |
+| `$field->rules('min:5')`             | Rules that should be applied when **updating** and **creating**.               |
+| `$field->creationRules('min:5')`     | Rules that should be applied when **creating**.                                |
+| `$field->updateRules('min:5')`       | Rules that should be applied when **updating**.                                |

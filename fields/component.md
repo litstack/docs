@@ -7,7 +7,8 @@ $form->component('my-component')
     ->width(3);
 ```
 
-Read the [Extend Vue](/docs/basics/vue.html#bootstrap-vue) section to learn how to register your own Vue components.
+Read the [Extend Vue](/docs/basics/vue.html#bootstrap-vue) section to learn how
+to register your own Vue components.
 
 ## Methods
 

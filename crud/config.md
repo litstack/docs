@@ -1,6 +1,9 @@
 # CRUD-Config
 
-The CRUD config returns an array in which the editability and further points are determined.
+## Introduction
+
+The CRUD config returns an array in which the editability and further points are
+determined.
 
 -   `preview_route` Route to display the model (optional)
 -   `index` Index table configuration
@@ -10,9 +13,12 @@ The CRUD config returns an array in which the editability and further points are
 
 ## Preview Route
 
-The preview route is optional and can be set to view the edited model directly in `mobile`, `tablet` and `desktop` view. The default device can be specified in the fjord config under the key `crud.preview.default_device`.
+The preview route is optional and can be set to view the edited model directly
+in `mobile`, `tablet` and `desktop` view. The default device can be specified in
+the fjord config under the key `crud.preview.default_device`.
 
-There are several ways to define a route that can be used according to your needs.
+There are several ways to define a route that can be used according to your
+needs.
 
 -   As a string:
 
@@ -94,8 +100,8 @@ return [
 
 ## Controller
 
-In some cases it will be necessary to set a custom controller.
-Define it by setting a controller:
+In some cases it will be necessary to set a custom controller. Define it by
+setting a controller:
 
 ```php
 <?php
@@ -120,7 +126,10 @@ The attributes that should be searched for are determined in `search`:
 ]
 ```
 
-The sorting possibilities are defined in `sort_by` by setting the attribute and the sorting direction as the key and the description as the value like `{key}.{asc|desc} =>{description}`. You can specify `sort_by_default` if you don't want the system to search for the first key automatically.
+The sorting possibilities are defined in `sort_by` by setting the attribute and
+the sorting direction as the key and the description as the value like
+`{key}.{asc|desc} =>{description}`. You can specify `sort_by_default` if you
+don't want the system to search for the first key automatically.
 
 ```php
 ...
@@ -134,11 +143,16 @@ The sorting possibilities are defined in `sort_by` by setting the attribute and 
 
 ## Form Fields
 
-For each fillable attribute of the model form fields can be specified to make them editable. [Read more about form fields](/{{route}}/{{version}}/form-fields).
+For each fillable attribute of the model form fields can be specified to make
+them editable.
+[Read more about form fields](/{{route}}/{{version}}/form-fields).
 
-Form fields used for a CRUD model may in some cases come with requirements described below.
+Form fields used for a CRUD model may in some cases come with requirements
+described below.
 
--   The `boolean` field needs the boolean [cast](https://laravel.com/docs/6.0/eloquent-mutators#attribute-casting) for the given attribute:
+-   The `boolean` field needs the boolean
+    [cast](https://laravel.com/docs/6.0/eloquent-mutators#attribute-casting) for
+    the given attribute:
 
 ```php
 <?php

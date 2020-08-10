@@ -1,10 +1,12 @@
 # Navigation
 
-[[toc]]
+## Introduction
 
-Your admin app by default contains two navigation instances: the top bar and your main navigation. The top navigation is for managing the admin interface, such as language, users and permissions. The main navigation is intended for the administration of data in your application.
+Your admin app by default contains two navigations: the **topbar** and your
+**main** navigation.
 
-Both navigation instances are configured in `fjord/app/Config/NavigationConfig.php` which looks as follows:
+Both navigation instances are configured in
+`fjord/app/Config/NavigationConfig.php` which looks as follows:
 
 ```php
 class NavigationConfig extends Config
@@ -23,9 +25,29 @@ class NavigationConfig extends Config
 
 ![navigation](./screens/navigation.jpg 'navigation')
 
-## Structure
+### Topbar
 
-The navigation structure is defined in an array. Simple entries, group titles and nested entries can be created. All entries are grouped within sections like this:
+The **topbar** navigation is meant for managing less important part sof your
+application, such as language and/or permissions.
+
+### Main
+
+The **main** navigation is inteded to provide quick access to the important
+components of your application. These could be for example Models or page
+content. Entries of the main navigation can be divided into
+[sections](#sections), additionally [groups](#groups) can be created which are
+displayed as dropdown. More than one depth is not possible here.
+
+## Building the Navigation
+
+The following explains how the navigations are built. The procedure is the same
+for the **topbar** and the **main** navigation. With a difference that only the
+**main** navigation can contain groups.
+
+### Sections
+
+A section can contain a list of entries. An optional title can be prepended to
+the entries like shown in the example:
 
 ```php
 $nav->section([
@@ -39,13 +61,15 @@ $nav->section([
 
 ### Entry
 
-Simple entries have a `title`, a `link`, and an `icon`. The [Font Awesome](https://fontawesome.com/icons?d=gallery&m=free) icons are included by default.
+Simple entries have a `title`, a `link`, and an `icon`. The
+[Font Awesome](https://fontawesome.com/icons?d=gallery&m=free) icons are
+included by default.
 
 ```php
 $nav->entry('Home', [
     'link' => route('your.route'), // Route
     'icon' => '<i class="fas fa-home"></i>' // Font Awesome icon
-])
+]),
 ```
 
 ### Groups
@@ -61,12 +85,14 @@ $nav->group([
     $nav->entry(...),
     ...
 
-])
+]),
 ```
 
-## Authorization
+### Authorization
 
-To hide navigation entries from users without the necessary permission, an `authorize` closure can be specified in which permissions for the logged in admin user can be queried.
+To hide navigation entries from users without the necessary permission, an
+`authorize` closure can be specified in which permissions for the logged in
+admin user can be queried.
 
 ```php
 use Fjord\User\Models\FjordUser;
@@ -76,13 +102,17 @@ $nav->entry('Home', [
     'authorize' => function(FjordUser $user) {
         return $user->can('read page-home');
     }
-])
+]),
 
 ```
 
-## Presets
+### Presets
 
-To build navigation entries, for example for Crud models, you can use navigation presets in which the corresponding `route` and `authorization` have already been defined. This is useful in most cases, especially to maintain the correct `authorization`. To edit the entry further you can specify an array with the navigation entry elements in a second parameter.
+To build navigation entries, for example for Crud models, you can use navigation
+presets in which the corresponding `route` and `authorization` have already been
+defined. This is useful in most cases, especially to maintain the correct
+`authorization`. To edit the entry further you can specify an array with the
+navigation entry elements in a second parameter.
 
 ```php
 $nav->preset('crud.departments', [
@@ -91,5 +121,8 @@ $nav->preset('crud.departments', [
 ```
 
 ::: tip
-A list of all registered navigation presets can be displayed with `php artisan fjord:nav`.
+
+A list of all registered navigation presets can be displayed with
+`php artisan fjord:nav`.
+
 :::
