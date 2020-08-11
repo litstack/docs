@@ -1,10 +1,12 @@
 # Configuration
 
-A configuration file can be found in the laravel config directory `config/fjord.php`.
+A configuration file can be found in the laravel config directory
+`config/fjord.php`.
 
 ## Basics
 
-In the following some basic configurations for the admin backend are explained. All specific configurations are explained in the corresponding documentation.
+In the following some basic configurations for the admin backend are explained.
+All specific configurations are explained in the corresponding documentation.
 
 Basic configuration keys:
 
