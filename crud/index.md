@@ -5,7 +5,7 @@
 Each Crud configuration can have an index page that shows an overview of the
 models. This index page is configured in the `index` method of its corresponding
 config. The first parameter is an instance of `Fjord\Page\Page` so all functions
-described in the [Fjord Page](../basics/page) documentation can be used.
+described in the [Fjord Page](../basics/page.md) documentation can be used.
 
 ```php
 use Fjord\Crud\CrudIndex;
@@ -33,7 +33,7 @@ public function index(CrudIndex $page)
 }
 ```
 
-The [table config](/config-table) describes how columns with **images**,
+The [table config](table.md) describes how columns with **images**,
 **relations** and much more can be built.
 
 ## Eager Loading

@@ -5,7 +5,7 @@
 In the `show` method of a **Form** or a **CRUD** config all components and
 fields are configured for editing the data. The first parameter is an instance
 of `Fjord\Page\Page` so all functions described in the
-[Fjord Page](/docs/basics/page) documentation can be used.
+[Fjord Page](../basics/page.md) documentation can be used.
 
 ```php
 use Fjord\Crud\CrudShow;
@@ -39,7 +39,7 @@ public function show(CrudShow $page)
 ```
 
 All available fields can be found in the documentation under
-[Fields](/docs/fields/introduction.html).
+[Fields](../fields/introduction.md).
 
 ## Group
 
@@ -52,8 +52,8 @@ $form->group(function($form) {
 })->width(6);
 ```
 
-Read the [Extend Vue](/docs/basics/vue.html#bootstrap-vue) section to learn how
-to register your own Vue components.
+Read the [Extend Vue](../basics/vue.md#bootstrap-vue) section to learn how to
+register your own Vue components.
 
 ## Info
 

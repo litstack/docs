@@ -2,11 +2,12 @@
 
 With the route picker field you can select a route from a predefined list.
 
-[[toc]]
-
 ## Register Routes
 
-To be able to select routes in your route field you must first register a route collection in a [service provider](https://laravel.com/docs/7.x/providers). The registered collection can then be used again and again in different places. The following example registers a collection with the name **app**.
+To be able to select routes in your route field you must first register a route
+collection in a [service provider](https://laravel.com/docs/7.x/providers). The
+registered collection can then be used again and again in different places. The
+following example registers a collection with the name **app**.
 
 ```php
 use Fjord\Crud\Fields\Route;
@@ -18,7 +19,9 @@ Route::register('app', function($collection) {
 
 ### Add Route
 
-The selectable routes are configured in the closure using the `route` method. The first parameter is the **title** that represents the route followed by an idendifier and a function that returns the actual route.
+The selectable routes are configured in the closure using the `route` method.
+The first parameter is the **title** that represents the route followed by an
+idendifier and a function that returns the actual route.
 
 ```php
 $collection->route('Home', 'home', function() {
@@ -26,8 +29,8 @@ $collection->route('Home', 'home', function() {
 });
 ```
 
-:::tip
-Use the [arrow function](https://www.php.net/manual/en/functions.arrow.php) short cut:
+:::tip Use the
+[arrow function](https://www.php.net/manual/en/functions.arrow.php) short cut:
 
 ```php
 $collection->route('Home', 'home', fn($locale) => route('home'));
@@ -53,7 +56,8 @@ $collection->group('Articles', function($group) {
 
 ### Localization
 
-The closure in which the route is returned is given the current **locale** as parameter.
+The closure in which the route is returned is given the current **locale** as
+parameter.
 
 ```php
 $collection->route('Home', 'home' function($locale) {
@@ -83,7 +87,8 @@ $casts = [
 
 ## Frontend
 
-You can output the value of your route directly in Blade, for example in the **href** attribute like this:
+You can output the value of your route directly in Blade, for example in the
+**href** attribute like this:
 
 ```php
 <a href="{{ $model->route }}">My Link</a>

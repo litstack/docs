@@ -202,6 +202,5 @@ public $controller = ArticleController::class;
 
 ### Index Table, Create & Update Form
 
-Next, the configuration for the [Index Table](/docs/crud/config-index.html) and
-the **create** and **update** [Form](/docs/crud/config-form.html) can be
-adjusted.
+Next, the configuration for the [Index Table](index.md) and the **create** and
+**update** [Form](show.md) can be adjusted.

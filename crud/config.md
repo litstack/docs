@@ -144,8 +144,7 @@ don't want the system to search for the first key automatically.
 ## Form Fields
 
 For each fillable attribute of the model form fields can be specified to make
-them editable.
-[Read more about form fields](/{{route}}/{{version}}/form-fields).
+them editable. [Read more about form fields](../fields/introduction.md).
 
 Form fields used for a CRUD model may in some cases come with requirements
 described below.
