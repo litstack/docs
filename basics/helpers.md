@@ -12,12 +12,9 @@ The package includes useful **Vue** `mixins` as well. Read the
 
 :::
 
-## Fjord Facade
+## Lit Facade
 
-The `Fjord` singleton contains some helpers which are related to the
-application.
-
-<a name="method-php-fjord-installed"></a>
+The `Lit` singleton contains some helpers which are related to the application.
 
 ### `installed()`
 
@@ -31,8 +28,6 @@ if(! Fjord::installed()) {
     return;
 }
 ```
-
-<a name="method-php-fjord-route"></a>
 
 ### `route($name)`
 
@@ -53,8 +48,6 @@ Route::get('dashboard', DashboardController::class)->name('dashboard');
 <a href="{{ route('fjord.dashboard') }}">Dashboard</a>
 ```
 
-<a name="method-php-fjord-url"></a>
-
 ### `url($url)`
 
 If you don't want to use the route name to call a route but directly specify the
@@ -67,8 +60,6 @@ config **fjord.php** to your url.
 
 ## Miscellaneous
 
-<a name="method-php-f"></a>
-
 ### `__f($key, $replace)`
 
 The `__f` method returns the translation using the application locale for the
@@ -77,8 +68,6 @@ authenticated user.
 ```php
 __f('messages.welcome', ['name' => 'Spatie'])
 ```
-
-<a name="method-php-fa"></a>
 
 ### `fa($group, $icon)`
 
@@ -89,8 +78,6 @@ The `fa` helper makes it easy to include
 fa('home') // <i class="fas fa-home"></i>
 fa('fal', 'abacus') // <i class="fal fa-abacus"></i>
 ```
-
-<a name="method-php-fjord"></a>
 
 ### `fjord()`
 
@@ -104,8 +91,6 @@ fjord()->installed();
 use Fjord\Support\Singletons\Fjord;
 Fjord::installed();
 ```
-
-<a name="method-php-fjord_user"></a>
 
 ### `fjord_user()`
 

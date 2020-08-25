@@ -1,7 +1,7 @@
 # Configuration
 
 A configuration file can be found in the laravel config directory
-`config/fjord.php`.
+`config/litstack.php`.
 
 ## Basics
 
@@ -20,8 +20,8 @@ Basic configuration keys:
 Styles and Scripts can easily be added to your the application:
 
 ```php
-use Fjord\Support\Facades\FjordApp;
+use Ignite\Support\Facades\Lit;
 
-FjordApp::style('path/to/your/style.css');
-FjordApp::script('path/to/your/script.js');
+Lit::style('path/to/your/style.css');
+Lit::script('path/to/your/script.js');
 ```

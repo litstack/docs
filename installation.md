@@ -13,7 +13,7 @@ well as all
 Installing the package into an existing Laravel application via Composer:
 
 ```shell
-composer require aw-studio/fjord
+composer require litstack/litstack
 ```
 
 The application will automatically register the needed service providers. The
@@ -21,20 +21,20 @@ next step is to process all publishes and migrations by typing the following
 artisan command:
 
 ```shell
-php artisan fjord:install
+php artisan lit:install
 ```
 
 Now all models have been moved to the `app/models` folder, all required files
 have been published and all migrations have been executed.
 
 The admin interface can be reached via the standard route `/admin`. The route
-may be changed in the config file `fjord.php` by changing the `route_prefix`
+may be changed in the config file `litstack.php` by changing the `route_prefix`
 key.
 
 The final step is to create an admin user so you can log in to the backend:
 
 ```shell
-php artisan fjord:admin
+php artisan lit:admin
 ```
 
 The wizard will guide you through the process of entering the required user
