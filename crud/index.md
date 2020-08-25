@@ -5,8 +5,7 @@
 Each Crud configuration can have an index page that shows an overview of the
 models. This index page is configured in the `index` method of its corresponding
 config. The first parameter is an instance of `Ignite\Page\Page` so all
-functions described in the [Fjord Page](../basics/page.md) documentation can be
-used.
+functions described in the [Page](../basics/page.md) documentation can be used.
 
 ```php
 use Ignite\Crud\CrudIndex;
