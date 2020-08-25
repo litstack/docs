@@ -7,7 +7,7 @@ used to build pages that fit the package's style. To ensure that users of the
 admin interface can find their way around quickly and easily on all sites, it is
 recommended to follow the following guidelines.
 
-The package's components have the prefix `fj-`.
+The package's components have the prefix `lit-`.
 
 ## Custom Pages
 
@@ -18,12 +18,12 @@ The following example shows how the root template of a page looks like.
 
 ```javascript
 <template>
-    <fj-container>
-        <fj-navigation/>
-        <fj-header :title="My Page"/>
+    <lit-container>
+        <lit-navigation/>
+        <lit-header :title="My Page"/>
 
         // Build your page here.
-    </fj-container>
+    </lit-container>
 </template>
 
 <script>
@@ -33,17 +33,17 @@ export default {
 </script>
 ```
 
-It is recommended to wrap your page content with a b-row and fj-col components.
+It is recommended to wrap your page content with a b-row and lit-col components.
 
 ```javascript
 <template>
-    <fj-container>
+    <lit-container>
         ...
         <b-row>
-            <fj-col :width="1/3">...</fj-col>
-            <fj-col :width="1/3">...</fj-col>
+            <lit-col :width="1/3">...</lit-col>
+            <lit-col :width="1/3">...</lit-col>
         </b-row>
-    </fj-container>
+    </lit-container>
 </template>
 ```
 
@@ -53,7 +53,7 @@ The topbar navigation is designed to make it easier for the user to navigate
 through the interface and display important controls while scrolling.
 
 ```javascript
-<fj-navigation />
+<lit-navigation />
 ```
 
 ### Go Back
@@ -66,7 +66,7 @@ To display the back link a text for the button and a link must be passed as prop
 to the navigation.
 
 ```php
-<fj-navigation :back="items" :back-text="Items"/>
+<lit-navigation :back="items" :back-text="Items"/>
 ```
 
 ### Controls
@@ -75,7 +75,7 @@ To display controls in the tooltip, simply specify an array with component
 names.
 
 ```javascript
-<fj-navigation :controls="['my-topbar-control']" />
+<lit-navigation :controls="['my-topbar-control']" />
 ```
 
 The components for the controls must use the bootstrap `b-dropdown-item` as a
@@ -104,14 +104,14 @@ Furthermore, the `left` and `right` slot can be used to display buttons
 directly.
 
 ```php
-<fj-navigation>
+<lit-navigation>
     <b-button slot="left" variant="primary">
         Left Action
     </b-button>
     <b-button slot="right" variant="primary">
         Right Action
     </b-button>
-</fj-navigation>
+</lit-navigation>
 ```
 
 ## Header
@@ -123,22 +123,22 @@ As well the header can contain controls that should be displayed under the
 header. The controls are displayed with the slots `actions` and `actions-right`.
 
 ```javascript
-<fj-header title="My Page">
+<lit-header title="My Page">
     <b-button slot="actions">
         Left Action
     </b-button>
     <b-button slot="actions-right">
         Right Action
     </b-button>
-<fj-header>
+<lit-header>
 ```
 
 ## Spinner
 
-The spinner can be displayed with the component `fj-spinner`.
+The spinner can be displayed with the component `lit-spinner`.
 
 ```javascript
 <template v-if="busy">
-	<fj-spinner />
+	<lit-spinner />
 </template>
 ```

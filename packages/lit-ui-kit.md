@@ -49,7 +49,7 @@ corresponding screen sizes.
 The component requires an image parameter with a media model:
 
 ```php
-<x-fj-image :image="$model->image"/>
+<x-lit-image :image="$model->image"/>
 ```
 
 The component lazy loads images and previews a minified base64 version of the
@@ -58,7 +58,7 @@ image untill it is loaded: ![litstack lazy loading](./screens/lazy.png)
 You may disable lazy loading by setting the `lazy` attribute to false:
 
 ```php
-<x-fj-image :image="$model->image" :lazy="false" />
+<x-lit-image :image="$model->image" :lazy="false" />
 ```
 
 ## Helpers

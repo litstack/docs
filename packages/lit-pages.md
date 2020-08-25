@@ -8,7 +8,7 @@ your admin panel into a **cms**.
 Install the package via composer:
 
 ```shell
-composer require litstack/fjord-pages
+composer require litstack/lit-pages
 ```
 
 Publish the migrations and migrate:
