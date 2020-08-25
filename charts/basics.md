@@ -8,11 +8,11 @@ pages as well as on detail pages.
 
 ## Create via Artisan
 
-Each chart has its own config file. The artisan command `fjord:chart {name}`
-generates the chart config into `./fjord/app/Config/Charts`.
+Each chart has its own config file. The artisan command `lit:chart {name}`
+generates the chart config into `./lit/app/Config/Charts`.
 
 ```shell
-php artisan fjord:chart SalesCountChart --area
+php artisan lit:chart SalesCountChart --area
 ```
 
 When no type is given as a flag the default chart type `area` will be generated.
@@ -24,7 +24,7 @@ Possible flags:
 -   `--number`
 -   `--progress`
 
-The command `fjord:chart` creates a chart config in `./fjord/app/Config/Charts`.
+The command `lit:chart` creates a chart config in `./lit/app/Config/Charts`.
 
 ## Configure
 
@@ -53,11 +53,11 @@ below:
 
 ## Register Charts
 
-Charts can be registered on pages that extend the `Fjord\Page\Page` class. For
+Charts can be registered on pages that extend the `Ignite\Page\Page` class. For
 example: `CrudShow` and `CrudIndex`.
 
 ```php
-use FjordApp\Config\Charts\SalesCountChart;
+use Lit\Config\Charts\SalesCountChart;
 
 $page->chart(SalesCountChart::class);
 ```
@@ -78,7 +78,7 @@ You may display the card in 3 different variants: `primary`, `secondary`,
 `white`
 
 ```php
-use FjordApp\Config\Charts\SalesCountChart;
+use Lit\Config\Charts\SalesCountChart;
 
 $container->chart(SalesCountChart::class)->variant('primary');
 $container->chart(SalesCountChart::class)->variant('secondary');
@@ -92,7 +92,7 @@ $container->chart(SalesCountChart::class)->variant('white');
 The width of the chart is indicated by `width`.
 
 ```php
-use FjordApp\Config\Charts\SalesCountChart;
+use Lit\Config\Charts\SalesCountChart;
 
 $container->chart(SalesCountChart::class)->width(1 / 3);
 ```
@@ -102,7 +102,7 @@ $container->chart(SalesCountChart::class)->width(1 / 3);
 The height of the chart is indicated by `width`.
 
 ```php
-use FjordApp\Config\Charts\SalesCountChart;
+use Lit\Config\Charts\SalesCountChart;
 
 $container->chart(SalesCountChart::class)->width(1 / 3);
 ```

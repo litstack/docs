@@ -12,13 +12,13 @@ charts or basicly any kind of page for the admin backend.
 
 ## Create a Page
 
-A page can be simply created by returning an instance of `Fjord\Page\Page` like
+A page can be simply created by returning an instance of `Ignite\Page\Page` like
 so:
 
 ```php
-namespace FjordApp\Controllers;
+namespace Lit\Controllers;
 
-use Fjord\Page\Page;
+use Ignite\Page\Page;
 
 class MyPageController
 {

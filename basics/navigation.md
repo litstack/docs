@@ -6,7 +6,7 @@ Your admin app by default contains two navigations: the **topbar** and your
 **main** navigation.
 
 Both navigation instances are configured in
-`fjord/app/Config/NavigationConfig.php` which looks as follows:
+`lit/app/Config/NavigationConfig.php` which looks as follows:
 
 ```php
 class NavigationConfig extends Config
@@ -92,18 +92,18 @@ $nav->group([
 
 To hide navigation entries from users without the necessary permission, an
 `authorize` closure can be specified in which permissions for the logged in
-admin user can be queried.
+litstack user can be queried.
 
 ```php
-use Fjord\User\Models\FjordUser;
+use Ignite\User\Models\User;
 
 $nav->entry('Home', [
     // ...
-    'authorize' => function(FjordUser $user) {
+
+    'authorize' => function(User $user) {
         return $user->can('read page-home');
     }
 ]),
-
 ```
 
 ### Presets
@@ -123,6 +123,6 @@ $nav->preset('crud.departments', [
 ::: tip
 
 A list of all registered navigation presets can be displayed with
-`php artisan fjord:nav`.
+`php artisan lit:nav`.
 
 :::

@@ -1,7 +1,7 @@
 # Configuration
 
 A configuration file can be found in the laravel config directory
-`config/litstack.php`.
+`config/lit.php`.
 
 ## Basics
 

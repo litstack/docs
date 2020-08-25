@@ -22,51 +22,51 @@ The `installed` method checks if the package has been installed. This can be
 useful in service providers.
 
 ```php
-use Fjord\Support\Facades\Fjord;
+use Ignite\Support\Facades\Lit;
 
-if(! Fjord::installed()) {
+if(! Lit::installed()) {
     return;
 }
 ```
 
 ### `route($name)`
 
-If a route is added to the route file `fjord/routes/fjord.php`, the prefix
-`fjord` is added to the name. The helper route also adds this prefix as well.
-Depending on your preferences you can use the laravel helper `route` or the
-Fjord helper to call up a route.
+If a route is added to the route file `lit/routes/web.php`, the prefix `lit` is
+added to the name. The helper route also adds this prefix as well. Depending on
+your preferences you can use the laravel helper `route` or the Litstack helper
+to call up a route.
 
 ```php
-// fjord/routes/fjord.php
+// lit/routes/web.php
 
 Route::get('dashboard', DashboardController::class)->name('dashboard');
 ```
 
 ```php
-<a href="{{ Fjord::route('dashboard') }}">Dashboard</a>
+<a href="{{ Lit::route('dashboard') }}">Dashboard</a>
 // Is the same as:
-<a href="{{ route('fjord.dashboard') }}">Dashboard</a>
+<a href="{{ route('lit.dashboard') }}">Dashboard</a>
 ```
 
 ### `url($url)`
 
 If you don't want to use the route name to call a route but directly specify the
 url, you can use the `url` helper which prepends the `route_prefix` from the
-config **fjord.php** to your url.
+config **lit.php** to your url.
 
 ```php
-<a href="{{ Fjord::url('dashboard') }}">Dashboard</a>
+<a href="{{ Lit::url('dashboard') }}">Dashboard</a>
 ```
 
 ## Miscellaneous
 
-### `__f($key, $replace)`
+### `__lit($key, $replace)`
 
-The `__f` method returns the translation using the application locale for the
+The `__lit` method returns the translation using the application locale for the
 authenticated user.
 
 ```php
-__f('messages.welcome', ['name' => 'Spatie'])
+__lit('messages.welcome', ['name' => 'Spatie'])
 ```
 
 ### `fa($group, $icon)`
@@ -79,23 +79,23 @@ fa('home') // <i class="fas fa-home"></i>
 fa('fal', 'abacus') // <i class="fal fa-abacus"></i>
 ```
 
-### `fjord()`
+### `lit()`
 
-The `fjord` method returns the `Fjord` singelton.
+The `lit` method returns the `Ignite\Support\Facades\Lit` singelton.
 
 ```php
-fjord()->installed();
+lit()->installed();
 
 // Is the same as:
 
-use Fjord\Support\Singletons\Fjord;
-Fjord::installed();
+use Ignite\Support\Singletons\Lit;
+Lit::installed();
 ```
 
-### `fjord_user()`
+### `lit_user()`
 
-The `fjord_user` method returns the authenticated user model.
+The `lit_user` method returns the authenticated user model.
 
 ```php
-<span>{{ fjord_user()->email }}</span>
+<span>{{ lit_user()->email }}</span>
 ```

@@ -19,15 +19,15 @@ php artisan vendor:publish --provider="FjordPages\FjordPagesServiceProvider" && 
 
 ## Setup a pages collection
 
-With the artisan command fjord:pages a new pages collection is created. For
+With the artisan command lit:pages a new pages collection is created. For
 example `blog`:
 
 ```shell
-php artisan fjord:pages Blog
+php artisan lit:pages Blog
 ```
 
 A config is created and two controllers, one for the backend in
-`./fjord/app/Controllers/Pages` and one for your application in
+`./lit/app/Controllers/Pages` and one for your application in
 `./app/Http/Controllers/Pages`.
 
 In the config you can configure the route prefix and the possible repeatabels.
@@ -40,9 +40,9 @@ specified in the config like so:
 -   `en/blog/{slug}`
 
 ```php
-// ./fjord/app/Config/Pages/BlogConfig.php
+// ./lit/app/Config/Pages/BlogConfig.php
 
-namespace FjordApp\Config\Pages;
+namespace Lit\Config\Pages;
 
 ...
 
@@ -89,15 +89,14 @@ class PagesController
 
 To be able to select the pages in a route field you must first add them to a
 route collection as described in the
-[route field](https://www.fjord-admin.com/docs/fields/route/#register-routes)
-documentation.
+[route field](../fields/route/#register-routes) documentation.
 
 FjordPages extends to Eloquent Collection with the helper method
 `addToRouteCollection` that lets you add a list of pages directly to a route
 collection:
 
 ```php
-use Fjord\Crud\Fields\Route;
+use Ignite\Crud\Fields\Route;
 use FjordPage\Models\FjordPage;
 
 Route::register('app', function($collection) {

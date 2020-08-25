@@ -24,7 +24,7 @@ file.
 ## Add Your Own Icons
 
 To import your own icons you have to specify the corresponding `css` file in the
-config `fjord.php`.
+config `lit.php`.
 
 ```php
 'assets' => [

@@ -11,13 +11,13 @@ on a detail page of a model.
 Create an action via artisan:
 
 ```shell
-php artisan fjord:action MyAction
+php artisan lit:action MyAction
 ```
 
-The created actions are located in `./fjord/app/Actions`.
+The created actions are located in `./lit/app/Actions`.
 
 ```php
-namespace FjordApp\Actions;
+namespace Lit\Actions;
 
 use Illuminate\Support\Collection;
 
@@ -80,10 +80,10 @@ If your action has the function modal, the execution of the action must be
 confirmed via a modal.
 
 ```php
-namespace FjordApp\Actions;
+namespace Lit\Actions;
 
 use Illuminate\Support\Collection;
-use Fjord\Page\Actions\ActionModal;
+use Ignite\Page\Actions\ActionModal;
 
 class MyAction
 {
@@ -109,8 +109,8 @@ type in a message to be sent by mail, as shown the following example.
 
 ```php
 use Illuminate\Support\Collection;
-use Fjord\Page\Actions\ActionModal;
-use Fjord\Page\Actions\AttributeBag;
+use Ignite\Page\Actions\ActionModal;
+use Ignite\Page\Actions\AttributeBag;
 
 public function modal(ActionModal $modal)
 {
@@ -141,7 +141,7 @@ and namespace of the action must be specified as parameters.
 ```php
 // CrudConfig
 
-use FjordApp\Actions\MyAction;
+use Lit\Actions\MyAction;
 
 public function index(CrudIndex $page)
 {
@@ -161,7 +161,7 @@ Actions can also be displayed on the show page of a crud, even in the slots
 ```php
 // CrudConfig
 
-use FjordApp\Actions\MyAction;
+use Lit\Actions\MyAction;
 
 public function show(CrudShow $page)
 {

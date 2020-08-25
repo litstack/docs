@@ -10,29 +10,29 @@ package `vendor/litstack/litstack` has to be installed. This can be done using
 the following artisan command:
 
 ```shell
-php artisan fjord:extend
+php artisan lit:extend
 ```
 
-At the beginning of your `webpack.mix.js` the import of the fjord mix config
+At the beginning of your `webpack.mix.js` the import of the Litstack mix config
 will be added automatically. Two files are compiled:
 
--   `fjord/resources/js/app.js` => `public/fjord/js/app.js`
--   `fjord/resources/sass/app.scss` => `public/fjord/css/app.css`
+-   `lit/resources/js/app.js` => `public/lit/js/app.js`
+-   `lit/resources/sass/app.scss` => `public/lit/css/app.css`
 
 Add them to **assets** in the config.
 
 ```php
-// config/fjord.php
+// config/lit.php
 'assets' => [
-    'js' => '/fjord/js/app.js',
+    'js' => '/lit/js/app.js',
     'css' => [
-        '/public/fjord/css/app.css',
+        '/public/lit/css/app.css',
         // Add more css files here ...
     ],
 ],
 ```
 
-All javascript files can be found in `fjord/resources/js`.
+All javascript files can be found in `lit/resources/js`.
 
 ::: tip Components that are created in the `components` folder are automatically
 registered. :::
@@ -44,13 +44,13 @@ package. :::
 
 ## Register Vue Components
 
-Vue Components that are located in the `./fjord/resources/js/components` folder
+Vue Components that are located in the `./lit/resources/js/components` folder
 are automatically globally registered. They can be used for example in Pages,
 Tables or anywhere where you want to include Vue components.
 
 ## Bootstrap Vue
 
-To make it easy to build uniform Fjord pages, the package uses
+To make it easy to build uniform Litstack pages, the package uses
 [Bootstrap Vue](https://bootstrap-vue.org/docs/components) for all frontend
 components. Bootstrap Vue comes with a large number of components to cover all
 the necessary areas needed to build an application.

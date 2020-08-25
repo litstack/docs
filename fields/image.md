@@ -11,7 +11,7 @@ To attach images to a model, only the media **contract** and the media **trait**
 must be added to the model.
 
 ```php
-use Fjord\Crud\Models\Traits\HasMedia;
+use Ignite\Crud\Models\Traits\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMedia as HasMediaContract;
 
 class Post extends Model implements HasMediaContract
@@ -80,7 +80,7 @@ $form->image('images')
 
 ## Conversions
 
-In the config `fjord.mediaconversions` all conversions groups are specified. If
+In the config `lit.mediaconversions` all conversions groups are specified. If
 you would like a model to use another conversion group than `default`, the group
 name can be set using the attribute `mediaconversions`.
 

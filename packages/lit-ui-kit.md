@@ -1,7 +1,7 @@
 # Ui Kit
 
 A package with helper functions and Blade components for your
-[fjord](https://github.com/litstack/litstack) project.
+[Litstack](https://github.com/litstack/litstack) project.
 
 ## Setup
 
@@ -37,7 +37,7 @@ If you want to customize the blade components, you can simply publish them and
 edit them as desired.
 
 ```shell
-php artisan vendor:publish --provider="Fjord\Ui\FjordUiServiceProvider" --tag=views
+php artisan vendor:publish --provider="Ignite\Ui\FjordUiServiceProvider" --tag=views
 ```
 
 ## Image
@@ -53,7 +53,7 @@ The component requires an image parameter with a media model:
 ```
 
 The component lazy loads images and previews a minified base64 version of the
-image untill it is loaded: ![fjord lazy loading](./screens/lazy.png)
+image untill it is loaded: ![litstack lazy loading](./screens/lazy.png)
 
 You may disable lazy loading by setting the `lazy` attribute to false:
 

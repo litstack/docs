@@ -4,11 +4,11 @@
 
 In the `show` method of a **Form** or a **CRUD** config all components and
 fields are configured for editing the data. The first parameter is an instance
-of `Fjord\Page\Page` so all functions described in the
+of `Ignite\Page\Page` so all functions described in the
 [Fjord Page](../basics/page.md) documentation can be used.
 
 ```php
-use Fjord\Crud\CrudShow;
+use Ignite\Crud\CrudShow;
 
 public function show(CrudShow $page)
 {
@@ -22,7 +22,7 @@ Form fields must be grouped into `cards`. You are free to create only one or any
 number of cards for a form.
 
 ```php
-use Fjord\Crud\CrudShow;
+use Ignite\Crud\CrudShow;
 
 public function show(CrudShow $page)
 {
@@ -62,7 +62,7 @@ user to quickly understand what is happening on the interface. Such information
 can be created outside and inside of cards like this:
 
 ```php
-use Fjord\Crud\CrudShow;
+use Ignite\Crud\CrudShow;
 
 public function show(CrudShow $page)
 {
@@ -94,7 +94,7 @@ Now the page can be previewed for the devices **desktop**, **tablet** or
 
 ### Default Device
 
-The default device can be changed in the config `fjord.php` under
+The default device can be changed in the config `lit.php` under
 'crud.preview.default_device'.
 
 ```php

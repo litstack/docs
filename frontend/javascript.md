@@ -8,8 +8,8 @@ available in Javascript.
 ## Axios
 
 The javascript global `axios` is configured with the route prefix specified in
-the config **fjord.php**. It is recommended to set a try around the function
-when executing an axios request.
+the config **lit.php**. It is recommended to set a try around the function when
+executing an axios request.
 
 ```javascript
 async func() {
@@ -24,8 +24,12 @@ async func() {
 }
 ```
 
-::: tip For requests that shouldn't use the fjord `route_prefix` the global
-`_axios` can be used. :::
+::: tip
+
+For requests that shouldn't use the admin `route_prefix` the global `_axios` can
+be used.
+
+:::
 
 ## Helpers
 
@@ -37,11 +41,11 @@ This includes the following helpers:
 
 ### `Fjord.baseURL`
 
-The `route_prefix` set in config **fjord.php**, with a front slash before and
+The `route_prefix` set in config **lit.php**, with a front slash before and
 after the prefix.
 
 ```php
-// config/fjord.php
+// config/lit.php
 'route_prefix' => 'admin' // Fjord.baseURL would be /admin/
 ```
 
@@ -53,7 +57,7 @@ after the prefix.
 
 ### `Fjord.config`
 
-All attributes from the config **fjord.php**.
+All attributes from the config **lit.php**.
 
 ## Event Bus
 

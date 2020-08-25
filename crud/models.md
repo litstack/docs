@@ -14,7 +14,7 @@ source packages to make models `translatable`, `sluggable` and to attach
 -   [Spatie Medialibrary](https://docs.spatie.be/laravel-medialibrary/v8/introduction/)
 -   [Cviebrock Sluggable](https://github.com/cviebrock/eloquent-sluggable)
 
-The `fjord/app/Config/Crud` directory contains all configuration files for your
+The `lit/app/Config/Crud` directory contains all configuration files for your
 CRUD-Models. Each model has its own file and is set up individually.
 Configurations can be created for existing Models.
 
@@ -30,7 +30,7 @@ needed.
 They can be created all at once using the following artisan command:
 
 ```shell
-php artisan fjord:crud
+php artisan lit:crud
 ```
 
 A wizard will take you through all required steps for setting up a fresh
@@ -40,7 +40,7 @@ CRUD-Model.
 
 If a Model already exists, it wont be changed. Only the configuration file and
 the controller will be created. This allows **existing** models to be made
-editable using `fjord:crud` as well.
+editable using `lit:crud` as well.
 
 :::
 
@@ -145,7 +145,7 @@ A controller has been created in which the authorization for all operations is
 specified. Operations can be `create`, `read`, `update` and `delete`.
 
 ```php
-public function authorize(FjordUser $user, string $operation): bool
+public function authorize(User $user, string $operation): bool
 {
     return $user->can("{$operation} articles");
 }
@@ -160,7 +160,7 @@ be hidden by users who did not create them:
 ```php
 public function query()
 {
-    return $this->model::where('created_by', fjord_user()->id);
+    return $this->model::where('created_by', lit_user()->id);
 }
 ```
 
@@ -183,7 +183,7 @@ specified in the config:
 
 ```php
 use App\Models\Article;
-use FjordApp\Controllers\Crud\ArticleController;
+use Lit\Controllers\Crud\ArticleController;
 
 /**
  * Model class.

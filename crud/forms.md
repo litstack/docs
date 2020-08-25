@@ -14,7 +14,7 @@ forms **home** and **faq**, which contain the page content for the pages
 A `form` can be created using the following artisan command:
 
 ```shell
-php artisan fjord:form
+php artisan lit:form
 ```
 
 A wizard will take you through all required steps. The corresponding `config`
@@ -41,10 +41,10 @@ protected $groups = [
 ```
 
 The migration can now simply be rolled back and re-run using the artisan command
-`fjord:form-permissions`.
+`lit:form-permissions`.
 
 ```shell
-php artisan fjord:nav-permissions
+php artisan lit:nav-permissions
 ```
 
 ::: tip
@@ -61,14 +61,14 @@ authorization for all operation is specified. Operations can be `read` and
 
 ```php
 /**
- * Authorize request for permission operation and authenticated fjord-user.
+ * Authorize request for permission operation and authenticated litstack-user.
  * Operations: read, update
  *
- * @param FjordUser $user
- * @param string $operation
+ * @param  User  $user
+ * @param  string  $operation
  * @return boolean
  */
-public function authorize(FjordUser $user, string $operation): bool
+public function authorize(User $user, string $operation): bool
 {
     return $user->can("{$operation} pages");
 }
@@ -92,7 +92,7 @@ Define the form config in the created config file:
 specified in the config:
 
 ```php
-use FjordApp\Controllers\Form\Pages\HomeController;
+use Lit\Controllers\Form\Pages\HomeController;
 
 /**
  * Controller class.
@@ -127,7 +127,7 @@ In order to retrieve the form data, you have to add the **Form Facade** to your
 controller. Data can now be easily retrieved with the `load` function like this:
 
 ```php
-use Fjord\Support\Facades\Form;
+use Ignite\Support\Facades\Form;
 
 $form = Form::load('pages', 'home');
 ```
@@ -136,7 +136,7 @@ This allows the data to be passed directly to a
 [View](https://laravel.com/docs/7.x/blade#displaying-data).
 
 ```php
-use Fjord\Support\Facades\Form;
+use Ignite\Support\Facades\Form;
 
 return view('home')->with([
     'home' => Form::load('pages', 'home')
@@ -152,7 +152,7 @@ and be used in a Blade template:
 It is also possible to load all data for a collection as shown in the example:
 
 ```php
-use Fjord\Support\Facades\Form;
+use Ignite\Support\Facades\Form;
 
 $settings = Form::load('settings');
 

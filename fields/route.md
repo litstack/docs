@@ -10,7 +10,7 @@ registered collection can then be used again and again in different places. The
 following example registers a collection with the name **app**.
 
 ```php
-use Fjord\Crud\Fields\Route;
+use Ignite\Crud\Fields\Route;
 
 Route::register('app', function($collection) {
     // Define your route collection in here.
@@ -78,7 +78,7 @@ $form->route('route')
 If the route field is used in Models the route cast must be specified:
 
 ```php
-use Fjord\Crud\Casts\Route;
+use Ignite\Crud\Casts\Route;
 
 $casts = [
     'route' => Route::class

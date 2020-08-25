@@ -19,7 +19,7 @@ The `can` mixin checks if the authenticated user has a permission.
 
 ### `user()`
 
-The `user` mixin returns the authenticated FjordUser Model.
+The `user` mixin returns the authenticated User Model.
 
 ```js
 <span>{{ user().name }}</span>
@@ -32,7 +32,7 @@ the translation in Vue. All translations that are available in **php** are
 available in **i18n-vue** as well like shown in the example:
 
 ```php
-// fjord/resources/lang/{locale}/message.php
+// lit/resources/lang/{locale}/message.php
 return [
     "welcome": "Welcome to Fjord"
 ];

@@ -28,8 +28,7 @@ Now all models have been moved to the `app/models` folder, all required files
 have been published and all migrations have been executed.
 
 The admin interface can be reached via the standard route `/admin`. The route
-may be changed in the config file `litstack.php` by changing the `route_prefix`
-key.
+may be changed in the config file `lit.php` by changing the `route_prefix` key.
 
 The final step is to create an admin user so you can log in to the backend:
 

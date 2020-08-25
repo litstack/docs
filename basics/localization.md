@@ -18,7 +18,7 @@ interface in the english version.
 The following examples refer to the translations which look like this:
 
 ```php
-// fjord/resources/lang/{locale}/messages.php
+// lit/resources/lang/{locale}/messages.php
 
 return [
     "welcome": "Welcome, :name"
@@ -27,24 +27,24 @@ return [
 
 ## PHP
 
-To compile for the locale of the admin interface the `__f()` helper method is
+To compile for the locale of the admin interface the `__lit()` helper method is
 used, just like `__()` from laravel's
 [localization](https://laravel.com/docs/7.x/localization#retrieving-translation-strings).
 
 ```php
-__f('messages.welcome', ['name', 'Jannes'])
+__lit('messages.welcome', ['name', 'Jannes'])
 ```
 
-Pluralization can be used with the `__f_choice` function or the short version
-`__f_c`.
+Pluralization can be used with the `__lit_choice` function or the short version
+`__lit_c`.
 
 ```php
 'apples' => '{0} There are none|[1,19] There are some|[20,*] There are many',
 
 ...
 
-__f_choice('apples', 10)
-__f_c('apples', 10)
+__lit_choice('apples', 10)
+__lit_c('apples', 10)
 ```
 
 ## Vue
@@ -72,28 +72,30 @@ You may also use the Larvel localization helpers in Vue components.
 
 ## Determine Locale
 
-To determine the locale the function `getLocale` can be used on the `FjordApp`
-facade like this:
+To determine the locale the function `getLocale` can be used on the `Lit` facade
+like this:
 
 ```php
-$fjordLocale = FjordApp::getLocale();
+use Ignite\Support\Facades\Lit;
 
-if (FjordApp::isLocale('en')) {
+$litLocale = Lit::getLocale();
+
+if (Lit::isLocale('en')) {
     //
 }
 ```
 
 ## Add Path
 
-By default the path `fjord/resources/lang` is imported for the admin
-translation. You can register any number of paths with localization files in
-your service providers. However, it is recommended to keep the translations for
-the admin application and your website separate.
+By default the path `lit/resources/lang` is imported for the admin translation.
+You can register any number of paths with localization files in your service
+providers. However, it is recommended to keep the translations for the admin
+application and your website separate.
 
 ```php
-use Fjord\Support\Facades\FjordLang;
+use Ignite\Support\Facades\Lang;
 
-FjordLang::addPath(base_path('yourpath/lang/'));
+Lang::addPath(base_path('yourpath/lang/'));
 ```
 
 ::: tip

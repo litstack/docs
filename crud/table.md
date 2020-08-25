@@ -153,7 +153,7 @@ that connects the relation.
 
 If an image is to be displayed in a table, the image url must also be specified
 using the `src` method. If the image was uploaded via the `Image` Field, the
-conversions specified in the config file **fjord.php** can be displayed.
+conversions specified in the config file **lit.php** can be displayed.
 
 ```php
 $table->image('Image')->src('{image.url}');
