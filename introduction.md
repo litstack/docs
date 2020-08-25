@@ -1,7 +1,5 @@
 # Introduction
 
-[[toc]]
-
 ## Features
 
 -   Code Driven Configuration

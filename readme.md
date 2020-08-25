@@ -1,7 +1,7 @@
 # Fjuse Documentation
 
 The online version of the documentation can be reached under
-[https://fjuse.io/docs](https://fjuse.io/docs)
+[https://litstack.io/docs](https://litstack.io/docs)
 
 ## Index
 

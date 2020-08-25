@@ -1,14 +1,18 @@
 # Vue Components
 
-[[toc]]
+## Introduction
 
-The package comes along with **bootstrap-vue** and a few components that can be used to build pages that fit the package's style. To ensure that users of the admin interface can find their way around quickly and easily on all sites, it is recommended to follow the following guidelines.
+The package comes along with **bootstrap-vue** and a few components that can be
+used to build pages that fit the package's style. To ensure that users of the
+admin interface can find their way around quickly and easily on all sites, it is
+recommended to follow the following guidelines.
 
 The package's components have the prefix `fj-`.
 
 ## Custom Pages
 
-Custom pages for the admin panel consist of a `container`, the topbar `navigation` and a `header`. The following content can be created as you like.
+Custom pages for the admin panel consist of a `container`, the topbar
+`navigation` and a `header`. The following content can be created as you like.
 
 The following example shows how the root template of a page looks like.
 
@@ -45,7 +49,8 @@ It is recommended to wrap your page content with a b-row and fj-col components.
 
 ## Navigation
 
-The topbar navigation is designed to make it easier for the user to navigate through the interface and display important controls while scrolling.
+The topbar navigation is designed to make it easier for the user to navigate
+through the interface and display important controls while scrolling.
 
 ```javascript
 <fj-navigation />
@@ -53,9 +58,12 @@ The topbar navigation is designed to make it easier for the user to navigate thr
 
 ### Go Back
 
-In the topbar navigation a **back** button can be displayed. All pages in admin application should be reached via at most one more link from the main navigation, i.e. an **overview** page and the **detail** page.
+In the topbar navigation a **back** button can be displayed. All pages in admin
+application should be reached via at most one more link from the main
+navigation, i.e. an **overview** page and the **detail** page.
 
-To display the back link a text for the button and a link must be passed as prop to the navigation.
+To display the back link a text for the button and a link must be passed as prop
+to the navigation.
 
 ```php
 <fj-navigation :back="items" :back-text="Items"/>
@@ -63,13 +71,15 @@ To display the back link a text for the button and a link must be passed as prop
 
 ### Controls
 
-To display controls in the tooltip, simply specify an array with component names.
+To display controls in the tooltip, simply specify an array with component
+names.
 
 ```javascript
 <fj-navigation :controls="['my-topbar-control']" />
 ```
 
-The components for the controls must use the bootstrap `b-dropdown-item` as a root component like so:
+The components for the controls must use the bootstrap `b-dropdown-item` as a
+root component like so:
 
 ```javascript
 <template>
@@ -90,7 +100,8 @@ export default {
 </script>
 ```
 
-Furthermore, the `left` and `right` slot can be used to display buttons directly.
+Furthermore, the `left` and `right` slot can be used to display buttons
+directly.
 
 ```php
 <fj-navigation>
@@ -105,9 +116,11 @@ Furthermore, the `left` and `right` slot can be used to display buttons directly
 
 ## Header
 
-The page header consists of an `h3` header. The title can either be specified via the prop `title` or designed in the main slot.
+The page header consists of an `h3` header. The title can either be specified
+via the prop `title` or designed in the main slot.
 
-As well the header can contain controls that should be displayed under the header. The controls are displayed with the slots `actions` and `actions-right`.
+As well the header can contain controls that should be displayed under the
+header. The controls are displayed with the slots `actions` and `actions-right`.
 
 ```javascript
 <fj-header title="My Page">
@@ -126,6 +139,6 @@ The spinner can be displayed with the component `fj-spinner`.
 
 ```javascript
 <template v-if="busy">
-    <fj-spinner />
+	<fj-spinner />
 </template>
 ```
