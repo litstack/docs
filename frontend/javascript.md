@@ -33,41 +33,41 @@ be used.
 
 ## Helpers
 
-In javascript and all Vue components the global variable `Fjord` is available.
+In javascript and all Vue components the global variable `Lit` is available.
 This includes the following helpers:
 
 -   `baseURL`
 -   `config`
 
-### `Fjord.baseURL`
+### `Lit.baseURL`
 
 The `route_prefix` set in config **lit.php**, with a front slash before and
 after the prefix.
 
 ```php
 // config/lit.php
-'route_prefix' => 'admin' // Fjord.baseURL would be /admin/
+'route_prefix' => 'admin' // Lit.baseURL would be /admin/
 ```
 
 ```javascript
 <component>
-	<a href="`${Fjord.baseURL}my-link`">Link</a>
+	<a href="`${Lit.baseURL}my-link`">Link</a>
 </component>
 ```
 
-### `Fjord.config`
+### `Lit.config`
 
 All attributes from the config **lit.php**.
 
 ## Event Bus
 
-The event bus can be called via the global Fjord like this:
+The event bus can be called via the global Lit like this:
 
 ```javascript
-Fjord.bus.$on(event, callback);
-Fjord.bus.$once(event, callback);
-Fjord.bus.$off(event, callback);
-Fjord.bus.$emit(event, callback);
+Lit.bus.$on(event, callback);
+Lit.bus.$once(event, callback);
+Lit.bus.$off(event, callback);
+Lit.bus.$emit(event, callback);
 ```
 
 ## Events

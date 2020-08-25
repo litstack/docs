@@ -74,7 +74,7 @@ use Illuminate\Http\Request;
 
 class PagesController
 {
-    use ManagesFjordPages;
+    use ManagesLitPages;
 
     public function __invoke(Request $request, $slug)
     {

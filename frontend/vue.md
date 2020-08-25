@@ -34,7 +34,7 @@ available in **i18n-vue** as well like shown in the example:
 ```php
 // lit/resources/lang/{locale}/message.php
 return [
-    "welcome": "Welcome to Fjord"
+    "welcome": "Welcome to Litstack"
 ];
 ```
 

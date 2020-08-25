@@ -37,7 +37,7 @@ If you want to customize the blade components, you can simply publish them and
 edit them as desired.
 
 ```shell
-php artisan vendor:publish --provider="Ignite\Ui\FjordUiServiceProvider" --tag=views
+php artisan vendor:publish --provider="Ignite\Ui\LitUiServiceProvider" --tag=views
 ```
 
 ## Image

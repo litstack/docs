@@ -5,7 +5,7 @@
 In the `show` method of a **Form** or a **CRUD** config all components and
 fields are configured for editing the data. The first parameter is an instance
 of `Ignite\Page\Page` so all functions described in the
-[Fjord Page](../basics/page.md) documentation can be used.
+[Page](../basics/page.md) documentation can be used.
 
 ```php
 use Ignite\Crud\CrudShow;
