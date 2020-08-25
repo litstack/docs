@@ -45,11 +45,11 @@ public function title()
 Additionally, each chart type needs a specific configuration, which are linked
 below:
 
--   [Area Chart](/docs/charts/area)
--   [Bar Chart](/docs/charts/bar)
--   [Donut Chart](/docs/charts/donut)
--   [Number Chart](/docs/charts/number)
--   [Progress](/docs/charts/progress)
+-   [Area Chart](area.md)
+-   [Bar Chart](bar.md)
+-   [Donut Chart](donut.md)
+-   [Number Chart](number.md)
+-   [Progress](progress.md)
 
 ## Register Charts
 
@@ -64,7 +64,7 @@ $page->chart(SalesCountChart::class);
 
 :::tip
 
-Use a [form](docs/crud/forms) as a dashboard by only displaying charts on it.
+Use a [form](../crud/forms.md) as a dashboard by only displaying charts on it.
 
 :::
 

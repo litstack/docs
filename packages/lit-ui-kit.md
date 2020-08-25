@@ -1,7 +1,7 @@
 # Ui Kit
 
 A package with helper functions and Blade components for your
-[fjord](https://github.com/aw-studio/fjord) project.
+[fjord](https://github.com/litstack/litstack) project.
 
 ## Setup
 
@@ -18,16 +18,16 @@ and the `x-scripts` tag at the end of the body.
 ```html
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        ...
+	<head>
+		...
 
-        <x-styles />
-    </head>
-    <body>
-        ...
+		<x-styles />
+	</head>
+	<body>
+		...
 
-        <x-scripts />
-    </body>
+		<x-scripts />
+	</body>
 </html>
 ```
 
@@ -53,8 +53,7 @@ The component requires an image parameter with a media model:
 ```
 
 The component lazy loads images and previews a minified base64 version of the
-image untill it is loaded:
-![fjord lazy loading](./screens/lazy.png)
+image untill it is loaded: ![fjord lazy loading](./screens/lazy.png)
 
 You may disable lazy loading by setting the `lazy` attribute to false:
 

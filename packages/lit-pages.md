@@ -1,14 +1,14 @@
 # Pages
 
-Pages help you to quickly add new pages to your admin application. This
-turns your admin panel into a **cms**.
+Pages help you to quickly add new pages to your admin application. This turns
+your admin panel into a **cms**.
 
 ![pages](./screens/pages_screen.jpg 'pages')
 
 Install the package via composer:
 
 ```shell
-composer require aw-studio/fjord-pages
+composer require litstack/fjord-pages
 ```
 
 Publish the migrations and migrate:

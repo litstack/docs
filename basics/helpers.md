@@ -7,7 +7,7 @@ The package includes a variety of global helper **PHP** `functions`.
 ::: tip
 
 The package includes useful **Vue** `mixins` as well. Read the
-[Vue mixins](/frontend/vue#mixins) section to learn more about the existing
+[Vue mixins](../frontend/vue.md#mixins) section to learn more about the existing
 `mixins`.
 
 :::

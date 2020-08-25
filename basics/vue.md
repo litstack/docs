@@ -6,8 +6,8 @@ purposes.
 ## Setup
 
 To include your own `Vue` components in the admin application, the locale npm
-package `vendor/aw-studio/laravel-content-administration` has to be installed.
-This can be done using the following artisan command:
+package `vendor/litstack/litstack` has to be installed. This can be done using
+the following artisan command:
 
 ```shell
 php artisan fjord:extend
