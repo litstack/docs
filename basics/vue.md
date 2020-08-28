@@ -1,11 +1,14 @@
 # Extend With Vue
 
+## Introduction
+
 The admin interface can be extended with custom Vue components for numerous
-purposes.
+purposes. This documents describes how custom Vue components can be added to the
+application.
 
 ## Setup
 
-To include your own `Vue` components in the admin application, the locale npm
+To include your own `Vue` components in the admin application, the local npm
 package `vendor/litstack/litstack` has to be installed. This can be done using
 the following artisan command:
 
@@ -34,13 +37,20 @@ Add them to **assets** in the config.
 
 All javascript files can be found in `lit/resources/js`.
 
-::: tip Components that are created in the `components` folder are automatically
-registered. :::
+::: tip
+
+Components that are created in the `components` folder are automatically
+registered.
+
+:::
 
 Run `npm run watch` and you are good to go.
 
-::: warning Dont forget to compile your assets every time you **update** the
-package. :::
+::: warning
+
+Dont forget to compile your assets every time you **update** the package.
+
+:::
 
 ## Register Vue Components
 

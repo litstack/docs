@@ -29,8 +29,10 @@ $collection->route('Home', 'home', function() {
 });
 ```
 
-:::tip Use the
-[arrow function](https://www.php.net/manual/en/functions.arrow.php) short cut:
+:::tip
+
+Use the [arrow function](https://www.php.net/manual/en/functions.arrow.php)
+short cut:
 
 ```php
 $collection->route('Home', 'home', fn($locale) => route('home'));

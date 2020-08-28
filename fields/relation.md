@@ -166,7 +166,11 @@ public function articles()
 }
 ```
 
-:::tip `oneRelation` and `manyRelation` can be used in Forms. :::
+:::tip
+
+`oneRelation` and `manyRelation` can be used in Forms.
+
+:::
 
 ## Methods
 
