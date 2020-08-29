@@ -9,6 +9,7 @@ The online version of the documentation can be reached under
     -   [Installation](installation.md)
     -   [Configuration](configuration.md)
 -   ## Basics
+    -   [Introduction](basics/introduction.md)
     -   [Navigation](basics/navigation.md)
     -   [Page](basics/page.md)
     -   [Localization](basics/localization.md)
@@ -40,7 +41,6 @@ The online version of the documentation can be reached under
     -   [Select](fields/select.md)
     -   [Textarea](fields/textarea.md)
     -   [WYSIWYG](fields/wysiwyg.md)
-    -   [Component](fields/Component.md)
     -   [Validation](fields/validation.md)
     -   [Conditional Fields](fields/conditions.md)
 -   ## Charts

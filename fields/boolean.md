@@ -1,6 +1,8 @@
 # Boolean
 
-A boolean field.
+## Introduction
+
+A boolean switch.
 
 ```php
 $form->boolean('active')

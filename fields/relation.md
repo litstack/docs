@@ -174,19 +174,19 @@ public function articles()
 
 ## Methods
 
-| Method          | Description                                                                                               |
-| --------------- | --------------------------------------------------------------------------------------------------------- |
-| `title`         | The title description for this field.                                                                     |
-| `hint`          | A short hint that should describe how to use the field.`                                                  |
-| `width`         | Width of the field.                                                                                       |
-| `filter`        | Initial query builder for the selectable relations.                                                       |
-| `preview`       | A closure to define the table preview of the corresponding relation.                                      |
-| `query`         | Modify preview query with eager loads and accessors that should be displayed.                             |
-| `confirm`       | Modal pops when unlinkin the relation and asks to confirm. (default: `true`)                              |
-| `sortable`      | Sortable relation (only works for `many` relations).                                                      |
-| `maxItems`      | Set a maximum number of selectable items (only works for `many` relations).                               |
-| `showTableHead` | Whether the table head should be shown. (default: `false`)                                                |
-| `type`          | The preview type (default: `table`) can be `tags` for **many relations** and `link` for **one relations** |
-| `tagValue`      | The attribute that should be displayed in the tag.                                                        |
-| `tagVariant`    | The bootstrap variant of the tag. (default: `info`)                                                       |
-| `linkValue`     | The attributes that should be displayed as the link.                                                      |
+| Method                                   | Description                                                                                               |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `$field->title('Articles')`              | The title description for this field.                                                                     |
+| `$field->hint('Choose an article.')`     | A short hint that should describe how to use the field.`                                                  |
+| `$field->width(12)`                      | Width of the field.                                                                                       |
+| `$field->filter(function($query) {})`    | Initial query builder for the selectable relations.                                                       |
+| `$field->query(function($query) {})`     | Modify preview query with eager loads and accessors that should be displayed.                             |
+| `$field->preview(function($preview) {})` | A **closure** to define the table preview of the corresponding relation.                                  |
+| `$field->confirm()`                      | Modal pops when unlinkin the relation and asks to confirm. (default: `true`)                              |
+| `$field->sortable()`                     | Sortable relation (only works for `many` relations).                                                      |
+| `$field->maxItems(5)`                    | Set a maximum number of selectable items (only works for `many` relations).                               |
+| `$field->showTableHead()`                | Whether the table head should be shown. (default: `false`)                                                |
+| `$field->type('table')`                  | The preview type (default: `table`) can be `tags` for **many relations** and `link` for **one relations** |
+| `$field->tagValue('{title}')`            | The attribute that should be displayed in the tag.                                                        |
+| `$field->tagVariant('secondary')`        | The bootstrap variant of the tag. (default: `info`)                                                       |
+| `$field->linkValue('{first_name}')`      | The attributes that should be displayed as the link.                                                      |

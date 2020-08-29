@@ -16,13 +16,23 @@ php artisan lit:chart SalesCountChart --area
 ```
 
 When no type is given as a flag the default chart type `area` will be generated.
-Possible flags:
 
--   `--area`
--   `--bar`
--   `--donut`
--   `--number`
--   `--progress`
+```shell
+php artisan lit:chart MyChart --area
+# Creates an area chart.
+
+php artisan lit:chart MyChart --bar
+# Creates a bar chart.
+
+php artisan lit:chart MyChart --donut
+# Creates a donut chart.
+
+php artisan lit:chart MyChart --number
+# Creates a number chart.
+
+php artisan lit:chart MyChart --progress
+# Creates a progress chart.
+```
 
 The command `lit:chart` creates a chart config in `./lit/app/Config/Charts`.
 

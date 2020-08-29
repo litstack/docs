@@ -1,8 +1,21 @@
 # Route Field
 
-With the route picker field you can select a route from a predefined list.
+## Introduction
 
-## Register Routes
+A route picker field that lets you select routes from a predefined collection.
+
+## Usage
+
+The route field requires the **name** of the [collection](#route-collection)
+that should be used for this field. Additionally a **title** is required.
+
+```php
+$form->route('route')
+    ->collection('app')
+    ->title('Picke a Url');
+```
+
+## Route Collection
 
 To be able to select routes in your route field you must first register a route
 collection in a [service provider](https://laravel.com/docs/7.x/providers). The
@@ -65,14 +78,6 @@ parameter.
 $collection->route('Home', 'home' function($locale) {
     return route("{$locale}.home");
 });
-```
-
-## Example
-
-```php
-$form->route('route')
-    ->collection('app')
-    ->title('Picke a Url');
 ```
 
 ## Prepare Model

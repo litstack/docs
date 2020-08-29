@@ -2,30 +2,34 @@
 
 ## Introduction
 
-The main task of an admin panel is to manage data. The package offers easy
-editing and managing of
+The main task of an admin panel is to manage data. Litstack offers easy editing
+and managing of
 [Laravel Eloquent Models](https://laravel.com/docs/7.x/eloquent). For a clear
 administration of models, a suitable `index` table and the corresponding
-`create` and `update` form are needed. The package also comes with powerful open
-source packages to make models `translatable`, `sluggable` and to attach
-`media`. The following packages are used for this:
+`create` and `update` form are needed.
+
+Litstack also uses the following Open-Source packages to extend the
+functionality of Models:
 
 -   [Astronomic Translatable](https://docs.astrotomic.info/laravel-translatable/)
+    Used for Model translations.
 -   [Spatie Medialibrary](https://docs.spatie.be/laravel-medialibrary/v8/introduction/)
--   [Cviebrock Sluggable](https://github.com/cviebrock/eloquent-sluggable)
+    Used for media management.
+-   [Cviebrock Sluggable](https://github.com/cviebrock/eloquent-sluggable) Used
+    to apply slugs to model attributes.
 
-The `lit/app/Config/Crud` directory contains all configuration files for your
-CRUD-Models. Each model has its own file and is set up individually.
-Configurations can be created for existing Models.
+The `./lit/app/Config/Crud` directory contains all configuration files for your
+CRUD-Models. Each model may have one or more config giles. Configurations can be
+created for existing Models.
 
 ## Create
 
-In order to create your index table and update & edit form three things are
+In order to create your index table and update & edit form three files are
 needed.
 
--   Model
--   Controller
--   Config
+-   **Model** located in `./app/Models`
+-   **Controller** located in `./lit/app/Http/Controllers`
+-   **Config** located in `./lit/app/Config/Crud`
 
 They can be created all at once using the following artisan command:
 
@@ -184,20 +188,24 @@ specified in the config:
 ```php
 use App\Models\Article;
 use Lit\Controllers\Crud\ArticleController;
+use Ignite\Crud\Config\CrudConfig;
 
-/**
- * Model class.
- *
- * @var string
- */
-public $model = Article::class;
+class ArticleConfig extends CrudConfig
+{
+    /**
+     * Model class.
+     *
+     * @var string
+     */
+    public $model = Article::class;
 
-/**
- * Controller class.
- *
- * @var string
- */
-public $controller = ArticleController::class;
+    /**
+     * Controller class.
+     *
+     * @var string
+     */
+    public $controller = ArticleController::class;
+}
 ```
 
 ### Index Table, Create & Update Form
