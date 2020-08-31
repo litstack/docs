@@ -1,4 +1,6 @@
-# Ui Kit
+# Bladesmith
+
+## Introduction
 
 A package with helper functions and Blade components for your
 [Litstack](https://github.com/litstack/litstack) project.

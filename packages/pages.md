@@ -1,5 +1,7 @@
 # Pages
 
+## Introduction
+
 Pages help you to quickly add new pages to your admin application. This turns
 your admin panel into a **cms**.
 

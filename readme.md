@@ -53,3 +53,7 @@ The online version of the documentation can be reached under
 -   ## Frontend
     -   [Javascript](frontend/javascript.md)
     -   [Vue](frontend/vue.md)
+-   ## Official Packages
+    -   [Bladesmith](packages/bladesmith.md)
+    -   [Pages](packages/Pages.md)
+    -   [Rehearsal](packages/rehearsal.md)

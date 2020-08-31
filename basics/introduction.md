@@ -40,3 +40,23 @@ There is a creator command for livewire as well:
 ```php
 php artisan lit:livewire Counter
 ```
+
+## Permissions
+
+Litstack brings a simple user-friendly permissions handler. Additionally there
+is an easy way to create or delete the existing permissions using the migration
+`./database/migrations/______________________make_permissions.php`.
+
+Configure the desired permission groups in it and create them with the artisan
+command `lit:permissions`.
+
+```shell
+php artisan lit:permissions
+```
+
+::: tip
+
+Add the `lit:permissions` command to your **deploy** script to keep the
+permissions in your production database up to date.
+
+:::
