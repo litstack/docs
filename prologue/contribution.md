@@ -20,6 +20,21 @@ be found via google on stackoverflow.
 
 :::
 
+## Compiled Assets
+
+If you are submitting a change that will affect a compiled file, such as most of
+the files in `resources/sass` or `resources/js` of any litstack repository, do
+not commit the compiled files. Due to their large size, they cannot
+realistically be reviewed by a maintainer. This could be exploited as a way to
+inject malicious code into Litstack. In order to defensively prevent this, all
+compiled files will be generated and committed by Litstack maintainers.
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Litstack, please send an email
+to Lennart Carstens-Behrens at lennart.carbe@gmail.com or Jannes Behrens at
+jannes@aw-studio.de. All security vulnerabilities will be promptly addressed.
+
 ## Coding Style
 
 Litstack follows the PSR-2 coding standard as laravel. The
