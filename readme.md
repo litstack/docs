@@ -1,4 +1,4 @@
-# Fjuse Documentation
+# Litstack Documentation
 
 The online version of the documentation can be reached under
 [https://litstack.io/docs](https://litstack.io/docs)
