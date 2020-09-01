@@ -5,6 +5,9 @@ The online version of the documentation can be reached under
 
 ## Index
 
+-   ## Prologue
+    -   [Upgrade Guide](prologue/upgrade.md)
+    -   [Contribution](prologue/contribution.md)
 -   ## Getting Started
     -   [Installation](installation.md)
     -   [Configuration](configuration.md)
@@ -55,5 +58,5 @@ The online version of the documentation can be reached under
     -   [Vue](frontend/vue.md)
 -   ## Official Packages
     -   [Bladesmith](packages/bladesmith.md)
-    -   [Pages](packages/Pages.md)
+    -   [Pages](packages/pages.md)
     -   [Rehearsal](packages/rehearsal.md)

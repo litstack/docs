@@ -2,15 +2,15 @@
 
 ## Introduction
 
-Pages help you to quickly add new pages to your admin application. This turns
-your admin panel into a **cms**.
+A package to turn your litstack application into a **CMS**. Add new pages to
+your application via the litstack interface.
 
 ![pages](./screens/pages_screen.jpg 'pages')
 
 Install the package via composer:
 
 ```shell
-composer require litstack/lit-pages
+composer require litstack/pages
 ```
 
 Publish the migrations and migrate:
