@@ -1,5 +1,7 @@
 # Configuration
 
+## Introduction
+
 A configuration file can be found in the laravel config directory
 `config/lit.php`.
 

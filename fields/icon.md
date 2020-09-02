@@ -28,10 +28,10 @@ config `lit.php`.
 
 ```php
 'assets' => [
-    ...
+    // ...
     'css' => [
-        'icons/icons.css', // Add your icon's css file.
-        ...
+        '/icons/icons.css', // Add your icon's css file.
+        // ...
     ],
 ],
 ```
