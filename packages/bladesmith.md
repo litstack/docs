@@ -129,7 +129,7 @@ This will result in the following simple horizontal navigation:
 	<img src="./screens/nav-result.png" width="600px">
 </p>
 
-Customize the table using the following options
+Customize the navigation using the following options
 
 | Method        | Description                                                            |
 | ------------- | ---------------------------------------------------------------------- |
