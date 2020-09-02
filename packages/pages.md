@@ -1,5 +1,12 @@
 # Pages
 
+## Introduction
+
+A package to turn your litstack application into a **CMS**. Add new pages to
+your application via the litstack interface.
+
+![pages](./screens/pages_screen.jpg 'pages')
+
 ## Sponsorware
 
 Litstack pages was created by
@@ -8,17 +15,10 @@ Litstack pages was created by
 
 ::: tip
 
-Read the [sponsorware](../prologue/sponsorware.md) section to learn how to get
-access to this package.
+[Sponsor litstack](https://github.com/sponsors/litstack) to get access to this
+package.
 
 :::
-
-## Introduction
-
-A package to turn your litstack application into a **CMS**. Add new pages to
-your application via the litstack interface.
-
-![pages](./screens/pages_screen.jpg 'pages')
 
 ## Setup
 

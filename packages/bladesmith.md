@@ -1,5 +1,10 @@
 # Bladesmith
 
+## Introduction
+
+A package with helper functions and Blade components for your
+[Litstack](https://github.com/litstack/litstack) project.
+
 ## Sponsorware
 
 Bladesmith was created by
@@ -8,15 +13,10 @@ Bladesmith was created by
 
 ::: tip
 
-Read the [sponsorware](../prologue/sponsorware.md) section to learn how to get
-access to this package.
+[Sponsor litstack](https://github.com/sponsors/litstack) to get access to this
+package.
 
 :::
-
-## Introduction
-
-A package with helper functions and Blade components for your
-[Litstack](https://github.com/litstack/litstack) project.
 
 ## Setup
 

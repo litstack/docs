@@ -18,7 +18,6 @@ The online version of the documentation can be reached under
     -   [Page](basics/page.md)
     -   [Localization](basics/localization.md)
     -   [Helpers](basics/helpers.md)
-    -   [Testing](basics/testing.md)
 -   ## CRUD
     -   [Models](crud/models.md)
     -   [Forms](crud/forms.md)
