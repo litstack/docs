@@ -13,13 +13,13 @@ $form->radio('type')
 
 ## Methods
 
-| Method          | Description                                                         |
-| --------------- | ------------------------------------------------------------------- |
-| `title`         | The title description for this field.                               |
-| `hint`          | A short hint that should describe how to use the field.`            |
-| `width`         | Width of the field.                                                 |
-| `options`       | An array with checkboxe values and descriptions.                    |
-| `stacked`       | Places each radio one over the other instead of next to each other. |
-| `rules`         | Rules that should be applied when **updating** and **creating**.    |
-| `creationRules` | Rules that should be applied when **creating**.                     |
-| `updateRules`   | Rules that should be applied when **updating**.                     |
+| Method                    | Description                                                         |
+| ------------------------- | ------------------------------------------------------------------- |
+| `$field->title()`         | The title description for this field.                               |
+| `$field->hint()`          | A short hint that should describe how to use the field.`            |
+| `$field->width()`         | Width of the field.                                                 |
+| `$field->options()`       | An array with checkboxe values and descriptions.                    |
+| `$field->stacked()`       | Places each radio one over the other instead of next to each other. |
+| `$field->rules()`         | Rules that should be applied when **updating** and **creating**.    |
+| `$field->creationRules()` | Rules that should be applied when **creating**.                     |
+| `$field->updateRules()`   | Rules that should be applied when **updating**.                     |

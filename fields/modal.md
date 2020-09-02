@@ -13,7 +13,8 @@ $form->modal('update_email')
 
 ## Confirm with Password
 
-Appends a password field to the end of the form that is required to confirm the modal form using the current users password.
+Appends a password field to the end of the form that is required to confirm the
+modal form using the current users password.
 
 ```php{4}
 $form->modal('update_email')
@@ -27,10 +28,10 @@ $form->modal('update_email')
 
 ## Methods
 
-| Method                | Description                                                                                                                  |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `title`               | The title description for this field.                                                                                        |
-| `placeholder`         | The placeholder for this field.                                                                                              |
-| `hint`                | A short hint that should describe how to use the field.`                                                                     |
-| `width`               | Width of the field.                                                                                                          |
-| `confirmWithPassword` | Appends a password field to the end of the form that is required to confirm the modal form using the current users password. |
+| Method                          | Description                                                                                                                  |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `$field->title()`               | The title description for this field.                                                                                        |
+| `$field->placeholder()`         | The placeholder for this field.                                                                                              |
+| `$field->hint()`                | A short hint that should describe how to use the field.`                                                                     |
+| `$field->width()`               | Width of the field.                                                                                                          |
+| `$field->confirmWithPassword()` | Appends a password field to the end of the form that is required to confirm the modal form using the current users password. |

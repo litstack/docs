@@ -13,16 +13,16 @@ $form->textarea('text')
 
 ## Methods
 
-| Method          | Description                                                                                                           |
-| --------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `title`         | The title description for this field.                                                                                 |
-| `placeholder`   | The placeholder for this field.                                                                                       |
-| `hint`          | A short hint that should describe how to use the field.`                                                              |
-| `width`         | Width of the field.                                                                                                   |
-| `translatable`  | Should the field be translatable? For translatable crud models, the translatable fields are automatically recognized. |
-| `max`           | Max characters.                                                                                                       |
-| `rows`          | Number of rows.                                                                                                       |
-| `maxRows`       | Maximum number of rows.                                                                                               |
-| `rules`         | Rules that should be applied when **updating** and **creating**.                                                      |
-| `creationRules` | Rules that should be applied when **creating**.                                                                       |
-| `updateRules`   | Rules that should be applied when **updating**.                                                                       |
+| Method                    | Description                                                                                                           |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `$field->title()`         | The title description for this field.                                                                                 |
+| `$field->placeholder()`   | The placeholder for this field.                                                                                       |
+| `$field->hint()`          | A short hint that should describe how to use the field.`                                                              |
+| `$field->width()`         | Width of the field.                                                                                                   |
+| `$field->translatable()`  | Should the field be translatable? For translatable crud models, the translatable fields are automatically recognized. |
+| `$field->max()`           | Max characters.                                                                                                       |
+| `$field->rows()`          | Number of rows.                                                                                                       |
+| `$field->maxRows()`       | Maximum number of rows.                                                                                               |
+| `$field->rules()`         | Rules that should be applied when **updating** and **creating**.                                                      |
+| `$field->creationRules()` | Rules that should be applied when **creating**.                                                                       |
+| `$field->updateRules()`   | Rules that should be applied when **updating**.                                                                       |

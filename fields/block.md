@@ -104,17 +104,17 @@ repeatable in order to be displayed.
 
 ## Methods
 
-| Method                                   | Description                                        |
-| ---------------------------------------- | -------------------------------------------------- |
-| `$field->title('Foo')`                   | The title description for this field.              |
-| `$field->repeatables(function($rep) {})` | A closure where all repeatable blocks are defined. |
-| `$field->width(1/2)`                     | Width of the field.                                |
-| `$field->blockWidth(1/3)`                | Width of a block.                                  |
+| Method                  | Description                                        |
+| ----------------------- | -------------------------------------------------- |
+| `$field->title()`       | The title description for this field.              |
+| `$field->repeatables()` | A closure where all repeatable blocks are defined. |
+| `$field->width()`       | Width of the field.                                |
+| `$field->blockWidth()`  | Width of a block.                                  |
 
 ## Repeatable Methods
 
-| Method                                  | Description                                      |
-| --------------------------------------- | ------------------------------------------------ |
-| `$repeatable->button('Text')`           | The title for the repeatable.                    |
-| `$repeatable->view('repeatables.text')` | The View describing the repeatable.              |
-| `$repeatable->x('repeatables.text')`    | The Blade x component describing the repeatable. |
+| Method                  | Description                                      |
+| ----------------------- | ------------------------------------------------ |
+| `$repeatable->button()` | The title for the repeatable.                    |
+| `$repeatable->view()`   | The View describing the repeatable.              |
+| `$repeatable->x()`      | The Blade x component describing the repeatable. |

@@ -29,12 +29,13 @@ $form->select('article_id')
 
 ## Methods
 
-| Methods         | Description                                                            |
-| --------------- | ---------------------------------------------------------------------- |
-| `title`         | The title description for this field.                                  |
-| `options`       | An array with the options, can be a simple array or key => value pairs |
-| `hint`          | A short hint that should describe how to use the field.`               |
-| `width`         | Width of the field.                                                    |
-| `rules`         | Rules that should be applied when **updating** and **creating**.       |
-| `creationRules` | Rules that should be applied when **creating**.                        |
-| `updateRules`   | Rules that should be applied when **updating**.                        |
+| Methods                   | Description                                                            |
+| ------------------------- | ---------------------------------------------------------------------- |
+| `$field->title()`         | The title description for this field.                                  |
+| `$field->title()`         | The title description for this field.                                  |
+| `$field->options()`       | An array with the options, can be a simple array or key => value pairs |
+| `$field->hint()`          | A short hint that should describe how to use the field.`               |
+| `$field->width()`         | Width of the field.                                                    |
+| `$field->rules()`         | Rules that should be applied when **updating** and **creating**.       |
+| `$field->creationRules()` | Rules that should be applied when **creating**.                        |
+| `$field->updateRules()`   | Rules that should be applied when **updating**.                        |

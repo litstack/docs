@@ -1,6 +1,7 @@
 # List
 
-A list field with nested items. It can be used to build **navigations** with nested entries.
+A list field with nested items. It can be used to build **navigations** with
+nested entries.
 
 ```php
 $form->list('menue')
@@ -12,13 +13,13 @@ $form->list('menue')
     });
 ```
 
-:::tip
-Add creation **rules** to the fields of your list to prevent the creation of empty items
-:::
+:::tip Add creation **rules** to the fields of your list to prevent the creation
+of empty items :::
 
 ### Preparing the Model
 
-List fields can be added to CRUD-Models as well as to forms. Lists don't need a dedicated column in the model, as they are stored in a database table centrally.
+List fields can be added to CRUD-Models as well as to forms. Lists don't need a
+dedicated column in the model, as they are stored in a database table centrally.
 
 ```php
 public function menue()
@@ -35,7 +36,8 @@ Post::find($id)->menue;
 
 ## Max Depth
 
-The maximum depth of the list levels can be specified with `maxDepth`. The default value is `3`.
+The maximum depth of the list levels can be specified with `maxDepth`. The
+default value is `3`.
 
 ```php{3}
 $form->list('menue')
@@ -52,9 +54,9 @@ $form->list('menue')
 
 ## Methods
 
-| Method        | Description                                |
-| ------------- | ------------------------------------------ |
-| `title`       | The title description for this form field. |
-| `form`        | The corresponding form to the list item.   |
-| `previewText` | Title that describes the form.             |
-| `maxDepth`    | Title that describes the form.             |
+| Method                  | Description                                |
+| ----------------------- | ------------------------------------------ |
+| `$field->title()`       | The title description for this form field. |
+| `$field->form()`        | The corresponding form to the list item.   |
+| `$field->previewText()` | Title that describes the form.             |
+| `$field->maxDepth()`    | Title that describes the form.             |
