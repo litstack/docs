@@ -20,6 +20,8 @@ your application via the litstack interface.
 
 ![pages](./screens/pages_screen.jpg 'pages')
 
+## Setup
+
 Add the Litstack repository to your application's composer.json file:
 
 ```json
