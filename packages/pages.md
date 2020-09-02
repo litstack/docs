@@ -20,6 +20,17 @@ your application via the litstack interface.
 
 ![pages](./screens/pages_screen.jpg 'pages')
 
+Add the Litstack repository to your application's composer.json file:
+
+```json
+"repositories": [
+    {
+        "type": "composer",
+        "url": "https://store.litstack.io"
+    }
+],
+```
+
 Install the package via composer:
 
 ```shell
@@ -29,7 +40,9 @@ composer require litstack/pages
 Publish the migrations and migrate:
 
 ```shell
-php artisan vendor:publish --provider="FjordPages\FjordPagesServiceProvider" && php artisan migrate
+php artisan vendor:publish --provider="Litstack\Pages\PagesServiceProvider"
+
+php artisan migrate
 ```
 
 ## Setup a pages collection
@@ -84,12 +97,12 @@ can now be passed to a view like this:
 
 namespace App\Http\Controllers\Pages;
 
-use FjordPages\ManagesFjordPages;
+use Litstack\Pages\ManagesPages;
 use Illuminate\Http\Request;
 
 class PagesController
 {
-    use ManagesLitPages;
+    use ManagesPages;
 
     public function __invoke(Request $request, $slug)
     {
@@ -104,7 +117,7 @@ class PagesController
 
 To be able to select the pages in a route field you must first add them to a
 route collection as described in the
-[route field](../fields/route/#register-routes) documentation.
+[route field](../fields/route.md#register-routes) documentation.
 
 FjordPages extends to Eloquent Collection with the helper method
 `addToRouteCollection` that lets you add a list of pages directly to a route
@@ -112,9 +125,9 @@ collection:
 
 ```php
 use Ignite\Crud\Fields\Route;
-use FjordPage\Models\FjordPage;
+use Litsatck\Pages\Models\Page;
 
 Route::register('app', function($collection) {
-    FjordPage::collection('blog')->get()->addToRouteCollection('Blog', $collection);
+    Page::collection('blog')->get()->addToRouteCollection('Blog', $collection);
 });
 ```
