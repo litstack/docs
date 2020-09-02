@@ -8,6 +8,7 @@ The online version of the documentation can be reached under
 -   ## Prologue
     -   [Upgrade Guide](prologue/upgrade.md)
     -   [Contribution](prologue/contribution.md)
+    -   [Sponsorware](prologue/sponsorware.md)
 -   ## Getting Started
     -   [Installation](installation.md)
     -   [Configuration](configuration.md)

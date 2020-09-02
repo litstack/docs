@@ -1,5 +1,18 @@
 # Pages
 
+## Sponsorware
+
+Litstack pages was created by
+**[Lennart Carstens-Behrens](https://twitter.com/lennartcb)** under the
+**[Sponsorware license](https://github.com/sponsorware/docs)**.
+
+::: tip
+
+Read the [sponsorware](../prologue/sponsorware.md) section to learn how to get
+access to this package.
+
+:::
+
 ## Introduction
 
 A package to turn your litstack application into a **CMS**. Add new pages to
