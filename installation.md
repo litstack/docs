@@ -1,6 +1,5 @@
 # Installation
 
-Herllo World
 ## Requirements
 
 An existing Laravel project is required to install the package as well as a
