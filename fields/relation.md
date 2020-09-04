@@ -129,7 +129,7 @@ $form->relation('articles')
     });
 ```
 
-### Add Fields For Pivot Columns
+### Pivot Fields
 
 Sometimes you may want to edit pivot data such as the expired_at date of a
 subscription. Therefore the `pivot` method must be prepended to the field.
