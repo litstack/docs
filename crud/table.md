@@ -25,12 +25,16 @@ model attributes in curly brackets to include them in the text flow.
 $table->col('Name')->value('{first_name} {last_name}');
 ```
 
-It is also possible to specify the attribute of relations. In this case
+#### Display Relationship Attributes
+
+It is also possible to display the attribute of relationships. In this case
 attributes must be separated with a dot like this:
 
 ```php
 $table->col('Product')->value('{product.name}');
 ```
+
+#### Display Options
 
 Maybe you want to display a value representative for a state, this can be
 achived by passing the attribute name as the first and an array of options as

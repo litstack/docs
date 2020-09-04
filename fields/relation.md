@@ -1,5 +1,7 @@
 # Relation
 
+## Introduction
+
 A relation picker. Relation pickers can be created for any relation of your
 model.
 
@@ -55,6 +57,30 @@ $form->relation('articles')
     ->use(ArticleConfig::class);
 ```
 
+### Display Pivot Data
+
+You may load and display data from the pivot table of a many to many relation.
+
+In the following example we want to display when a subscrition of a user
+expires:
+
+First load the pivot data by specifing the desired columns in the `withPivot`
+method:
+
+```php
+$index->query(function($query) {
+    $query->withPivot('expires_at');
+});
+```
+
+Now we can display the `expires_at` attribute like this:
+
+```php
+$relation->preview(function ($table) {
+    $table->col('subscriptions.pivot.expires_at');
+});
+```
+
 ## Sortable
 
 If the relation should be sortable, the related query in your Model must be
@@ -87,6 +113,19 @@ $form->relation('articles')
     ->title('Articles')
     ->filter(function($query) {
         $query->where('created_by', lit_user()->id);
+    });
+```
+
+## Fields
+
+You can edit the **related attributes** in a modal by configuring fields in the
+form method:
+
+```php
+$form->relation('articles')
+    ->title('Articles')
+    ->form(function($form) {
+        $form->wysiwyg('text')->title('text');
     });
 ```
 
