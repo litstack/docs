@@ -76,7 +76,7 @@ $index->query(function($query) {
 Now we can display the `expires_at` attribute like this:
 
 ```php
-$relation->preview(function ($table) {
+$field->preview(function ($table) {
     $table->col('subscriptions.pivot.expires_at');
 });
 ```
@@ -127,6 +127,17 @@ $form->relation('articles')
     ->form(function($form) {
         $form->wysiwyg('text')->title('text');
     });
+```
+
+### Add Fields For Pivot Columns
+
+Sometimes you may want to edit pivot data such as the expired_at date of a
+subscription. Therefore the `pivot` method must be prepended to the field.
+
+```php
+$field->form(function($form) {
+    $form->pivot()->datetime('expires_at')->title('Expires At');
+});
 ```
 
 ## Eager Loading & Appending Accessors
