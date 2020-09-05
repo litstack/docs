@@ -56,8 +56,6 @@ The online version of the documentation can be reached under
 -   ## Frontend
     -   [Javascript](frontend/javascript.md)
     -   [Vue](frontend/vue.md)
--   ## Digging Deeper
-    -   [Package Development](deeper/packages.md)
 -   ## Official Packages
     -   [Bladesmith](packages/bladesmith.md)
     -   [Pages](packages/pages.md)

@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Charts give the user an overview of what is going on on his site or in his
-application. Charts show Model data and can be displayed on dashboards, index
-pages as well as on detail pages.
+Charts can be used to visualize model data and give the user an overview of
+whats going on in his application in a selected time period. Charts can be
+displayed on dashboards, index pages as well as on crud detail pages.
 
 ## Create via Artisan
 
@@ -60,6 +60,42 @@ below:
 -   [Donut Chart](donut.md)
 -   [Number Chart](number.md)
 -   [Progress](progress.md)
+
+### Display Relationship Data
+
+In some cases you may want to display the data of relations on a detail page of
+a crud model. To do so, you need to specify the name of the relation for the
+model in the relation property.
+
+Let's assume that you want to display the number of bookings related to a user
+and have created an **area** chart with the name `UserBookingsChart`. The config
+for this would look as follows:
+
+```php{lit/app/Config/Charts/UserBookingsChart.php}
+<?php
+
+namespace Lit\Config\Charts;
+
+use Ignite\Chart\Chart;
+use Ignite\Chart\Config\AreaChartConfig;
+
+class UserBookingsChart extends AreaChartConfig
+{
+    public $model = \App\Models\User::class;
+
+    public $relation = 'bookings';
+
+    public function title()
+    {
+        return 'User Bookings';
+    }
+
+    public function value($query)
+    {
+        return $this->count($query);
+    }
+}
+```
 
 ## Register Charts
 
