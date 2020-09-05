@@ -2,8 +2,6 @@
 
 ## Introduction
 
-Hello
-
 Charts can be used to visualize model data and give the user an overview of
 whats going on in his application in a selected time period. Charts can be
 displayed on dashboards, index pages as well as on crud detail pages.
