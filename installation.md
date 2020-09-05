@@ -2,8 +2,6 @@
 
 ## Requirements
 
-Hello World!
-
 An existing Laravel project is required to install the package as well as a
 database connection. The package requires **PHP 7.4+** and **Laravel 7+**. As
 well as all
