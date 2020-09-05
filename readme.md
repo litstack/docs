@@ -13,7 +13,7 @@ The online version of the documentation can be reached under
     -   [Installation](installation.md)
     -   [Configuration](configuration.md)
 -   ## Basics
-    -   [Introduction](basics/introduction.md)
+    -   [Basics](basics.md)
     -   [Navigation](basics/navigation.md)
     -   [Page](basics/page.md)
     -   [Localization](basics/localization.md)

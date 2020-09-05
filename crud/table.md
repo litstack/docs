@@ -208,14 +208,13 @@ be achieved by using the `relation` method. The related `name` of the relation
 and `routePrefix` of the corresponding CRUD config must be specified.
 
 ```php
+use Ignite\Support\Facades\Config;
 use App\Models\Product;
 
 $table->relation('Product')
     ->related('product') // Relation name.
     ->value('{name}') // Related attribute to be displayed.
-    ->routePrefix(
-        Crud::config(Product::class)->route_prefix
-    )
+    ->routePrefix($this->routePrefix())
     ->sortBy('product.name');
 ```
 

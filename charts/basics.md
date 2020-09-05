@@ -36,6 +36,12 @@ php artisan lit:chart MyChart --progress
 
 The command `lit:chart` creates a chart config in `./lit/app/Config/Charts`.
 
+With the `--model` option you can directly specify the name of the model:
+
+```shell
+php artisan lit:chart MyChart --model=Booking
+```
+
 ## Configure
 
 Next your chart needs to be configured. Every chart type needs its corresponding
@@ -70,6 +76,13 @@ model in the relation property.
 Let's assume that you want to display the number of bookings related to a user
 and have created an **area** chart with the name `UserBookingsChart`. The config
 for this would look as follows:
+
+With the `--relation` flag the **property** is placed in the class when
+generating the chart config.
+
+```shell
+php artisan lit:chart UserBookingsChart --model=User --relation=bookings
+```
 
 ```php{lit/app/Config/Charts/UserBookingsChart.php}
 <?php
