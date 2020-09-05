@@ -145,12 +145,12 @@ $container->chart(SalesCountChart::class)->width(1 / 3);
 
 #### Height
 
-The height of the chart is indicated by `width`.
+The height of the chart is indicated by `height`.
 
 ```php
 use Lit\Config\Charts\SalesCountChart;
 
-$container->chart(SalesCountChart::class)->width(1 / 3);
+$container->chart(SalesCountChart::class)->height('100px');
 ```
 
 ## Number Formatting
