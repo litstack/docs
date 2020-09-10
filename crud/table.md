@@ -201,6 +201,15 @@ $table->image('Image')
     ->square('50px'); // Displays the image as 50 x 50 px square using object-fit: cover
 ```
 
+## Progress
+
+Often you want to display the progress of a model directly in a table column.
+Litstack provides the progress column for this purpose:
+
+```php
+$table->progress('value', $max = 100)->label('Progress');
+```
+
 ## Relation
 
 In some cases, you may want to link a relation directly in your table. This can
