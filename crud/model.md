@@ -149,6 +149,13 @@ Read more about the sluggable options in the
 
 :::
 
+::: warning
+
+Make sure the **Sluggable** trait and configuration are in the correct Model
+when using **translatable** Models.
+
+:::
+
 ## Migrate
 
 Edit the newly created migration and add all table fields you need. For the
@@ -190,59 +197,6 @@ executed.
 ```shell
 php artisan migrate
 ```
-
-## Model(s)
-
-Edit the created model in `app/models`. Add all fillable attributes to avoid
-[mass assignment](https://laravel.com/docs/5.8/eloquent#mass-assignment). If the
-Model is translatable you have to set the fillable attributes on the
-corresponding translation-model in the `App\Models\Translations` directory and
-add all translatable attributes like in the given example:
-
-```php
-<?php
-
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Model;
-
-// ...
-
-class Article extends Model
-{
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['title', 'text'];
-
-    // ...
-}
-```
-
-```php
-<?php
-
-namespace App\Models\Translations;
-
-use Illuminate\Database\Eloquent\Model;
-
-...
-
-class ArticleTranslation extends Model
-{
-    use Sluggable;
-    ...
-}
-```
-
-::: warning
-
-Make sure the **Sluggable** trait and configuration are in the correct Model
-when using **translatable** Models.
-
-:::
 
 ## Controller (authorization)
 
