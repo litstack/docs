@@ -19,7 +19,7 @@ The online version of the documentation can be reached under
     -   [Localization](basics/localization.md)
     -   [Helpers](basics/helpers.md)
 -   ## CRUD
-    -   [Models](crud/models.md)
+    -   [Model](crud/model.md)
     -   [Forms](crud/forms.md)
     -   [Index Config](crud/index.md)
     -   [Show Config](crud/show.md)

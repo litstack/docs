@@ -4,9 +4,22 @@
 
 The main task of an admin panel is to manage data. Litstack offers easy editing
 and managing of
-[Laravel Eloquent Models](https://laravel.com/docs/7.x/eloquent). For a clear
-administration of models, a suitable `index` table and the corresponding
-`create` and `update` form are needed.
+[Laravel Eloquent Models](https://laravel.com/docs/7.x/eloquent). It lets you
+attach a variety of **form fields** to model attributes. There are **relation
+fields** that to link any available models in any laravel relation, and the
+ability to attach fields to attributes from pivot tables.
+
+The administrative views of a model include two views. An index view with a
+table and a detail view in which information for a single model can be displayed
+or edited. These are configured in litstack in the so-called configs. The
+`./lit/app/Config/Crud` directory contains all configuration files for your
+CRUD-Models. Each model may have one or more config giles.
+
+::: tip
+
+Configurations can be created for existing Models.
+
+:::
 
 Litstack also uses the following Open-Source packages to extend the
 functionality of Models:
@@ -18,33 +31,121 @@ functionality of Models:
 -   [Cviebrock Sluggable](https://github.com/cviebrock/eloquent-sluggable) Used
     to apply slugs to model attributes.
 
-The `./lit/app/Config/Crud` directory contains all configuration files for your
-CRUD-Models. Each model may have one or more config giles. Configurations can be
-created for existing Models.
+## Generate Config
 
-## Create
-
-In order to create your index table and update & edit form three files are
-needed.
-
--   **Model** located in `./app/Models`
--   **Controller** located in `./lit/app/Http/Controllers`
--   **Config** located in `./lit/app/Config/Crud`
-
-They can be created all at once using the following artisan command:
+Assuming you want to generate a crud-config for the Model with the name `Post`,
+you can simply generate a crud-config for the model using the `lit:crud`
+command.
 
 ```shell
-php artisan lit:crud
+php artisan lit:crud Post
 ```
 
-A wizard will take you through all required steps for setting up a fresh
-CRUD-Model.
+Executing the command will create all necessary files, unless they already
+exist:
+
+-   The migration for the `posts` Table
+-   The model `App\Models\Post`
+-   The config `./lit/app/Config/Crud/PostConfig`
+-   The controller `./lit/app/Http/Controllers/Crud/PostController`
+
+Now the config can be added to the navigation so it can be reached via your
+admin panel.
+
+```php{lit/app/Config/NavigationConfig.php}
+use Lit\Config\Crud\PostConfig;
+
+$nav->preset(PostConfig::class, ['icon' => fa('newspaper')]),
+```
+
+### Config Name
+
+Since you are able to create **multiple** configurations for the same model, in
+some cases you may want to use a config name that does not begin with the class
+name of the model. The name of the config can be given as the second argument to
+the `lit:crud` command:
+
+```shell
+php artisan lit:crud User StargazerConfig
+```
+
+## Media
+
+If your model should have media like pictures or pdfs, it needs to implement the
+`Spatie\MediaLibrary\HasMedia` **interface** and use the **trait**
+`Ignite\Crud\Models\Traits\HasMedia`, as shown in the following example:
+
+```php{app/Models/Post.php}
+namespace App\Models;
+
+use Ignite\Crud\Models\Traits\HasMedia;
+use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia as HasMediaContract;
+
+class Test extends Model implements HasMediaContract
+{
+    use HasMedia;
+
+    // ...
+}
+```
+
+Litstack generates the a Model with the needed requirements by adding the
+`--media` (or short `-m`) options to the `lit:crud` command:
+
+```shell
+php artisan lit:crud Post -m
+```
+
+Now you can add images to your model via the [image field](../fields/image.md).
+
+## Translatable
+
+The litstack form fields make managing translatable content easier than ever.
+Even setting up translatable models is easy.
+
+## Sluggable
+
+Models that should have one or more slugs need the trait
+`Ignite\Crud\Models\Traits\Sluggable`. The trait is automatically added to the
+mode when it is created by the command `lit:crud` with the option `--slug`
+(short `-s`):
+
+```shell
+php artisan lit:crud Post -s
+```
+
+The `sluggable` method of the model specifies which attributes contain slugs and
+from which attributes the slugs are built. In the following example the column
+`slug` contains the slug that is built from the value of `title`.
+
+```php
+namespace App\Models;
+
+use Ignite\Crud\Models\Traits\Sluggable;
+use Illuminate\Database\Eloquent\Model;
+
+class Post extends Model
+{
+    use Sluggable;
+
+    protected $fillable = ['title'];
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title',
+            ],
+        ];
+    }
+}
+```
 
 ::: tip
 
-If a Model already exists, it wont be changed. Only the configuration file and
-the controller will be created. This allows **existing** models to be made
-editable using `lit:crud` as well.
+Read more about the sluggable options in the
+[package documentation](https://github.com/cviebrock/eloquent-sluggable).
 
 :::
 
