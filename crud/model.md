@@ -101,8 +101,132 @@ Now you can add images to your model via the [image field](../fields/image.md).
 
 ## Translatable
 
-The litstack form fields make managing translatable content easier than ever.
-Even setting up translatable models is easy.
+The litstack form fields make managing translatable content easier than ever:
+
+```php
+$form->input('title')->translatable();
+```
+
+To use translatable fields in models the correct configuration is required,
+which is done from within the **migration** and the **model**, as described
+below.
+
+::: tip
+
+The required configuration is generated automatically by adding the
+`--translatable` (or short `-t`) option to the `lit:crud` command.
+
+:::
+
+### Migration
+
+In the migration a second table must be created, which contains the translatable
+fields. For `posts` this would be `post_translations`. All required **columns**
+can be added to the translations table by using `translates` with the name of
+the table to be translated. In the following example the column title is
+translatable for the posts table.
+
+```php{database/migrations/*create_posts_table.php}
+Schema::create('posts', function (Blueprint $table) {
+    $table->bigIncrements('id');
+    $table->timestamps();
+});
+Schema::create('post_translations', function (Blueprint $table) {
+    $table->translates('posts');
+    $table->string('title');
+});
+```
+
+### Model
+
+Your translation model, in our case post, needs the **interface**
+`Astrotomic\Translatable\Contracts\Translatable` and the **trait**
+`Ignite\Crud\Models\Traits\Translatable`. Furthermore, all translatable
+attributes are specified in the `translatedAttributes` property.
+
+```php{app/Models/Post.php}
+<?php
+
+namespace App\Models;
+
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Ignite\Crud\Models\Traits\Translatable;
+use Illuminate\Database\Eloquent\Model;
+
+class Post extends Model implements TranslatableContract
+{
+    use Translatable;
+
+    /**
+     * The attributes to be translated.
+     *
+     * @var array
+     */
+    public $translatedAttributes = ['title'];
+
+    /**
+     * The relationships that should always be loaded.
+     *
+     * @var array
+     */
+    protected $with = ['translations'];
+}
+```
+
+::: tip
+
+It is recommended to **always** load the `translations` relation.
+
+:::
+
+Furthermore, a model for the translation table is needed. Translation Models are
+generated into `app/Models/Translations`. In the translation model all mass
+assignable attributes of the translation table are specified:
+
+```php{app/Models/Translations/PostTranslation.php}
+<?php
+
+namespace App\Models\Translations;
+
+use Illuminate\Database\Eloquent\Model;
+
+class PostTranslation extends Model
+{
+    /**
+     * Wether the model uses the default timestamp columns.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['title'];
+}
+```
+
+#### Displaying Translated Attributes
+
+The attribute title can now be output via the model post, the value is displayed
+depending on the set **locale**:
+
+```php
+app()->setLocale('en');
+echo $post->title; // Echo's englisch value.
+
+app()->setLocale('de');
+echo $post->title; // Echo's german value.
+```
+
+::: tip
+
+Read more about translatable models in the
+[package documentation](https://docs.astrotomic.info/laravel-translatable/).
+
+:::
 
 ## Sluggable
 
@@ -156,57 +280,67 @@ when using **translatable** Models.
 
 :::
 
-## Migrate
+## Permissions
 
-Edit the newly created migration and add all table fields you need. For the
-translation of models
-[laravel-translatable](https://docs.astrotomic.info/laravel-translatable/installation#migrations)
-from `astronomic` is used. Pay attention to translatable and non-translatable
-fields.
+Litstack brings not only a super simple **permission manager**, but also a
+simple way to create permissions and bind them to crud models. The desired
+permissions just need to be added to the migration `*_make_permissions.php` and
+will be added to the database by executing the `lit:permissions` command.
 
-In the migration all **permissions** for the corresponding model are created in
-the `permissions` array. It's possible that the permissions are used by another
-model. For example, it makes sense not to give extra permissions for
-`article_states` but to use the permissions from `articles`. In this case the
-array can simply be left empty.
+### Create Permissions
 
-```php
-class CreateArticlesTable extends Migration
-{
-    ...
+So let's create crud permissions for our posts example. So we add `posts` to the
+`crudPermissionGroups` property. This will create the following permissions:
 
-    /**
-     * Permissions that should be created for this crud.
-     *
-     * @var array
-     */
-    protected $permissions = [
-        'create articles',
-        'read articles',
-        'update articles',
-        'delete articles',
-    ];
+-   `create posts`
+-   `read posts`
+-   `update posts`
+-   `delete posts`
 
-    ...
-}
+```php{database/migrations/______________________make_permissions.php}
+protected $crudPermissionGroups = [
+    // ...
+
+    'posts'
+];
 ```
 
-After all fields and permissions have been defined, the migration can be
-executed.
+and execute the command:
 
 ```shell
-php artisan migrate
+php artisan lit:permissions
 ```
 
-## Controller (authorization)
+### Apply Permissions
 
-A controller has been created in which the authorization for all operations is
-specified. Operations can be `create`, `read`, `update` and `delete`.
+The controller that comes with the crud contains the authozire method. The
+second parameter is the operation to be executed. So now we can check if the
+authenticated user has the permission to operate on the group `posts` by
+returning `$user->can("{$operation} posts")`:
 
-```php
-public function authorize(User $user, string $operation): bool
+```php{lit/app/Http/Controllers/Crud/PostController.php}
+<?php
+
+namespace Lit\Http\Controllers\Crud;
+
+use Ignite\Crud\Controllers\CrudController;
+use Lit\Models\User;
+
+class PostController extends CrudController
 {
-    return $user->can("{$operation} articles");
+    /**
+     * Authorize request for authenticated lit-user and permission operation.
+     * Operations: create, read, update, delete.
+     *
+     * @param  User   $user
+     * @param  string $operation
+     * @param  int    $id
+     * @return bool
+     */
+    public function authorize(User $user, string $operation, $id = null): bool
+    {
+        return $user->can("{$operation} posts");
+    }
 }
 ```
 
@@ -216,22 +350,23 @@ You may want to authorize individual models. This can be achieved by adding the
 initial query in the `query` method. The following example shows how models can
 be hidden by users who did not create them:
 
-```php
-public function query()
+```php{lit/app/Http/Controllers/Crud/PostController.php}
+class PostController
 {
-    return $this->model::where('created_by', lit_user()->id);
+    public function query($query)
+    {
+        $query->where('created_by', lit_user()->id);
+    }
 }
 ```
 
 ## Navigation
 
-Add the navigation entry by adding the `crud.{table_name}` preset to your
+Add the navigation entry by adding the config namespace preset to your
 navigation.
 
 ```php
-$nav->preset('crud.articles', [
-    'icon' => fa('newspaper')
-]),
+$nav->preset(PostConfig::class, ['icon' => fa('newspaper')]),
 ```
 
 ## Configuration
