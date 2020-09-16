@@ -77,20 +77,22 @@ public function show(CrudShow $page)
 
 ## Preview
 
-It is possible to get a `preview` of the stored data directly in the update
-form. The **route** for this can be easily specified using the method
-`previewRoute`. For a CRUD Model, the corresponding model is also passed as a
-parameter.
+Sometimes you may want to provide a direct **preview** on the edit page of a
+crud. This can be done by passing the route that shows the edited content to the
+preview method:
 
 ```php
-public function previewRoute($article)
+use Ignite\Crud\CrudShow;
+
+public function show(CrudShow $page)
 {
-    return route('article', $article->id);
+    $page->preview(function($article = null) {
+        return route('articles.show', [
+            'article' => $article->id ?? 0
+        ]);
+    });
 }
 ```
-
-Now the page can be previewed for the devices **desktop**, **tablet** or
-**mobile**.
 
 ### Default Device
 
