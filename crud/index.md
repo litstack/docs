@@ -114,7 +114,7 @@ Filters are specified in groups. Laravel's model
 [`scopes`](https://laravel.com/docs/7.x/eloquent#local-scopes) are used to
 filter the index table as shown in the example:
 
-```php
+```php{lit/app/Config/PostConfig.php}
 use Ignite\Crud\CrudIndex;
 
 public function index(CrudIndex $page)
@@ -129,8 +129,7 @@ public function index(CrudIndex $page)
 }
 ```
 
-```php
-// Model
+```php{app/Models/Post.php}
 public function scopeDevelopment()
 {
     return $this->hasOne('App\Models\Department')->where('name', 'development');

@@ -42,6 +42,7 @@ config `lit.php`.
 | -------------------------------------------- | --------------------------------------------------------------------------- |
 | `$field->title('Foo')`                       | The title description for this field.                                       |
 | `$field->hint('Foo.')`                       | A short hint that should describe how to use the field.                     |
+| `$field->info('...')`                        | Questionmark with tooltip. (Can contain longer field descriptions)          |
 | `$field->width(1/2)`                         | Width of the field.                                                         |
 | `$field->icons(['<i class="my-icon"></i>'])` | List of selectable icons. (By default all fontawesome icons are selectable) |
 | `$field->rules('required')`                  | Rules that should be applied when **updating** and **creating**.            |

@@ -19,6 +19,7 @@ $form->wysiwyg('text')
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | `$field->title()`          | The title description for this field.                                                                                 |
 | `$field->hint()`           | A short hint that should describe how to use the field.`                                                              |
+| `$field->info()`           | Questionmark with tooltip. (Can contain longer field descriptions)                                                    |
 | `$field->width()`          | Width of the field.                                                                                                   |
 | `$field->translatable()`   | Should the field be translatable? For translatable crud models, the translatable fields are automatically recognized. |
 | `$field->max()`            | Max characters.                                                                                                       |
