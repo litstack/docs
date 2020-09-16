@@ -32,14 +32,22 @@ public function show(CrudShow $page)
 
         $form->input('first_name')->title('First Name');
 
-    })
-    ->title('Card Title')
-    ->width(8);
+    });
 }
 ```
 
 All available fields can be found in the documentation under
 [Fields](../fields/introduction.md).
+
+### Customize Card
+
+You may customize your card with the following options:
+
+| Method                | Description                                                         |
+| --------------------- | ------------------------------------------------------------------- |
+| `$card->title('Foo')` | The title description for the card.                                 |
+| `$card->width(1/2)`   | Width of the card.                                                  |
+| `$card->secondary()`  | Give's your card a secondary background, for less important content |
 
 ## Group
 
