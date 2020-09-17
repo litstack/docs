@@ -1,5 +1,7 @@
 # List
 
+## Introduction
+
 A list field with nested items. It can be used to build **navigations** with
 nested entries.
 
@@ -13,8 +15,12 @@ $form->list('menue')
     });
 ```
 
-:::tip Add creation **rules** to the fields of your list to prevent the creation
-of empty items :::
+:::tip
+
+Add creation **rules** to the fields of your list to prevent the creation of
+empty items
+
+:::
 
 ### Preparing the Model
 

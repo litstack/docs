@@ -23,7 +23,6 @@ github account. You will then be shown the sponsorware videos.
 
 ### Packages
 
-To get access to the packages bladesmith and pages go to
-[store.litsatck.io](https://store.litsatck.io) and log in with your github
-account. You will then be shown a token which you can use together with your
-github username as composer credentials to install the packages.
+To get access to the packages bladesmith and pages you can send an email to
+`lennart.carbe@gmail.com`. Lennart will then send you an access token to install
+the private composer packages.

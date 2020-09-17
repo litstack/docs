@@ -93,7 +93,7 @@ display the content depending on the repeatable `type`, like this:
 @foreach($model->content as $repeatable)
     @if($repeatable->type == 'text')
         {{ $repeatable->text }}
-    @elseif($repeatable->type == 'text')
+    @elseif($repeatable->type == 'image')
         {{-- ... --}}
     @endif
 @endforeach
