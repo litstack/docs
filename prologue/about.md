@@ -1,9 +1,20 @@
 # About Litstack
 
-## Introduction
+## How Are We
 
-Hello there! We are very happy that you are stopping by. **We** are Lennart
-Carstens-Behrens und Jannes Behrens, two cousins from northern Germany who work
+<div class="flex justify-around my-6">
+    <div style="max-width:150px;">
+    <img src="./screens/jb.jpeg" style="border-radius: 100%; ">
+    <center class="text-center"><small>Jannes <br>Behrens</small></center>
+    </div>
+    <div style="max-width:150px;">
+    <img src="./screens/cbl.jpeg" style="border-radius: 100%; ">
+    <center class="text-center"><small>Lennart <br>Carstens-Behrens</small></center>
+    </div>
+</div>
+
+Hello there! We are very happy that you are stopping by. **We** are Jannes
+Behrens and Lennart Carstens-Behrens, two cousins from northern Germany who work
 together at the [Alle Wetter](https://aw-studio.de) Studio for Design and
 Development. We are passionate developers and have been working together for
 years on hobby projects and continued our colaboration shortly after Jannes and
