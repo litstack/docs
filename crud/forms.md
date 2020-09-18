@@ -5,11 +5,15 @@
 Forms provide a convenient way to store, organize and maintain data of many
 kinds, such as your page content. You may create as many `Forms` as you like.
 
-Forms are divided into form `collections` to keep the overview. For example, the
-forms **home** and **faq**, which contain the page content for the pages
-**home** and **faq**, can be included in the `collection` **pages**.
+Think of a `form` as a model with **dynamic** attributes. Its structure may
+change at any time. `Forms` are being managed on a crud-page just like
+[crud models](model.md).
 
-## Create
+Forms are grouped into form `collections` to keep the overview. For example, the
+forms **home** and **faq**, which contain the page content for the pages
+**home** and **faq**, could be included in the `collection` **pages**.
+
+## Generate Form
 
 A `form` can be created using the following artisan command:
 
@@ -20,69 +24,18 @@ php artisan lit:form
 A wizard will take you through all required steps. The corresponding `config`
 and the `controller` is created afterwards.
 
-## Permissions
-
-Now you need to specify a **permission group** in the `_make_form_permissions`
-migration. You can create a **permission group** for each form or only for each
-collection. For example, for the collection `pages` in which all forms for the
-static pages of a website are located, you can create a **group** for all pages
-or for each individual form.
-
-The permissions `read {group}` and `update {group}` are created for all groups
-that are specified.
-
-```php
-protected $groups = [
-    // For the collection:
-    'pages',
-    // Or for a single form:
-    'page-home'
-];
-```
-
-The migration can now simply be rolled back and re-run using the artisan command
-`lit:form-permissions`.
-
-```shell
-php artisan lit:nav-permissions
-```
-
-::: tip
-
-Try to use as few groups as possible to keep permission **management** simple.
-
-:::
-
-## Controller (Authorization)
-
-A controller has been created in `Controllers/Form/{collection}` in which the
-authorization for all operation is specified. Operations can be `read` and
-`update`.
-
-```php
-/**
- * Authorize request for permission operation and authenticated litstack-user.
- * Operations: read, update
- *
- * @param  User  $user
- * @param  string  $operation
- * @return boolean
- */
-public function authorize(User $user, string $operation): bool
-{
-    return $user->can("{$operation} pages");
-}
-```
+A config file and a controller will be generated. Checkout the [model](model.md)
+documentation to learn how to apply **permissions** on forms.
 
 ## Navigation
 
-Add the navigation entry by adding the `form.{collection}.{form}` preset to your
-navigation.
+Add the navigation entry by adding the namespace of the newly generated config
+to your navigation.
 
-```php
-$nav->preset('form.pages.home', [
-    'icon' => fa('home'),
-]),
+```php{lit/app/Config/NavigationConfig.php}
+use Lit\Config\Pages\HomeConfig;
+
+$nav->preset(HomeConfig::class, ['icon' => fa('home')]),
 ```
 
 ## Configuration
@@ -102,24 +55,21 @@ use Lit\Controllers\Form\Pages\HomeController;
 public $controller = HomeController::class;
 ```
 
-### Container Size
+### Form Fields
 
-By default, the containers for the update Form have a maximum width. If you want
-the containers to expand to the maximum width for a better overview, this can be
-achieved with `expandContainer`.
+All form fields for the form are specified in the `show` method:
 
 ```php
-/**
- * Set bootstrap container to fluid.
- *
- * @var boolean
- */
-public $expandContainer = false;
+public function show($page)
+{
+    $page->card(function($form) {
+        $form->input('title');
+    });
+}
 ```
 
-### Update Form
-
-Next, the configuration for the [form](show.md) can be adjusted.
+Read the [Crud Show](show.md) documentation to learn more on how to customize
+your forms.
 
 ## Retrieve Data
 
@@ -158,16 +108,3 @@ $settings = Form::load('settings');
 
 $settings->main->title;
 ```
-
-::: tip
-
-Use [View composers](https://laravel.com/docs/7.x/views#view-composers) to load
-global Form data to your `Views`.
-
-```php
-View::composer('*', function ($view) {
-    $view->with('settings', Form::load('settings', 'main'));
-});
-```
-
-:::
