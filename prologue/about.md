@@ -1,6 +1,6 @@
 # About Litstack
 
-## How Are We
+## Who Are We
 
 <div class="flex justify-around my-6">
     <div style="max-width:150px;">
