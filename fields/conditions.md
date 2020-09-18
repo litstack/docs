@@ -13,7 +13,7 @@ values.
 The following example shows an input field that only gets displayed if model
 attribute `type` has the value `news`:
 
-```php{10}
+```php
 $form->select('type')
     ->options([
         'news' => 'News',

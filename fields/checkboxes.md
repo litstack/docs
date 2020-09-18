@@ -4,7 +4,7 @@
 
 Multiple checkboxes. The selected values are stored as an array.
 
-## Example
+## Usage
 
 The following example shows a list of fruits that can be selected using
 checkboxes.

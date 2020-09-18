@@ -1,8 +1,8 @@
 # Boolean
 
-## Introduction
+## Usage
 
-A boolean switch.
+The boolean field adds a switch to a boolean attribute.
 
 ```php
 $form->boolean('active')
@@ -11,7 +11,7 @@ $form->boolean('active')
     ->width(1/3);
 ```
 
-Add the `array`
+Add the `boolean`
 [cast](https://laravel.com/docs/5.2/eloquent-mutators#attribute-casting) to your
 model:
 
