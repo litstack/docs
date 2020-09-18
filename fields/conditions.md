@@ -2,15 +2,16 @@
 
 ## Introduction
 
-If fields should depend on the value of other fields, field conditions can be
-used.
+Field **conditions** can be used to display fields when a model attribute has a
+certain value. Individual fields or field groups can be made dependent on model
+values.
 
 ![radio conditions](./screens/conditions/conditions_radio.gif 'radio conditions')
 
-## Examples
+## Usage
 
-The following example shows an input field that only gets displayed if the
-select field `type` has the value `news`:
+The following example shows an input field that only gets displayed if model
+attribute `type` has the value `news`:
 
 ```php{10}
 $form->select('type')
@@ -44,7 +45,7 @@ $form->group(function($form) {
     $form->input('news_title')->title('Title');
     $form->input('news_text')->title('Text');
 
-})->when($field, 'news');
+})->when('type', 'news');
 ```
 
 ### Multiple Conditions

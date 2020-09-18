@@ -60,9 +60,6 @@ $form->group(function($form) {
 })->width(6);
 ```
 
-Read the [Extend Vue](../basics/vue.md#bootstrap-vue) section to learn how to
-register your own Vue components.
-
 ## Info
 
 A good content administration interface includes **descriptions** that help the

@@ -247,11 +247,10 @@ $table->toggle('active')
 With the `view` method you can easily add Blad Views to your table column:
 
 ```php
-$table->view('columns.hello')->label('Hello');
+$table->view('lit::columns.hello')->label('Hello');
 ```
 
-```html
-<!-- ./resouces/views/columns/hello.blade.php -->
+```html{lit/resouces/views/columns/hello.blade.php}
 <div class="badge badge-secondary">
 	Hello World!
 </div>
@@ -261,17 +260,15 @@ $table->view('columns.hello')->label('Hello');
 
 You can use Vue components in your blade component:
 
-```html
-<!-- ./resouces/views/columns/hello.blade.php -->
+```html{lit/resouces/views/columns/hello.blade.php}
 <b-badge>
 	Hello World!
 </b-badge>
 ```
 
-Use the **prop** `item` to display attribute data:
+Use the **prop** `item` to display model attributes:
 
-```html
-<!-- ./resouces/views/columns/hello.blade.php -->
+```html{lit/resouces/views/columns/hello.blade.php}
 <b-badge v-html="item.state" />
 ```
 
