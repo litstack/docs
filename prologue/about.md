@@ -19,7 +19,7 @@ together at the [Alle Wetter](https://aw-studio.de) Studio for Design and
 Development. We are passionate developers and have been working together for
 years on hobby projects and continued our colaboration shortly after Jannes and
 Gerrit founded Alle Wetter in 2016. The artwork is made by our experienced
-designer Uwe Steffens. Grüße an dich Uwe!
+designer (Head of design at Alle Wetter) Uwe Steffens. Grüße an dich Uwe!
 
 ## How It Started
 
