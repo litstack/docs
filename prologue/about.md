@@ -18,7 +18,8 @@ Behrens and Lennart Carstens-Behrens, two cousins from northern Germany who work
 together at the [Alle Wetter](https://aw-studio.de) Studio for Design and
 Development. We are passionate developers and have been working together for
 years on hobby projects and continued our colaboration shortly after Jannes and
-Gerrit founded Alle Wetter in 2016.
+Gerrit founded Alle Wetter in 2016. The artwork is made by our experienced
+designer Uwe Steffens. Grüße an dich Uwe!
 
 ## How It Started
 
