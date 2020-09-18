@@ -24,12 +24,13 @@ will be added automatically. Two files are compiled:
 
 Add them to **assets** in the config.
 
-```php
-// config/lit.php
+```php{config/lit.php}
 'assets' => [
     'js' => '/lit/js/app.js',
-    'css' => [
-        '/public/lit/css/app.css',
+    'scripts' => [
+        // Add more js files here ...
+    ],
+    'styles' => [
         // Add more css files here ...
     ],
 ],
@@ -96,8 +97,7 @@ The `user` mixin returns the authenticated User Model.
 the translation in Vue. All translations that are available in **php** are
 available in **i18n-vue** as well like shown in the example:
 
-```php
-// lit/resources/lang/{locale}/message.php
+```php{lit/resources/lang/en/message.php}
 return [
     "welcome": "Welcome to Litstack"
 ];

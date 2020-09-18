@@ -17,9 +17,7 @@ interface in the english version.
 
 The following examples refer to the translations which look like this:
 
-```php
-// lit/resources/lang/{locale}/messages.php
-
+```php{lit/resources/lang/en/messages.php}
 return [
     "welcome": "Welcome, :name"
 ];
