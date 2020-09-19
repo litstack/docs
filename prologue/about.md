@@ -40,7 +40,7 @@ positive feedback motivated us in continuing our work.
 ### From CMS to Admin Panel
 
 After some time the idea of a **cms** changed to an **admin panel**, which has
-the possibility to execute the functions of a cms. The management of data is the
+the possibility to perform the task of a cms. The management of data is the
 main problem to be solved in a modern web app. Be it an **API** or **internal
 product managing**. Everything is covered by an administration panel.
 
