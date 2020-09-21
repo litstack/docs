@@ -153,6 +153,31 @@ that connects the relation.
 
 :::
 
+## Action
+
+You may make [actions](actions.md) available directly in a table column:
+
+```php
+use Lit\Actions\SendMailAction;
+
+$table->action('Send Mail', SendMailAction::class)->label('Mail');
+```
+
+### Multiple Actions
+
+You can also place multiple actions in one column. These are then accessible via
+a dropdown button
+
+```php
+use Lit\Actions\FooAction;
+use Lit\Actions\BarAction;
+
+$table->actions([
+    'Foo' => FooAction::class,
+    'Bar' => BarAction::class,
+])->label('Actions');
+```
+
 ## Image
 
 If an image is to be displayed in a table, the image url must also be specified
