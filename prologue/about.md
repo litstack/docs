@@ -3,13 +3,13 @@
 ## Who Are We
 
 <div class="flex justify-around my-6">
-    <div style="max-width:150px;">
-    <img src="./screens/jb.jpeg" style="border-radius: 100%; ">
-    <center class="text-center"><small>Jannes <br>Behrens</small></center>
+    <div style="max-width:150px;" class="mx-2">
+        <img src="./screens/jb.jpeg" style="border-radius: 100%;">
+        <center class="text-center"><small>Jannes <br>Behrens</small></center>
     </div>
-    <div style="max-width:150px;">
-    <img src="./screens/cbl.jpeg" style="border-radius: 100%; ">
-    <center class="text-center"><small>Lennart <br>Carstens-Behrens</small></center>
+    <div style="max-width:150px;" class="mx-2">
+        <img src="./screens/cbl.jpeg" style="border-radius: 100%; ">
+        <center class="text-center"><small>Lennart <br>Carstens-Behrens</small></center>
     </div>
 </div>
 
