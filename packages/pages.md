@@ -69,13 +69,7 @@ specified in the config like so:
 -   `en/blog/{slug}`
 -   `en/blog/{slug}`
 
-```php
-// ./lit/app/Config/Pages/BlogConfig.php
-
-namespace Lit\Config\Pages;
-
-...
-
+```php{lit/app/Config/Pages/BlogConfig.php}
 class BlogConfig extends PagesConfig
 {
     ...
@@ -95,10 +89,7 @@ class BlogConfig extends PagesConfig
 In the controller the page model is loaded with the method `getFjordPage`. This
 can now be passed to a view like this:
 
-```php
-
-namespace App\Http\Controllers\Pages;
-
+```php{app/Http/Controllers/Pages}
 use Litstack\Pages\ManagesPages;
 use Illuminate\Http\Request;
 
