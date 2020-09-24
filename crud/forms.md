@@ -99,6 +99,22 @@ and be used in a Blade template:
 <h1>{{ $home->title }}</h1>
 ```
 
+### Load Using Namespace
+
+If you want to load the form data of a single config, you can also use the
+static load function of the config. This allows you to "click" directly into the
+class in your editor.
+
+```php
+use Lit\Config\Form\Pages\Home;
+
+$home = HomeConfig::load();
+
+echo $home->title;
+```
+
+### Retrive A Full Collection
+
 It is also possible to load all data for a collection as shown in the example:
 
 ```php
@@ -106,5 +122,5 @@ use Ignite\Support\Facades\Form;
 
 $settings = Form::load('settings');
 
-$settings->main->title;
+echo $settings->main->title;
 ```
