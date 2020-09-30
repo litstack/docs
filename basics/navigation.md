@@ -8,7 +8,7 @@ Your admin app by default contains two navigations: the **topbar** and your
 Both navigation instances are configured in
 `lit/app/Config/NavigationConfig.php` which looks as follows:
 
-```php
+```php{lit/app/Config/NavigationConfig.php}
 class NavigationConfig extends Config
 {
     public function topbar(Navigation $nav)
