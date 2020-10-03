@@ -15,7 +15,7 @@ composer require --dev litstack/rehearsal
 
 ## Usage
 
-To run tests in a fjord environment, your test class only needs to extend
+To run tests in a litstack environment, your test class only needs to extend
 `Litstack\Rehearsal\TestCase`.
 
 ```php
