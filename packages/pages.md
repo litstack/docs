@@ -1,5 +1,7 @@
 # Pages
 
+<iframe src="https://github.com/sponsors/litstack/card" title="Sponsor litstack" height="88" width="600" style="border: 0;" class="github-sponsor"></iframe>
+
 ## Introduction
 
 A package to turn your litstack application into a **CMS**. Add new pages to
@@ -12,13 +14,6 @@ your application via the litstack interface.
 Litstack pages was created by
 **[Lennart Carstens-Behrens](https://twitter.com/lennartcb)** under the
 **[Sponsorware license](https://github.com/sponsorware/docs)**.
-
-::: tip
-
-[Sponsor litstack](https://github.com/sponsors/litstack) to get access to this
-package.
-
-:::
 
 ## Setup
 
