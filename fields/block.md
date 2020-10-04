@@ -84,6 +84,15 @@ directory.
 php artisan lit:repeatable text
 ```
 
+The generated class can be added to a block by passing the **namespace** as the
+first parameter to the `add` method:
+
+```php
+use Lit\Repeatables\TextRepeatable;
+
+$repeatables->add(TextRepeatable::class);
+```
+
 ## Frontend
 
 To use the repeatables of a block in the frontend you can loop over them and
