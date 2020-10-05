@@ -159,7 +159,7 @@ $page->table(function($table) {
     // Single action as button:
     $table->action('My Action', MyAction::class); 
     
-    // Multiple actionso as dropdown:
+    // Multiple actions as dropdown:
     $table->actions([
         'My Action' => MyAction::class,
         'Other Action' => OtherAction::class,
