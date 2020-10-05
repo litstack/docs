@@ -12,7 +12,7 @@ must be added to the model.
 
 ```php
 use Ignite\Crud\Models\Traits\HasMedia;
-use Spatie\MediaLibrary\HasMedia\HasMedia as HasMediaContract;
+use Spatie\MediaLibrary\HasMedia as HasMediaContract;
 
 class Post extends Model implements HasMediaContract
 {
