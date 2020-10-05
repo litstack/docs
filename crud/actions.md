@@ -135,8 +135,7 @@ public function run(Collection $models, AttributeBag $attributes)
 
 ### In a Table
 
-Actions can be added to a table using the `action` method. To do this, the title
-and namespace of the action must be specified as parameters.
+There are multiple places where an `action` can be displayed in a table, first of all an action can be executed for all selected items:
 
 ```php
 // CrudConfig
@@ -149,6 +148,25 @@ public function index(CrudIndex $page)
         ->action('My Action', MyAction::class);
 }
 ```
+
+Additionally actions can be displayed in table columns to make important actions more accessible. You can add either one action as a button or several actions as dropdown to a column:
+
+```php
+use Lit\Actions\MyAction;
+use Lit\Actions\OtherAction;
+
+$page->table(function($table) {
+    // Single action as button:
+    $table->action('My Action', MyAction::class); 
+    
+    // Multiple actions as dropdown:
+    $table->actions([
+        'My Action' => MyAction::class,
+        'Other Action' => OtherAction::class,
+    ]); 
+});
+```
+
 
 ### On a Page
 
