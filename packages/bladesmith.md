@@ -112,17 +112,17 @@ class MainNavigationConfig extends FormConfig
 	<img src="./screens/nav-field.png" width="600px">
 </p>
 
-Now we can simply pass the list field to the `x-fj-nav-list` component and a
-navigation is created that can be build in the fjord backend:
+Now we can simply pass the list field to the `x-lit-nav-list` component and a
+navigation is created that can be build in the litstack backend:
 
 ### Display the Navigation
 
 ```php
-use Fjord\Support\Facades\Form;
+use Ignite\Support\Facades\Form;
 
 $nav = Form::load('navigations', 'main_navigation');
 
-<x-fj-nav-list :list="$nav->main" layout="horizontal" dropdown/>
+<x-lit-nav-list :list="$nav->main" layout="horizontal" dropdown/>
 ```
 
 This will result in the following simple horizontal navigation:
@@ -141,7 +141,7 @@ Customize the navigation using the following options
 | `subLevel`    | Start depth.                                                           |
 | `expandable`  | Only display's level one, all child levels can be expanded on `click`. |
 | `class`       | Navigation class.                                                      |
-| `activeClass` | Class of active items. (default is: `fj--active`)                      |
+| `activeClass` | Class of active items. (default is: `lit--active`)                     |
 
 ## Translatable Routes
 
@@ -224,11 +224,11 @@ class MyController extends Controller
 
 ### Language Switch
 
-The Blade componend `x-fj-localize` creates a link to the translated routes of
+The Blade componend `x-lit-localize` creates a link to the translated routes of
 all locales.
 
 ```html
-<x-fj-localize />
+<x-lit-localize />
 ```
 
 Result:
@@ -242,14 +242,14 @@ You may change the content of the link By passing a slot with the name of the
 locale:
 
 ```html
-<x-fj-localize>
+<x-lit-localize>
 	<x-slot name="en">
 		English
 	</x-slot>
 	<x-slot name="de">
 		Deutsch
 	</x-slot>
-</x-fj-localize>
+</x-lit-localize>
 ```
 
 Result:
