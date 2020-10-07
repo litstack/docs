@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Pages are the fundamental part of package. They provide a convenient and yet
+Pages are a fundamental part of the package. They provide a convenient and yet
 powerfull way to configure pages for the Vue application in PHP. They can be
 used to integrate **Blade Views**, **Vue components** or ready-made components
 such as **charts** or form fields for models.
