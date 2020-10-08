@@ -269,7 +269,7 @@ $table->toggle('active')
 
 ## Blade View
 
-With the `view` method you can easily add Blad Views to your table column:
+With the `view` method you can easily add Blade Views to your table column:
 
 ```php
 $table->view('lit::columns.hello')->label('Hello');
