@@ -26,7 +26,7 @@ Add them to **assets** in the config.
 
 ```php{config/lit.php}
 'assets' => [
-    'js' => '/lit/js/app.js',
+    'app_js' => '/lit/js/app.js',
     'scripts' => [
         // Add more js files here ...
     ],
