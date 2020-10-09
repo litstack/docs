@@ -41,7 +41,7 @@ achived by passing the attribute name as the first and an array of options as
 the second parameter to the value method:
 
 ```php
-use App\Modols\Product;
+use App\Models\Product;
 
 $table->col('State')->value('state', [
     Product::AVAILABLE    => 'available',
