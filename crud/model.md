@@ -284,10 +284,12 @@ when using **translatable** Models.
 
 You may want fill attributes to the model before it gets created or updated from
 the user via a crud form. This can be achieved by modifing the Model in either
-`fillOnStore` or `fillOnUpdate` the crud controller:
+`fillOnStore` or `fillOnUpdate` the crud controller.
+
+The following example show's how to assign an author to a post by setting the
+`author_id` to the authenticated litstack user id.
 
 ```php{lit/app/Http/Controllers/Crud/PostController.php}
-
 namespace Lit\Http\Controllers\Crud;
 
 use Ignite\Crud\Controllers\CrudController;
