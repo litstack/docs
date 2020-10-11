@@ -280,6 +280,33 @@ when using **translatable** Models.
 
 :::
 
+## Fill Model On Create & Update
+
+You may want fill attributes to the model before it gets created or updated from
+the user via a crud form. This can be achieved by modifing the Model in either
+`fillOnStore` or `fillOnUpdate` the crud controller:
+
+```php{lit/app/Http/Controllers/Crud/PostController.php}
+
+namespace Lit\Http\Controllers\Crud;
+
+use Ignite\Crud\Controllers\CrudController;
+use Lit\Models\User;
+
+class PostController extends CrudController
+{
+    public function fillOnStore($post)
+    {
+        $post->author_id = lit_user()->id;
+    }
+
+    public function fillOnUpdate($post)
+    {
+        // ...
+    }
+}
+```
+
 ## Permissions
 
 Litstack brings not only a super simple **permission manager**, but also a
