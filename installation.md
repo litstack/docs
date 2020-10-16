@@ -1,40 +1,31 @@
-# Installation
+# Cài đặt
 
-## Requirements
+## Yêu cầu
 
-An existing Laravel project is required to install the package as well as a
-database connection. The package requires **PHP 7.4+** and **Laravel 7+**. As
-well as all
-[requirements](https://docs.spatie.be/laravel-medialibrary/v8/requirements) of
-**spatie/laravel-medialibrary 8.2+**.
+Cần có một dự án Laravel hiện tại để cài đặt gói này cũng như kết nối cơ sở dữ liệu. Gói yêu cầu **PHP 7.4+** và **Laravel 7+**. Như cũng như tất cả [các yêu cầu](https://docs.spatie.be/laravel-medialibrary/v8/requirements) của **spatie/laravel-medialibrary 8.2+**.
 
-## Setup
+## Thiết lập
 
-Installing the package into an existing Laravel application via Composer:
+Cài đặt gói vào một ứng dụng Laravel hiện có thông qua Composer:
 
 ```shell
 composer require litstack/litstack
 ```
 
-The application will automatically register the needed service providers. The
-next step is to process all publishes and migrations by typing the following
-artisan command:
+Ứng dụng sẽ tự động đăng ký các nhà cung cấp dịch vụ cần thiết. Các bước tiếp theo là xử lý tất cả các lần xuất bản và di chuyển bằng cách nhập nội dung sau lệnh artisan:
 
 ```shell
 php artisan lit:install
 ```
 
-Now all models have been moved to the `app/models` folder, all required files
-have been published and all migrations have been executed.
+Bây giờ tất cả các mô hình đã được chuyển đến thư mục `app/models`, tất cả các tệp bắt buộc đã được xuất bản và tất cả quá trình di chuyển đã được thực hiện.
 
-The admin interface can be reached via the standard route `/admin`. The route
-may be changed in the config file `lit.php` by changing the `route_prefix` key.
+Có thể truy cập giao diện quản trị thông qua đường dẫn `/admin`. Route có thể được thay đổi trong tệp cấu hình `lit.php` bằng cách thay đổi khóa `route_prefix`.
 
-The final step is to create an admin user so you can log in to the backend:
+Bước cuối cùng là tạo người dùng quản trị để bạn có thể đăng nhập vào phần phụ trợ:
 
 ```shell
 php artisan lit:admin
 ```
 
-The wizard will guide you through the process of entering the required user
-data.
+Trình hướng dẫn sẽ hướng dẫn bạn quy trình nhập người dùng cần thiết dữ liệu.
