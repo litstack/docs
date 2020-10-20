@@ -89,7 +89,7 @@ a `list` field in a short time.
 We start by creating a form in that we can build our navigation:
 
 ```shell
-php artisan lit:form --collection=navigations --form=main_navigation
+php artisan lit:form navigations main_navigation
 ```
 
 The next step is to add a `nav` field to the newly created config file:
