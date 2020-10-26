@@ -17,7 +17,7 @@ folder.
 ::: tip
 
 Isolating your administration application from your app provides a clear
-structure of your actual buisness logic.
+structure of your actual business logic.
 
 :::
 
