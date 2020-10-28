@@ -21,7 +21,13 @@ A `form` can be created using the following artisan command:
 php artisan lit:form
 ```
 
-A wizard will take you through all required steps. The corresponding `config`
+A wizard will take you through all required steps. You may also create the form by adding the collection and the name as arguments to the artisan command:
+
+```php
+php artisan lit:form pages home
+```
+
+The corresponding `config`
 and the `controller` is created afterwards.
 
 A config file and a controller will be generated. Checkout the [model](model.md)
