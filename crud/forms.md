@@ -21,7 +21,7 @@ A `form` can be created using the following artisan command:
 php artisan lit:form
 ```
 
-A wizard will take you through all required steps. You may also create the form by adding the collection and the name as arguments to the artisan command:
+A wizard will take you through all required steps. You may also create the form by adding the **collection** and the **name** as arguments to the artisan command:
 
 ```php
 php artisan lit:form pages home
