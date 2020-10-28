@@ -239,16 +239,14 @@ $table->progress('value', $max = 100)->label('Progress');
 
 In some cases, you may want to link a relation directly in your table. This can
 be achieved by using the `relation` method. The related `name` of the relation
-and `routePrefix` of the corresponding CRUD config must be specified.
+and the related crud config must be specified.
 
 ```php
 use Ignite\Support\Facades\Config;
-use App\Models\Product;
+use Lit\Config\Crud\ProductConfig;
 
-$table->relation('Product')
-    ->related('product') // Relation name.
-    ->value('{name}') // Related attribute to be displayed.
-    ->routePrefix($this->routePrefix())
+$table->relation('product', ProductConfig::class)
+    ->value('{product.name}') // Related attribute to be displayed.
     ->sortBy('product.name');
 ```
 
@@ -263,7 +261,6 @@ simply use the config function `routePrefix`.
 ```php
 $table->toggle('active')
     ->label('Live')
-    ->routePrefix($this->routePrefix())
     ->sortBy('active');
 ```
 
