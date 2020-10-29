@@ -8,7 +8,7 @@ nested entries.
 ```php
 $form->list('menue')
     ->title('Menue')
-    ->previewText('{title}')
+    ->previewTitle('{title}')
     ->form(function($form) {
         $form->input('title')
             ->title('Title');
@@ -49,7 +49,7 @@ default value is `3`.
 $form->list('menue')
     ->title('Menue')
     ->maxDepth(4)
-    ->previewText('{title}')
+    ->previewTitle('{title}')
     ->form(function($form) {
         $form->input('title')
             ->title('Title');
@@ -64,5 +64,5 @@ $form->list('menue')
 | ----------------------- | ------------------------------------------ |
 | `$field->title()`       | The title description for this form field. |
 | `$field->form()`        | The corresponding form to the list item.   |
-| `$field->previewText()` | Title that describes the form.             |
+| `$field->previewTitle()`| Title that describes the form.             |
 | `$field->maxDepth()`    | Title that describes the form.             |
