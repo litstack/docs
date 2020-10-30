@@ -32,6 +32,7 @@ The online version of the documentation can be reached under
     -   [Boolean](fields/boolean.md)
     -   [Checkboxes](fields/checkboxes.md)
     -   [Date/Time](fields/date-time.md)
+    -   [File](fields/file.md)
     -   [Icon](fields/icon.md)
     -   [Image](fields/image.md)
     -   [Input](fields/input.md)
