@@ -166,6 +166,109 @@ $page->table(...)
     ]);
 ```
 
+### Custom Filter With Form Fields
+
+To add filters with form fields like e.g. `checkboxes` or `date` pickers you can
+create custom filters. A filter is generated via the artisan command
+`lit:fitler`:
+
+```shell
+php artisan lit:filter MyCustomFilter
+```
+
+The following class will the be generated:
+
+```php{lit/app/Filters/MyCustomFilter.php}
+
+namespace Lit\Filters;
+
+use Ignite\Crud\Filter\Filter;
+use Ignite\Crud\Filter\FilterForm;
+use Ignite\Support\AttributeBag;
+use Illuminate\Database\Eloquent\Builder;
+
+class MyCustomFilter extends Filter
+{
+    /**
+     * Apply field attributes to query.
+     *
+     * @param Builder      $query
+     * @param AttributeBag $attributes
+     * @var   void
+     */
+    public function apply($query, AttributeBag $attributes)
+    {
+        //
+    }
+
+    /**
+     * Add filter form fields.
+     *
+     * @param  FilterForm $form
+     * @return void
+     */
+    public function form(FilterForm $form)
+    {
+        //
+    }
+}
+```
+
+#### Add Form Fields
+
+You can now add fields like this:
+
+```php
+public function form(FilterForm $form)
+{
+    $form->datetime('from');
+    $form->datetime('to');
+}
+```
+
+Or Checkboxes:
+
+```php
+use App\Models\Tag;
+
+public function form(FilterForm $form)
+{
+    $options = Tag::all()->pluck('name')->toArray();
+
+    $form->checkboxes('tags')->options($options);
+}
+```
+
+#### Apply Field Attribtues To The Query
+
+The next thing you want to do is to apply the field attributes to the query:
+
+```php
+public function apply($query, AttributeBag $attributes)
+{
+    if ($attributes->from) {
+        $query->where('created_at', '>=', $attributes->from);
+    }
+
+    if ($attributes->to) {
+        $query->where('created_at', '<', $attributes->to);
+    }
+}
+```
+
+#### Use Custom Filter
+
+The custom Filter can now be used for your CRUD index:
+
+```php{lit/app/Config/PostConfig.php}
+use Lit\Filters\MyCustomFilter;
+
+$page->table(...)
+    ->filter([
+        'Button Text' => MyCustomFilter::class,
+    ]);
+```
+
 ## Pagination
 
 The maximum number of items to be displayed on a page is defined in `perPage`.
