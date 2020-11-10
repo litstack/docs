@@ -150,6 +150,22 @@ public function scopeMarketing()
 }
 ```
 
+### Default Filter
+
+You may also specify one or more default filter that will be used after the page
+is loaded:
+
+```php{lit/app/Config/PostConfig.php}
+$page->table(...)
+    ->defaultFilter('development')
+    ->filter([
+        'Department' => [
+            'development' => 'Development',
+            'marketing' => 'Marketing',
+        ],
+    ]);
+```
+
 ## Pagination
 
 The maximum number of items to be displayed on a page is defined in `perPage`.
