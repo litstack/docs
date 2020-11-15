@@ -60,4 +60,5 @@ The online version of the documentation can be reached under
 -   ## Official Packages
     -   [Bladesmith](packages/bladesmith.md)
     -   [Pages](packages/pages.md)
+    -   [2 Factor Authentication](packages/2fa.md)
     -   [Rehearsal](packages/rehearsal.md)
