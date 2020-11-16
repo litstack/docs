@@ -20,7 +20,7 @@ $form->verify('code');
 
 ![verify field](./screens/verify.gif)
 
-::: info
+::: tip
 
 If the authenticated user hasn't activated 2 factor authentication for his
 account. He is asked to verify the form using his password.
