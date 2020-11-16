@@ -15,7 +15,7 @@ With the verify field a form can be confirmed with a one time password become.
 ```php
 $form->input('header');
 
-$form->verify('code');
+$form->needsVerification(');
 ```
 
 ![verify field](./screens/verify.gif)
