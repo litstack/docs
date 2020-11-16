@@ -8,6 +8,25 @@
 
 A package to add 2 Factor Authentication to your litstack application.
 
+## The verify Field
+
+With the verify field a form can be confirmed with a one time password become.
+
+```php
+$form->input('header');
+
+$form->verify('code');
+```
+
+![verify field](./screens/verify.gif)
+
+::: info
+
+If the authenticated user hasn't activated 2 factor authentication for his
+account. He is asked to verify the form using his password.
+
+:::
+
 <!--
 ## Sponsorware
 
