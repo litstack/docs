@@ -51,6 +51,13 @@ using the method `crop`.
 $form->image('images')->title('Images')->crop(16 / 9);
 ```
 
+::: tip
+
+If no ratio is passed as a parameter to the crop method, the image can be freely
+cropped.
+
+:::
+
 ## Expand
 
 By default the images are displayed as a square. However, this view is not
