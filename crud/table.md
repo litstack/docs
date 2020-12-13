@@ -153,6 +153,16 @@ that connects the relation.
 
 :::
 
+## Form Fields
+
+In litstack form fields can be placed in table columns, this allows the user to
+edit attributes directly in the table similar to excel. Each column can contain
+only one form field.
+
+```php
+$table->field('Name')->input('{name}');
+```
+
 ## Action
 
 You may make [actions](actions.md) available directly in a table column:
