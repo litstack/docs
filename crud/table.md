@@ -121,6 +121,16 @@ Usefull **ISO 4217** codes:
 | `"CHF"` | Swiss Franc       | `"10,00 CHF"`     |
 | `"GGP"` | Pound             | `"10,00 £"`       |
 
+### Date
+
+To display a formatted date, you may use the `date` method. 
+A parameter with the desired formatting is required.
+
+```php
+$table->date('created_at', 'Y-m-d');
+```
+
+
 ## Reduce Width
 
 With the function `small` the column is reduced to the minimum width.
