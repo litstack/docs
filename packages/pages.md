@@ -113,7 +113,7 @@ collection:
 
 ```php
 use Ignite\Crud\Fields\Route;
-use Litsatck\Pages\Models\Page;
+use Litstack\Pages\Models\Page;
 
 Route::register('app', function($collection) {
     Page::collection('blog')->get()->addToRouteCollection('Blog', $collection);
