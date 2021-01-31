@@ -76,11 +76,11 @@ $form->map('lat', 'lng');
 
 ### Store Place Attributes
 
-The maps field let's you store additional information about places. This can be
-achieved by passing an array as a third parameter to the maps field, containting
-the desired attributes and the database column in which the attribute should be
-stored. In the following example the `formatted_address` would be stored in the
-`street` column.
+The maps field let's you store additional information about places to your
+Model. This can be achieved by passing an array as a third parameter to the maps
+field, containting the desired attributes and the database column in which the
+attribute should be stored. In the following example the `formatted_address`
+would be stored in the `street` column.
 
 ```php
 $form->map('lat', 'lng', [
