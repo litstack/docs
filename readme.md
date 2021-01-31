@@ -58,6 +58,7 @@ The online version of the documentation can be reached under
     -   [Javascript](frontend/javascript.md)
     -   [Vue](frontend/vue.md)
 -   ## Official Packages
+    -   [Location / Maps](packages/location.md)
     -   [Bladesmith](packages/bladesmith.md)
     -   [Pages](packages/pages.md)
     -   [2 Factor Authentication](packages/2fa.md)
