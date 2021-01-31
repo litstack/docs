@@ -7,7 +7,7 @@
 The location package ships with a google maps field that let's you benefit from
 the extensive places api, to search for location's or pick one from the map.
 
-![maps](./screens/maps.gif)
+![maps](./screens/maps.png)
 
 ## Maps Field
 
