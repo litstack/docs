@@ -47,6 +47,7 @@ The online version of the documentation can be reached under
     -   [WYSIWYG](fields/wysiwyg.md)
     -   [Validation](fields/validation.md)
     -   [Conditional Fields](fields/conditions.md)
+    -   [Masks](fields/masks.md)
 -   ## Charts
     -   [Basics](charts/basics.md)
     -   [Area Chart](charts/area.md)
