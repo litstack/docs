@@ -116,18 +116,35 @@ $form->relation('articles')
     });
 ```
 
-## Fields
+## Forms
 
 You can edit the **related attributes** in a modal by configuring fields in the
 form method:
 
 ```php
 $form->relation('articles')
-    ->title('Articles')
     ->form(function($form) {
         $form->wysiwyg('text')->title('text');
     });
 ```
+
+### Create A New Relationship Model
+
+You may also add a create form so the user can create new relationship models
+directly:
+
+```php
+$form->relation('articles')
+    ->create(function($form) {
+        $form->wysiwyg('text')->title('text');
+    });
+```
+
+::: tip
+
+Set a create and edit form using the `createAndUpdateForm`.
+
+:::
 
 ### Pivot Fields
 
@@ -138,6 +155,59 @@ Sometimes you may want to edit pivot data such as the `expired_at` date of a
 $field->form(function($form) {
     $form->pivot()->datetime('expires_at')->title('Expires At');
 });
+```
+
+## Inline Fields
+
+You may even add inline fields to your relationship table. The following example
+show's how to add an relationship to opening hours that can be created and
+edited directly:
+
+```php
+$form->relation('openingHours')
+	->title('Opening Hours')
+	->showTableHead()
+	->deleteUnlinked()
+	->hideRelationLink()
+	->names([
+		'singular' => 'Opening Hour',
+		'plural'   => 'Opening Hours',
+	])
+	->preview(function ($preview) {
+		$preview->col('Week Day')->value('{week_day}');
+
+		$preview->field('Opening Time')
+			->datetime('opening_time')
+			->onlyTime()
+			->minuteInterval(15);
+
+		$preview->field('Closing Time')
+			->datetime('closing_time')
+			->onlyTime()
+			->minuteInterval(15);
+	})
+	->create(function ($form) {
+		$form->select('week_day')
+			->title('Wochentag')
+			->options([
+				'monday' => 'Monday',
+				'tuesday' => 'Tuesday',
+				'wednesday' => 'Wednesday',
+				'thursday' => 'Thursday',
+				'friday' => 'Friday',
+				'saturday' => 'Saturday',
+				'sunday' => 'Sunday',
+			]);
+		$form->datetime('opening_time')
+			->onlyTime()
+			->minuteInterval(15)
+			->width(1 / 2);
+
+		$form->datetime('closing_time')
+			->onlyTime()
+			->minuteInterval(15)
+			->width(1 / 2);
+	});
 ```
 
 ## Eager Loading & Appending Accessors
@@ -157,15 +227,23 @@ $form->relation('articles')
     });
 ```
 
-## Allow Direct Delete
+## Allow Direct Unlink
 
-To switch off the modal in which deleting a relation is confirmed, `confirm`
+To switch off the modal in which unlinking a relation is confirmed, `confirm`
 must be set to false.
 
 ```php
 $form->relation('articles')
-    ->title('Articles')
     ->confirm(false);
+```
+
+## Delete Unlinked Model
+
+You may wish to delete a relation when it has been unlinked:
+
+```php
+$form->relation('articles')
+    ->deleteUnlinked();
 ```
 
 ## Tags
@@ -224,19 +302,24 @@ public function articles()
 
 ## Methods
 
-| Method                    | Description                                                                                               |
-| ------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `$field->title(')`        | The title description for this field.                                                                     |
-| `$field->hint(')`         | A short hint that should describe how to use the field.`                                                  |
-| `$field->width()`         | Width of the field.                                                                                       |
-| `$field->filter()`        | Initial query builder for the selectable relations.                                                       |
-| `$field->query()`         | Modify preview query with eager loads and accessors that should be displayed.                             |
-| `$field->preview()`       | A **closure** to define the table preview of the corresponding relation.                                  |
-| `$field->confirm()`       | Modal pops when unlinkin the relation and asks to confirm. (default: `true`)                              |
-| `$field->sortable()`      | Sortable relation (only works for `many` relations).                                                      |
-| `$field->maxItems()`      | Set a maximum number of selectable items (only works for `many` relations).                               |
-| `$field->showTableHead()` | Whether the table head should be shown. (default: `false`)                                                |
-| `$field->type()`          | The preview type (default: `table`) can be `tags` for **many relations** and `link` for **one relations** |
-| `$field->tagValue()`      | The attribute that should be displayed in the tag.                                                        |
-| `$field->tagVariant()`    | The bootstrap variant of the tag. (default: `info`)                                                       |
-| `$field->linkValue()`     | The attributes that should be displayed as the link.                                                      |
+| Method                          | Description                                                                                               |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `$field->title(')`              | The title description for this field.                                                                     |
+| `$field->hint(')`               | A short hint that should describe how to use the field.`                                                  |
+| `$field->width()`               | Width of the field.                                                                                       |
+| `$field->filter()`              | Initial query builder for the selectable relations.                                                       |
+| `$field->query()`               | Modify preview query with eager loads and accessors that should be displayed.                             |
+| `$field->preview()`             | A **closure** to define the table preview of the corresponding relation.                                  |
+| `$field->confirm()`             | Modal pops when unlinkin the relation and asks to confirm. (default: `true`)                              |
+| `$field->deleteUnlinked()`      | Deletes the relation Model after unlinking the relation. (default: `false`)                               |
+| `$field->sortable()`            | Sortable relation (only works for `many` relations).                                                      |
+| `$field->small()`               | Small table column height.                                                                                |
+| `$field->maxItems()`            | Set a maximum number of selectable items (only works for `many` relations).                               |
+| `$field->create()`              | Define form fields for a create form so users can crete new relationship models directly.                 |
+| `$field->form()`                | Define form fields so the user can update relation ship attributes.                                       |
+| `$field->createAndUpdateForm()` | Define the same form fields for `create` and `form`.                                                      |
+| `$field->showTableHead()`       | Whether the table head should be shown. (default: `false`)                                                |
+| `$field->type()`                | The preview type (default: `table`) can be `tags` for **many relations** and `link` for **one relations** |
+| `$field->tagValue()`            | The attribute that should be displayed in the tag.                                                        |
+| `$field->tagVariant()`          | The bootstrap variant of the tag. (default: `info`)                                                       |
+| `$field->linkValue()`           | The attributes that should be displayed as the link.                                                      |
