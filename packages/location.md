@@ -9,6 +9,59 @@ the extensive places api, to search for location's or pick one from the map.
 
 ![maps](./screens/maps.png)
 
+## Sponsorware
+
+Bladesmith was created by
+**[Lennart Carstens-Behrens](https://twitter.com/lennartcb)** under the
+**[Sponsorware license](https://github.com/sponsorware/docs)**.
+
+::: tip
+
+[Sponsor litstack](https://github.com/sponsors/litstack) to get access to this
+package.
+
+:::
+
+## Setup
+
+Add the Litstack repository to your application's composer.json file:
+
+```json
+"repositories": [
+    {
+        "type": "composer",
+        "url": "https://store.litstack.io"
+    }
+],
+```
+
+```shell
+composer require litstack/location
+```
+
+### Get A Google Api Key
+
+Now you need to get an api key to make use of google maps in your litstack
+project.
+
+-   Go to the
+    [Google credentials page](https://console.cloud.google.com/projectselector2/apis/credentials).
+-   Create an Api Key.
+-   Enable the following
+    [libraries](https://console.cloud.google.com/apis/library) for your newly
+    generated API Key
+    ([Maps Javascript API](https://console.cloud.google.com/apis/library/maps-backend.googleapis.com),
+    [Places API](https://console.cloud.google.com/apis/library/places-backend.googleapis.com))
+
+The api key must now be added to your config under
+`lit.location.google_api_key`:
+
+```php{config/lit.php}
+'location' => [
+	'google_api_key' => env('GOOGLE_MAPS_API_KEY'),
+],
+```
+
 ## Maps Field
 
 The maps field let's the user pick location by searching for it or clicking
