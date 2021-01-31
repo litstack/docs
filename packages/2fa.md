@@ -6,7 +6,8 @@
 
 ## Introduction
 
-A package to add 2 Factor Authentication to your litstack application.
+A package to add 2 Factor Authentication to your litstack application. Secure
+the login or the submitting of forms.
 
 ## The verify Field
 
