@@ -51,6 +51,8 @@ $form->datetime('publish_at')
 | `$field->formatted('LL')`           | The shown datetime format. (Usefull formats listed below.)       |
 | `$field->hint('Pick a date.')`      | A closure where all repeatable blocks are defined.               |
 | `$field->onlyDate()`                | Pick date only (default: `true`).                                |
+| `$field->onlyTime()`                | Pick time only (default: `false`).                               |
+| `$field->minuteInterval(15)`        | Timepicker minute interval (default: `5`).                       |
 | `$field->width(1/2)`                | Width of the field.                                              |
 | `$field->rules('required')`         | Rules that should be applied when **updating** and **creating**. |
 | `$field->creationRules('required')` | Rules that should be applied when **creating**.                  |
