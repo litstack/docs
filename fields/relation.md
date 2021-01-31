@@ -163,6 +163,8 @@ You may even add inline fields to your relationship table. The following example
 show's how to add an relationship to opening hours that can be created and
 edited directly:
 
+![Relation Inline Fields](./screens/relation/inline.png 'Relation Inline Fields')
+
 ```php
 $form->relation('openingHours')
 	->title('Opening Hours')
