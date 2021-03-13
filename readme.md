@@ -60,6 +60,7 @@ The online version of the documentation can be reached under
     -   [Vue](frontend/vue.md)
 -   ## Official Packages
     -   [Location / Maps](packages/location.md)
+    -   [Meta](packages/meta.md)
     -   [Bladesmith](packages/bladesmith.md)
     -   [Pages](packages/pages.md)
     -   [2 Factor Authentication](packages/2fa.md)
