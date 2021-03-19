@@ -90,21 +90,33 @@ public function show(CrudShow $page)
 
 ## Preview
 
-Sometimes you may want to provide a direct **preview** on the edit page of a
-crud. This can be done by passing the route that shows the edited content to the
-preview method:
+![preview](./screens/preview.gif 'preview')
+
+You may want to provide a direct **preview** of the crud's associated page. This
+can be done using the `preview` method in your crud or form like this:
 
 ```php
 use Ignite\Crud\CrudShow;
 
 public function show(CrudShow $page)
 {
-    $page->preview(function($article = null) {
-        return route('articles.show', [
-            'article' => $article->id ?? 0
+    $page->preview(function($post = null, $locale) {
+        return route('posts.show', [
+            'slug' => $post->slug ?? ''
         ]);
     });
 }
+```
+
+You may even provide a route for every language, so the user gets a preview for
+all languages:
+
+```php
+$page->preview(function($post = null, $locale) {
+    return route($locale.'.posts.show', [
+        'slug' => $post->translate($locale)->slug ?? ''
+    ]);
+});
 ```
 
 ### Default Device

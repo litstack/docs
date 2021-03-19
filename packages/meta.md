@@ -21,8 +21,8 @@ php artisan migrate
 
 ## Usage
 
-Start by perparing your Crud-Model by using the `HasMeta` Trait and implement
-the `metaable` Contract:
+Start by perparing your Model by using the `HasMeta` Trait and implement the
+`metaable` Contract:
 
 ```php
 use Litstack\Meta\Metaable;
@@ -75,70 +75,3 @@ component and pass it the `metaFields` of your model.
 ```
 
 ## Default Values / Customizing / Overriding
-
-If you want to use meta attributes directly from model attributes you can
-specify them in `metaAttributes` in your config. You may as well override the
-meta methods like `metaAuthor` to return dynamic meta attributes:
-
-```php
-class Post extends Model implements Metaable
-{
-    use HasMeta;
-
-    protected $metaAttributes = [
-        'author' => 'author.name',
-        'image'  => 'header_image',
-    ];
-
-    public function getHeaderImageAttribute()
-    {
-        // ...
-    }
-
-    public function metaTitle(): ?string
-    {
-        // Return a prefix:
-        return "Awesome Blog: " . parent::metaTitle();
-    }
-}
-```
-
-You may set default attributes by setting `defaultMetaAttributes` or add a
-method `defaultMeta...` method:
-
-```php
-class Post extends Model implements Metaable
-{
-    use HasMeta;
-
-    protected $defaultMetaAttribute = [
-        'description' => 'description',
-    ];
-
-    public function defaultMetaTitle()
-    {
-
-    }
-}
-```
-
-The same works for forms:
-
-```php
-class HomeConfig extends FormConfig
-{
-    // ...
-
-    protected $metaAttributes = [
-        'title' => 'foo',
-    ];
-
-    public function show(CrudShow $page)
-    {
-        $page->card(function($form) {
-            $form->input('foo');
-        });
-        $this->meta($page);
-    }
-}
-```
