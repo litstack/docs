@@ -123,13 +123,12 @@ Usefull **ISO 4217** codes:
 
 ### Date
 
-To display a formatted date, you may use the `date` method. 
-A parameter with the desired formatting is required.
+To display a formatted date, you may use the `date` method. A parameter with the
+desired formatting is required.
 
 ```php
 $table->date('created_at', 'Y-m-d');
 ```
-
 
 ## Reduce Width
 
@@ -268,6 +267,27 @@ use Lit\Config\Crud\ProductConfig;
 $table->relation('product', ProductConfig::class)
     ->value('{product.name}') // Related attribute to be displayed.
     ->sortBy('product.name');
+```
+
+### MorphTo
+
+I case your relationship is of the type
+[MorphTo](https://laravel.com/docs/8.x/eloquent-relationships#one-to-many-polymorphic-model-structure),
+you need to apply the config classes and values for all models like this:
+
+```php
+use App\Models\Post;
+use App\Models\Video;
+use Lit\Config\Crud\PostConfig;
+use Lit\Config\Crud\VideoConfig;
+
+$table->relation('commentable', [
+    Post::class  => PostConfig::class,
+    Video::class => VideoConfig::class,
+])->value([
+    Post::class  => '{commentable.title}',
+    Video::class => '{commentable.title}',
+]);
 ```
 
 ## Toggle
