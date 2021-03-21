@@ -172,6 +172,8 @@ only one form field.
 $table->field('Name')->input('{name}');
 ```
 
+If you want to modify the
+
 ## Action
 
 You may make [actions](actions.md) available directly in a table column:
@@ -181,6 +183,17 @@ use Lit\Actions\SendMailAction;
 
 $table->action('Send Mail', SendMailAction::class)->label('Mail');
 ```
+
+::: tip
+
+Use conditions to only show actions for certain models:
+
+```php
+$table->action('Cancel', CancelBookingAction::class)
+    ->whenNot('state', 'canceled');
+```
+
+:::
 
 ### Multiple Actions
 
@@ -303,6 +316,18 @@ $table->toggle('active')
     ->label('Live')
     ->sortBy('active');
 ```
+
+::: warning
+
+Please use an inline `boolean` form field instead of the toggle column since it
+might be dropped in **4.x**.
+
+```php
+$table->field('Live', fn($column) => $column->sortBy('active'))
+    ->boolean('active');
+```
+
+:::
 
 ## Blade View
 

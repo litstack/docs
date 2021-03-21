@@ -62,25 +62,6 @@ Blade.
 
 ![Page with View](./screens/page_view.jpg 'Page with View')
 
-## Livewire
-
-Add livewire components to your page:
-
-```php
-$page = new Page;
-
-$page->livewire('counter');
-
-return $page->title('My Page');
-```
-
-:::tip
-
-Create livewire components in your `lit/app/Http` folder by using the
-`lit:livewire` command.
-
-:::
-
 ## Component
 
 Just like Blade Views, Vue components can be easily integrated into your page.

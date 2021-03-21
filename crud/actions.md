@@ -135,7 +135,8 @@ public function run(Collection $models, AttributeBag $attributes)
 
 ### In a Table
 
-There are multiple places where an `action` can be displayed in a table, first of all an action can be executed for all selected items:
+There are multiple places where an `action` can be displayed in a table, first
+of all an action can be executed for all selected items:
 
 ```php
 // CrudConfig
@@ -149,7 +150,9 @@ public function index(CrudIndex $page)
 }
 ```
 
-Additionally actions can be displayed in table columns to make important actions more accessible. You can add either one action as a button or several actions as dropdown to a column:
+Additionally actions can be displayed in table columns to make important actions
+more accessible. You can add either one action as a button or several actions as
+dropdown to a column:
 
 ```php
 use Lit\Actions\MyAction;
@@ -157,16 +160,15 @@ use Lit\Actions\OtherAction;
 
 $page->table(function($table) {
     // Single action as button:
-    $table->action('My Action', MyAction::class); 
-    
+    $table->action('My Action', MyAction::class);
+
     // Multiple actions as dropdown:
     $table->actions([
         'My Action' => MyAction::class,
         'Other Action' => OtherAction::class,
-    ]); 
+    ]);
 });
 ```
-
 
 ### On a Page
 
@@ -191,8 +193,30 @@ public function show(CrudShow $page)
 }
 ```
 
+You may even place it somewhere on your page:
+
+```php
+$page->card(function($page) {
+    $page->action('My Action', MyAction::class);
+});
+```
+
 The `variant` of the actions that are displayed as buttons can be adjusted:
 
 ```php
-$page->headerLeft()->action('My Action', MyAction::class)->variant('outline-primary');
+$page->headerLeft()
+    ->action('My Action', MyAction::class)
+    ->variant('outline-primary');
+```
+
+## Conditional Actions
+
+You may want to display actions depending on the value of a model attribute.
+This can be achieved by applying any of the existing
+[field dependencies](../fields/conditions.md#usage) to your action like this:
+
+```php
+$page->headerLeft()
+    ->action('cancel', CancelBookingAction::class)
+    ->whenNot('state', 'canceled');
 ```

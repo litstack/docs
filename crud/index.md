@@ -17,12 +17,11 @@ public function index(CrudIndex $page)
 
 `Ignite\Crud\CrudIndex` is an instance of `Ignite\Page\Page` so all functions
 described in the [Page](../basics/page.md) documentation can be used. This
-includes bindung Vue components, Blade views or Livewire components to a page:
+includes bindung Vue components or Blade views components to a page:
 
 ```php
 $page->component('foo'); // Vue component
 $page->view('foo'); // Blade view
-$page->livewire('foo'); // Livewire component
 ```
 
 In the Config for a CRUD model its index table is defined.
