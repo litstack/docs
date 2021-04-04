@@ -7,6 +7,7 @@ The online version of the documentation can be reached under
 
 -   ## Prologue
     -   [About](prologue/about.md)
+    -   [Artwork](prologue/art.md)
     -   [Upgrade Guide](prologue/upgrade.md)
     -   [Contribution](prologue/contribution.md)
     -   [Sponsorware](prologue/sponsorware.md)

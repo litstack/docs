@@ -26,13 +26,13 @@ designer (Head of design at Alle Wetter) Uwe Steffens. Grüße an dich Uwe!
 In the middle of 2018 we thought for the first time about building our own cms.
 Requirements in projects became more complex and none of the existing systems
 offered a satisfactory solution. At that time we couldn't have imagined what
-would be develope from this idea now two years later: **litstack**. Along the way,
-we tried things out, rejected ideas and looked for the best ways to create a
-system that would meet both, developer & user experience: A clear and appealing
-user interface and a beginner-friendly yet powerful backend. The love for detail
-also cost a lot of time and nightly sessions. But we are more than happy
-with what has come out of it and that we can contribute to the **Open-Source**
-world with this project.
+would be develope from this idea now two years later: **litstack**. Along the
+way, we tried things out, rejected ideas and looked for the best ways to create
+a system that would meet both, developer & user experience: A clear and
+appealing user interface and a beginner-friendly yet powerful backend. The love
+for detail also cost a lot of time and nightly sessions. But we are more than
+happy with what has come out of it and that we can contribute to the
+**Open-Source** world with this project.
 
 On our way we always found immediate application in customer projects and the
 positive feedback motivated us in continuing our work.
@@ -40,9 +40,9 @@ positive feedback motivated us in continuing our work.
 ### From CMS to Admin Panel
 
 After some time the idea of a **cms** changed to an **admin panel**, which has
-the possibility to perform the task of a cms. The management of data is the
-main problem to be solved in a modern web app. Be it an **API** or **internal
-product managing**. Everything is covered by an administration panel.
+the possibility to perform the task of a cms. The management of data is the main
+problem to be solved in a modern web app. Be it an **API** or **internal product
+managing**. Everything is covered by an administration panel.
 
 ## Our Goal
 
