@@ -22,6 +22,13 @@ displayed as attribute.
 
 ![Field Validation](./screens/validation/validation_1.png 'Lit field validation')
 
+::: tip
+
+litstack only sends fields that have changed via the api. So keep in mind that
+you propably want add the `required` rule to `creationRules`.
+
+:::
+
 ## Update Rules
 
 All rules specified via the method `rules` apply to the creation and updating of
