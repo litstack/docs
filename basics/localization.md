@@ -23,6 +23,16 @@ return [
 ];
 ```
 
+## Configuration
+
+### Translating Litstack
+
+Translations of the admin panel are managed in the [litstack/lang](https://github.com/litstack/lang) repository, if it doesn't contain your language, you are welcome to contribute. The languages in which your admin panel should be translatable can be specified in the `lit.translatable` config.
+
+### Translating App
+
+You can configure the translatability of your app in the `config/translatable.php` config. If more than one locale is specified, form fields can be edited in multiple languages.
+
 ## PHP
 
 To compile for the locale of the admin interface the `__lit()` helper method is
