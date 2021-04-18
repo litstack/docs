@@ -27,6 +27,7 @@ The online version of the documentation can be reached under
     -   [Show Config](crud/show.md)
     -   [Table](crud/table.md)
     -   [Actions](crud/actions.md)
+    -   [Search](crud/search.md)
 -   ## Fields
     -   [Introduction](fields/introduction.md)
     -   [Block](fields/block.md)
