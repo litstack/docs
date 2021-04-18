@@ -35,7 +35,7 @@ You can configure the translatability of your app in the `config/translatable.ph
 
 ## PHP
 
-To compile for the locale of the admin interface the `__lit()` helper method is
+To translate your admin panel using the locale of the authenticated litstack user the `__lit()` helper method is
 used, just like `__()` from laravel's
 [localization](https://laravel.com/docs/7.x/localization#retrieving-translation-strings).
 
