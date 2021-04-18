@@ -2,12 +2,12 @@
 
 ## Introduction
 
-The application can be managed multilingual. The translation in the frontend can
+The application can be managed multilingual. The translation of your admin panel can
 be done in `php` using
 [laravel's localization](https://laravel.com/docs/7.x/localization) service or
 in `vue` using
 [vue-i18n](https://kazupon.github.io/vue-i18n/docs/formatting.html). It uses the
-syntax of **laravel**. All translation strings are formatted so they can be used
+**laravel** syntax for translation string. All translation strings are formatted so they can be used
 in `vue-i18n` as well.
 
 In Laravel applications that include the package, there are **two** different
