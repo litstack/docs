@@ -44,7 +44,7 @@ class OrderConfig extends CrudConfig
 And finally register the crud config to your search in the created
 `SearchConfig`:
 
-```php
+```php{lit/app/Config/SearchConfig.php}
 public function main(Search $search)
 {
     $search
