@@ -10,7 +10,7 @@ in `vue` using
 **laravel** syntax for translation string. All translation strings are formatted so they can be used
 in `vue-i18n` as well.
 
-In Laravel applications that include the package, there are **two** different
+In Laravel applications that include the litstack package, there are **two** different
 locales, one for your website and one for the admin application. So for example,
 a user can manage german content in the admin application and still see the
 interface in the english version.
