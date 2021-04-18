@@ -2,15 +2,15 @@
 
 ## Introduction
 
-The application can be managed multilingual. The translation in the frontend can
+The application can be managed multilingual. The translation of your admin panel can
 be done in `php` using
 [laravel's localization](https://laravel.com/docs/7.x/localization) service or
 in `vue` using
 [vue-i18n](https://kazupon.github.io/vue-i18n/docs/formatting.html). It uses the
-syntax of **laravel**. All translation strings are formatted so they can be used
+**laravel** syntax for translation string. All translation strings are formatted so they can be used
 in `vue-i18n` as well.
 
-In Laravel applications that include the package, there are **two** different
+In Laravel applications that include the litstack package, there are **two** different
 locales, one for your website and one for the admin application. So for example,
 a user can manage german content in the admin application and still see the
 interface in the english version.
@@ -23,9 +23,25 @@ return [
 ];
 ```
 
+## Configuration
+
+### Translating Litstack
+
+Translations of the admin panel are managed in the [litstack/lang](https://github.com/litstack/lang) repository, if it doesn't contain your language, you are welcome to contribute. The languages in which your admin panel should be translatable can be specified in the `lit.translatable` config.
+
+### Translating App
+
+You can configure the translatability of your app in the `config/translatable.php` config. 
+
+::: tip
+
+If more than one locale is specified, form fields can be edited in multiple languages.
+
+:::
+
 ## PHP
 
-To compile for the locale of the admin interface the `__lit()` helper method is
+To translate your admin panel using the locale of the authenticated litstack user, the `__lit()` helper method is
 used, just like `__()` from laravel's
 [localization](https://laravel.com/docs/7.x/localization#retrieving-translation-strings).
 

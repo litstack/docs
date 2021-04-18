@@ -255,7 +255,7 @@ class Post extends Model
 
     protected $fillable = ['title'];
 
-    public function sluggable()
+    public function sluggable(): array
     {
         return [
             'slug' => [
