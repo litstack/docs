@@ -31,7 +31,13 @@ Translations of the admin panel are managed in the [litstack/lang](https://githu
 
 ### Translating App
 
-You can configure the translatability of your app in the `config/translatable.php` config. If more than one locale is specified, form fields can be edited in multiple languages.
+You can configure the translatability of your app in the `config/translatable.php` config. 
+
+::: tip
+
+If more than one locale is specified, form fields can be edited in multiple languages.
+
+:::
 
 ## PHP
 
