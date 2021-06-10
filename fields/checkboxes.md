@@ -40,9 +40,9 @@ protected $casts = [
 | ----------------------------------- | ---------------------------------------------------------------------- |
 | `$field->title('Foo')`              | The title description for this field.                                  |
 | `$field->hint('Foo.')`              | A short hint that should describe how to use the field.`               |
-| `$field->info('...')`               | Questionmark with tooltip. (Can contain longer field descriptions)     |
+| `$field->info('...')`               | Question mark with tooltip. (Can contain longer field descriptions)     |
 | `$field->width(1/2)`                | Width of the field.                                                    |
-| `$field->options(['foo', 'bar'])`   | An array with checkboxe values and descriptions.                       |
+| `$field->options(['foo', 'bar'])`   | An array with checkbox values and descriptions.                       |
 | `$field->stacked()`                 | Places each checkbox one over the other instead of next to each other. |
 | `$field->rules('required')`         | Rules that should be applied when **updating** and **creating**.       |
 | `$field->creationRules('required')` | Rules that should be applied when **creating**.                        |

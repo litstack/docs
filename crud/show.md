@@ -16,7 +16,7 @@ public function show(CrudShow $page)
 
 `Ignite\Crud\CrudShow` is an instance of `Ignite\Page\Page` so all functions
 described in the [Page](../basics/page.md) documentation can be used. This
-includes bindung Vue components or Blade views to a page:
+includes binding Vue components or Blade views to a page:
 
 ```php
 $page->component('foo'); // Vue component
@@ -54,7 +54,7 @@ You may customize your card with the following options:
 | --------------------- | ------------------------------------------------------------------- |
 | `$card->title('Foo')` | The title description for the card.                                 |
 | `$card->width(1/2)`   | Width of the card.                                                  |
-| `$card->secondary()`  | Give's your card a secondary background, for less important content |
+| `$card->secondary()`  | Gives your card a secondary background, for less important content |
 
 ## Group
 

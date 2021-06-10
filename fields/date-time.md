@@ -48,7 +48,7 @@ $form->datetime('publish_at')
 | Method                              | Description                                                      |
 | ----------------------------------- | ---------------------------------------------------------------- |
 | `$field->title('Publish At')`       | The title description for this field.                            |
-| `$field->formatted('LL')`           | The shown datetime format. (Usefull formats listed below.)       |
+| `$field->formatted('LL')`           | The shown datetime format. (Useful formats listed below.)       |
 | `$field->hint('Pick a date.')`      | A closure where all repeatable blocks are defined.               |
 | `$field->onlyDate()`                | Pick date only (default: `true`).                                |
 | `$field->onlyTime()`                | Pick time only (default: `false`).                               |
@@ -60,7 +60,7 @@ $form->datetime('publish_at')
 
 ## Formats
 
-Usefull formats:
+Useful formats:
 
 | Key    | Example Result                   |
 | ------ | -------------------------------- |

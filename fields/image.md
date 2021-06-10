@@ -129,10 +129,10 @@ $form->image('images')->title('Images')->maxFileSize(25);
 | `$field->title('Image')`   | The title for this form field.                                     |
 | `$field->translatable()`   | Should the field be translatable.                                  |
 | `$field->hint('Foo.')`     | A short hint that should describe how to use the form field.`      |
-| `$field->info('...')`      | Questionmark with tooltip. (Can contain longer field descriptions) |
+| `$field->info('...')`      | Question mark with tooltip. (Can contain longer field descriptions) |
 | `$field->width(1/2)`       | Width of the form field.                                           |
 | `$field->sortable()`       | Should the images be sortable? (default: `true`)                   |
-| `$field->maxFiles(1)`      | Maxmium number of uploadable images. (default: `5`)                |
+| `$field->maxFiles(1)`      | Maximum number of uploadable images. (default: `5`)                |
 | `$field->maxFileSize(100)` | Maximum file size. (default: `12`)                                 |
 | `$field->expand()`         | Expand the preview image to its full width.                        |
 | `$field->crop(16/9)`       | Opens a Crop-Tool before the upload. (default: `false`)            |

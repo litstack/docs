@@ -44,9 +44,9 @@ $modal->password('password_confirmation')
 | `$field->title('Password')`          | The title description for this field.                                          |
 | `$field->placeholder('Password')`    | The placeholder for this field.                                                |
 | `$field->hint('Choose a Password.')` | A short hint that should describe how to use the field.`                       |
-| `$field->info('...')`                | Questionmark with tooltip. (Can contain longer field descriptions)             |
+| `$field->info('...')`                | Question mark with tooltip. (Can contain longer field descriptions)             |
 | `$field->width(1/2)`                 | Width of the field.                                                            |
-| `$field->confirm()`                  | Requires the user to type in the current passwort to confirm update or create. |
+| `$field->confirm()`                  | Requires the user to type in the current password to confirm update or create. |
 | `$field->rulesOnly()`                | The password wont be stored, only validation rules are used.                   |
 | `$field->rules('min:5')`             | Rules that should be applied when **updating** and **creating**.               |
 | `$field->creationRules('min:5')`     | Rules that should be applied when **creating**.                                |

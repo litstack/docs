@@ -34,7 +34,7 @@ $form->select('article_id')
 | `$field->title()`         | The title description for this field.                                  |
 | `$field->options()`       | An array with the options, can be a simple array or key => value pairs |
 | `$field->hint()`          | A short hint that should describe how to use the field.`               |
-| `$field->info()`          | Questionmark with tooltip. (Can contain longer field descriptions)     |
+| `$field->info()`          | Question mark with tooltip. (Can contain longer field descriptions)     |
 | `$field->width()`         | Width of the field.                                                    |
 | `$field->rules()`         | Rules that should be applied when **updating** and **creating**.       |
 | `$field->creationRules()` | Rules that should be applied when **creating**.                        |

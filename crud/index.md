@@ -17,7 +17,7 @@ public function index(CrudIndex $page)
 
 `Ignite\Crud\CrudIndex` is an instance of `Ignite\Page\Page` so all functions
 described in the [Page](../basics/page.md) documentation can be used. This
-includes bindung Vue components or Blade views components to a page:
+includes binding Vue components or Blade views components to a page:
 
 ```php
 $page->component('foo'); // Vue component
@@ -46,7 +46,7 @@ The [table config](table.md) describes how columns with **images**,
 
 ## Eager Loading
 
-Eager loadings can be performend in the `query` method. Here you can modify the
+Eager loadings can be performed in the `query` method. Here you can modify the
 query that is executed when loading the index table items.
 
 ```php
@@ -169,7 +169,7 @@ $page->table(...)
 
 To add filters with form fields like e.g. `checkboxes` or `date` pickers you can
 create custom filters. A filter is generated via the artisan command
-`lit:fitler`:
+`lit:filter`:
 
 ```shell
 php artisan lit:filter MyCustomFilter
@@ -238,7 +238,7 @@ public function form(FilterForm $form)
 }
 ```
 
-#### Apply Field Attribtues To The Query
+#### Apply Field Attributes To The Query
 
 The next thing you want to do is to apply the field attributes to the query:
 

@@ -75,7 +75,7 @@ $repeatables->add('text', function($form, $preview) {
 
 ## Reusable Repeatables
 
-Sometimes you want to use repeatables in different places. Resuable repeatables
+Sometimes you want to use repeatables in different places. Reusable repeatables
 can be created using the `lit:repeatable` command. The **preview** and **form**
 can then be configured in the newly generated class in the `lit/app/Repeatables`
 directory.

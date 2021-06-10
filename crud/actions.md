@@ -43,7 +43,7 @@ public function run(Collection $models)
 }
 ```
 
-There is a helper for each vairant:
+There is a helper for each variant:
 
 ```php
 return response()->success('My message.');

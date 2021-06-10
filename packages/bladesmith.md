@@ -135,7 +135,7 @@ Customize the navigation using the following options
 
 | Method        | Description                                                            |
 | ------------- | ---------------------------------------------------------------------- |
-| `layout`      | Can be `horizontal` or `vertical`. (default is `vertial`)              |
+| `layout`      | Can be `horizontal` or `vertical`. (default is `vertical`)             |
 | `dropdown`    | Wether the navigation should be a dropdown menue on `mouseover`.       |
 | `depth`       | Max depth.                                                             |
 | `subLevel`    | Start depth.                                                           |
@@ -147,7 +147,7 @@ Customize the navigation using the following options
 
 Build translated routes in the form of `/en/home`, `/de/startseite` made easy.
 
-Make shure to translate your routes within your translation-files in the
+Make sure to translate your routes within your translation-files in the
 `resources` directory, for example:
 
 ```php
@@ -224,7 +224,7 @@ class MyController extends Controller
 
 ### Language Switch
 
-The Blade componend `x-lit-localize` creates a link to the translated routes of
+The Blade component `x-lit-localize` creates a link to the translated routes of
 all locales.
 
 ```html

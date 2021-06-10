@@ -17,7 +17,7 @@ Hello there! We are very happy that you are stopping by. **We** are Jannes
 Behrens and Lennart Carstens-Behrens, two cousins from northern Germany who work
 together at the [Alle Wetter](https://aw-studio.de) Studio for Design and
 Development. We are passionate developers and have been working together for
-years on hobby projects and continued our colaboration shortly after Jannes and
+years on hobby projects and continued our collaboration shortly after Jannes and
 Gerrit founded Alle Wetter in 2016. The artwork is made by our experienced
 designer (Head of design at Alle Wetter) Uwe Steffens. Grüße an dich Uwe!
 
@@ -47,7 +47,7 @@ managing**. Everything is covered by an administration panel.
 ## Our Goal
 
 With litstack we try to simplify our life as developers, since we use it daily
-and continously change or improve things due to our customers needs.
+and continuously change or improve things due to our customers needs.
 Additionally we want to provide an attractive frontend that is not only clear
 but also fun to use.
 

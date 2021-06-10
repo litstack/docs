@@ -61,10 +61,10 @@ $form->relation('articles')
 
 You may load and display data from the pivot table of a many to many relation.
 
-In the following example we want to display when a subscrition of a user
+In the following example we want to display when a subscription of a user
 expires:
 
-First load the pivot data by specifing the desired columns in the `withPivot`
+First load the pivot data by specifying the desired columns in the `withPivot`
 method:
 
 ```php
@@ -273,7 +273,7 @@ process of creating a new migration to add the required columns/tables. For this
 there is the `oneRelation` and `manyRelation`. They can simply be added to your
 Models or Forms.
 
-The following example shows the simplep setup of a the relation field that works
+The following example shows the simple setup of a the relation field that works
 for both:
 
 ```php
@@ -312,7 +312,7 @@ public function articles()
 | `$field->filter()`              | Initial query builder for the selectable relations.                                                       |
 | `$field->query()`               | Modify preview query with eager loads and accessors that should be displayed.                             |
 | `$field->preview()`             | A **closure** to define the table preview of the corresponding relation.                                  |
-| `$field->confirm()`             | Modal pops when unlinkin the relation and asks to confirm. (default: `true`)                              |
+| `$field->confirm()`             | Modal pops when unlinking the relation and asks to confirm. (default: `true`)                              |
 | `$field->deleteUnlinked()`      | Deletes the relation Model after unlinking the relation. (default: `false`)                               |
 | `$field->sortable()`            | Sortable relation (only works for `many` relations).                                                      |
 | `$field->small()`               | Small table column height.                                                                                |

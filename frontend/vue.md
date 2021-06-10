@@ -49,7 +49,7 @@ Run `npm run watch` and you are good to go.
 
 ::: warning
 
-Dont forget to compile your assets every time you **update** the package.
+Don't forget to compile your assets every time you **update** the package.
 
 :::
 

@@ -12,7 +12,7 @@ that should be used for this field. Additionally a **title** is required.
 ```php
 $form->route('route')
     ->collection('app')
-    ->title('Picke a Url');
+    ->title('Pick an Url');
 ```
 
 ## Route Collection
@@ -34,7 +34,7 @@ Route::register('app', function($collection) {
 
 The selectable routes are configured in the closure using the `route` method.
 The first parameter is the **title** that represents the route followed by an
-idendifier and a function that returns the actual route.
+identifier and a function that returns the actual route.
 
 ```php
 $collection->route('Home', 'home', function() {

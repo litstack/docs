@@ -68,7 +68,7 @@ The maps field let's the user pick location by searching for it or clicking
 somewhere on the map.
 
 The map field requires 2 parameters, the first one is the name of the latitude
-attribute, the second parameter is the longitute attribute name.
+attribute, the second parameter is the longitude attribute name.
 
 ```php
 $form->map('lat', 'lng');
@@ -78,7 +78,7 @@ $form->map('lat', 'lng');
 
 The maps field let's you store additional information about places to your
 Model. This can be achieved by passing an array as a third parameter to the maps
-field, containting the desired attributes and the database column in which the
+field, containing the desired attributes and the database column in which the
 attribute should be stored. In the following example the `formatted_address`
 would be stored in the `street` column.
 
@@ -95,7 +95,7 @@ The following attributes are available:
 | `formatted_address` | The formatted address name.   |
 | `street_number`     | The location's street number. |
 | `street_name`       | The location's street name.   |
-| `state`             | The locaiton's state.         |
+| `state`             | The location's state.         |
 | `city`              | The location's city name.     |
 | `country`           | The location's country.       |
 | `postal_code`       | The location's postal code.   |
