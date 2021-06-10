@@ -13,7 +13,7 @@ The administrative views of a model include two views. An index view with a
 table and a detail view in which information for a single model can be displayed
 or edited. These are configured in litstack in the so-called configs. The
 `./lit/app/Config/Crud` directory contains all configuration files for your
-CRUD-Models. Each model may have one or more config giles.
+CRUD-Models. Each model may have one or more config files.
 
 ::: tip
 
