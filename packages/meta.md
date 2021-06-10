@@ -21,7 +21,7 @@ php artisan migrate
 
 ## Usage
 
-Start by perparing your Model by using the `HasMeta` Trait and implement the
+Start by preparing your Model by using the `HasMeta` Trait and implement the
 `metaable` Contract:
 
 ```php

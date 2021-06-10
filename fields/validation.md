@@ -25,7 +25,7 @@ displayed as attribute.
 ::: tip
 
 litstack only sends fields that have changed when saving. So keep in mind that
-you propably want add the `required` rule to `creationRules`.
+you probably want add the `required` rule to `creationRules`.
 
 :::
 

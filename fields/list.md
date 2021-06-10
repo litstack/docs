@@ -56,7 +56,7 @@ $form->list('menue')
     });
 ```
 
-## Retreive Data
+## Retrieve Data
 
 ## Methods
 

@@ -3,12 +3,12 @@
 ## Introduction
 
 Pages are a fundamental part of the package. They provide a convenient and yet
-powerfull way to configure pages for the Vue application in PHP. They can be
+powerful way to configure pages for the Vue application in PHP. They can be
 used to integrate **Blade Views**, **Vue components** or ready-made components
 such as **charts** or form fields for models.
 
 Pages are used to configure forms with fields, index pages, dashboards with
-charts or basicly any kind of page for the admin backend.
+charts or basically any kind of page for the admin backend.
 
 ## Create a Page
 

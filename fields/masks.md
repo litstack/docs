@@ -17,7 +17,7 @@ $form->input('credit_card')->mask([
 ]);
 ```
 
-Checkout some usefull masks on
+Checkout some useful masks on
 [nosir.github.io/cleave.js](https://nosir.github.io/cleave.js/).
 
 ## Add Addons
@@ -49,7 +49,7 @@ $form->input('phone_number')->mask([
 ## Conditional Options
 
 You may use attribute values to add conditional options by adding the attribute
-in curley brackets:
+in curly brackets:
 
 ```php
 $form->select('country')->options([

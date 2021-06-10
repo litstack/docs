@@ -215,7 +215,7 @@ depending on the set **locale**:
 
 ```php
 app()->setLocale('en');
-echo $post->title; // Echo's englisch value.
+echo $post->title; // Echo's english value.
 
 app()->setLocale('de');
 echo $post->title; // Echo's german value.
@@ -283,7 +283,7 @@ when using **translatable** Models.
 ## Fill Model On Create & Update
 
 You may want fill attributes to the model before it gets created or updated from
-the user via a crud form. This can be achieved by modifing the Model in either
+the user via a crud form. This can be achieved by modifying the Model in either
 `fillOnStore` or `fillOnUpdate` the crud controller.
 
 The following example show's how to assign an author to a post by setting the
@@ -342,7 +342,7 @@ php artisan lit:permissions
 
 ### Apply Permissions
 
-The controller that comes with the crud contains the authozire method. The
+The controller that comes with the crud contains the authorize method. The
 second parameter is the operation to be executed. So now we can check if the
 authenticated user has the permission to operate on the group `posts` by
 returning `$user->can("{$operation} posts")`:

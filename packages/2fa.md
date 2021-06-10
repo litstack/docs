@@ -87,7 +87,7 @@ class AddTwoFaColumnsToLitUsersTable extends Migration
 }
 ```
 
-Execute the migraton:
+Execute the migration:
 
 ```shell
 php artisan migrate

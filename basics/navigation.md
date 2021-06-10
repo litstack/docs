@@ -32,7 +32,7 @@ application, such as language and/or permissions.
 
 ### Main
 
-The **main** navigation is inteded to provide quick access to the important
+The **main** navigation is intended to provide quick access to the important
 components of your application. These could be for example Models or page
 content. Entries of the main navigation can be divided into
 [sections](#sections), additionally [groups](#groups) can be created which are

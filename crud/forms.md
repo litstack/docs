@@ -119,7 +119,7 @@ $home = HomeConfig::load();
 echo $home->title;
 ```
 
-### Retrive A Full Collection
+### Retrieve A Full Collection
 
 It is also possible to load all data for a collection as shown in the example:
 

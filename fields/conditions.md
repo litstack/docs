@@ -26,14 +26,14 @@ $form->input('news_title')
     ->when('type, 'news');
 ```
 
-A varity of conditions are available for any field:
+A variety of conditions are available for any field:
 
 | Condition                                   | Description                                 |
 | ------------------------------------------- | ------------------------------------------- |
 | `$field->when('type', 'foo')`               | Matches the exact given value.              |
-| `$field->whenNot('type', 'foo')`            | When field doesnt match the given value.    |
+| `$field->whenNot('type', 'foo')`            | When field doesn't match the given value.    |
 | `$field->whenContains('type', 'foo')`       | Matches the given substring or array value. |
-| `$field->whenNotContains('type', 'foo')`    | When field doesnt contain the given value.  |
+| `$field->whenNotContains('type', 'foo')`    | When field doesn't contain the given value.  |
 | `$field->whenIn('type', ['foo', 'bar'])`    | When field is any of the given values.      |
 | `$field->whenNotIn('type', ['foo', 'bar'])` | When field is not any of the given values.  |
 

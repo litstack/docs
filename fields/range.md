@@ -24,7 +24,7 @@ A range slider.
 | ------------------------- | ------------------------------------------------------------------ |
 | `$field->title()`         | The title description for this field.                              |
 | `$field->hint()`          | A short hint that should describe how to use the field.`           |
-| `$field->info()`          | Questionmark with tooltip. (Can contain longer field descriptions) |
+| `$field->info()`          | Question mark with tooltip. (Can contain longer field descriptions) |
 | `$field->width()`         | Width of the field.                                                |
 | `$field->min()`           | Minimum value.                                                     |
 | `$field->max()`           | Maximum value.                                                     |

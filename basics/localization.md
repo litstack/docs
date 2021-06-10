@@ -76,7 +76,7 @@ format is used.
 
 ::: tip
 
-You may also use the Larvel localization helpers in Vue components.
+You may also use the Laravel localization helpers in Vue components.
 
 -   \_\_()
 -   trans()

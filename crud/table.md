@@ -37,7 +37,7 @@ $table->col('Product')->value('{product.name}');
 #### Display Options
 
 Maybe you want to display a value representative for a state, this can be
-achived by passing the attribute name as the first and an array of options as
+achieved by passing the attribute name as the first and an array of options as
 the second parameter to the value method:
 
 ```php
@@ -94,7 +94,7 @@ $table->money('amount');
 #### Currency
 
 For formatting the
-[formatCurrnency](https://www.php.net/manual/de/numberformatter.formatcurrency.php)
+[formatCurrency](https://www.php.net/manual/de/numberformatter.formatcurrency.php)
 method of the PHP
 [NumberFormatter](https://www.php.net/manual/de/class.numberformatter.php) is
 used. This makes it possible to choose the 3-letter ISO 4217 currency code. The
@@ -111,7 +111,7 @@ locale of the authenticated user is used by default.
 $table->money('amount', 'USD', 'en_US');
 ```
 
-Usefull **ISO 4217** codes:
+Useful **ISO 4217** codes:
 
 | Code    | Currency          | Example (`de_DE`) |
 | ------- | ----------------- | ----------------- |
@@ -305,7 +305,7 @@ $table->relation('commentable', [
 
 ## Toggle
 
-To edit the boolean state of a moel directly in a table, a **switch** can be
+To edit the boolean state of a model directly in a table, a **switch** can be
 displayed in a column using `toggle`. The name of the corresponding attribute
 must be specified as the first parameter. In addition, the `routePrefix` for the
 update route must be specified, if the table is built in a CRUD or form config,
@@ -337,7 +337,7 @@ With the `view` method you can easily add Blade Views to your table column:
 $table->view('lit::columns.hello')->label('Hello');
 ```
 
-```html{lit/resouces/views/columns/hello.blade.php}
+```html{lit/resources/views/columns/hello.blade.php}
 <div class="badge badge-secondary">
 	Hello World!
 </div>
@@ -347,7 +347,7 @@ $table->view('lit::columns.hello')->label('Hello');
 
 You can use Vue components in your blade component:
 
-```html{lit/resouces/views/columns/hello.blade.php}
+```html{lit/resources/views/columns/hello.blade.php}
 <b-badge>
 	Hello World!
 </b-badge>
@@ -355,7 +355,7 @@ You can use Vue components in your blade component:
 
 Use the **prop** `item` to display model attributes:
 
-```html{lit/resouces/views/columns/hello.blade.php}
+```html{lit/resources/views/columns/hello.blade.php}
 <b-badge v-html="item.state" />
 ```
 
@@ -392,7 +392,7 @@ export default {
             required: true,
             type: Object
         },
-        vairants: {
+        variants: {
             type: Array,
             required: true
         }
