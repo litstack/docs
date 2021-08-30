@@ -1,4 +1,4 @@
-# Location
+# Meta
 
 ## Introduction
 
