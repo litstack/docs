@@ -27,7 +27,7 @@ class NavigationConfig extends Config
 
 ### Topbar
 
-The **topbar** navigation is meant for managing less important part sof your
+The **topbar** navigation is meant for managing less important parts of your
 application, such as language and/or permissions.
 
 ### Main
@@ -36,7 +36,7 @@ The **main** navigation is intended to provide quick access to the important
 components of your application. These could be for example Models or page
 content. Entries of the main navigation can be divided into
 [sections](#sections), additionally [groups](#groups) can be created which are
-displayed as dropdown. More than one depth is not possible here.
+displayed as a dropdown. More than one depth is not possible here.
 
 ## Building the Navigation
 
