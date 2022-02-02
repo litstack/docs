@@ -46,7 +46,7 @@ used, just like `__()` from laravel's
 [localization](https://laravel.com/docs/7.x/localization#retrieving-translation-strings).
 
 ```php
-__lit('messages.welcome', ['name', 'Jannes'])
+__lit('messages.welcome', ['name' => 'Jannes'])
 ```
 
 Pluralization can be used with the `__lit_choice` function or the short version
