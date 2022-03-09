@@ -73,7 +73,7 @@ class AddTwoFaColumnsToLitUsersTable extends Migration
     {
         Schema::table('lit_users', function (Blueprint $table) {
             $table->boolean('two_fa_enabled');
-            $table->string('two_fa_secret');
+            $table->text('two_fa_secret');
         });
     }
 
