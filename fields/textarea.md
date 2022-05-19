@@ -21,7 +21,7 @@ $form->textarea('text')
 | `$field->info()`          | Question mark with tooltip. (Can contain longer field descriptions)                                                    |
 | `$field->width()`         | Width of the field.                                                                                                   |
 | `$field->translatable()`  | Should the field be translatable? For translatable crud models, the translatable fields are automatically recognized. |
-| `$field->max()`           | Max characters.                                                                                                       |
+| `$field->maxChars()`      | Max characters.                                                                                                       |
 | `$field->rows()`          | Number of rows.                                                                                                       |
 | `$field->maxRows()`       | Maximum number of rows.                                                                                               |
 | `$field->rules()`         | Rules that should be applied when **updating** and **creating**.                                                      |
