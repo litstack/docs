@@ -74,18 +74,23 @@ $nav->entry('Home', [
 
 ### Groups
 
-Create nested navigation entries in groups.
+Create nested navigation entries in groups. Groups are part of sections.
 
 ```php
-$nav->group([
-    'title' => 'Pages',
-    'icon' => '<i class="fas fa-file"></i>',
-], [
+$nav->section([
 
-    $nav->entry(...),
-    ...
+    // The Section title describes the following set of navigation entries.
+    $nav->title('Bookings'),
+    $nav->group([
+        'title' => 'Pages',
+        'icon' => '<i class="fas fa-file"></i>'
+    ], [
 
-]),
+        $nav->entry(...),
+        ...
+
+    ])
+]);
 ```
 
 ### Authorization
